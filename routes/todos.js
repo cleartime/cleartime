@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
   var query = new AV.Query(Todo);
   query.descending('createdAt');
   query.find().then(function(results) {
+    console.log(results);
     res.render('todos', {
       title: 'TODO 列表',
       todos: results
