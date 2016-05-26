@@ -7,11 +7,15 @@ var AV = require('leanengine');
 var Todo = AV.Object.extend('Todo');
 
 // 新增 Todo 项目
-router.post('/login', function(req, res, next) {
+router.post('/', function(req, res, next) {
   var content = req.body.content;
   var todo = new Todo();
-  todo.set('role', content);
+  todo.set('content', content);
   todo.save().then(function(todo) {
-    res.redirect('/role');
+    res.redirect('/todos');
   }).catch(next);
 });
+
+
+module.exports = router;
+
