@@ -4,10 +4,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var todos = require('./routes/todos');
-//var config = require('./routes/config');
+var config = require('./routes/config');
 var AV = require('leanengine');
-app.use('/todos',todos);
 var app = express();
 
 // 设置模板引擎
@@ -44,7 +42,8 @@ app.use(function(req, res, next) {
   });
   d.run(next);
 });
-
+app.use('/routes/config', function (req, res, next) {
+})
 app.get('/', function(req, res) {
   res.render('index', { currentTime: new Date() });
 });
