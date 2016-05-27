@@ -1,0 +1,58 @@
+<header>
+    <p class="pull-left" style="margin-left: 15px;">
+        hou
+    </p>
+    博客管理后台
+    <p class="pull-right" style="margin-right: 15px;">
+        <a href="/" style="color: #fff;" target="_blank">网站主页</a>
+    </p>
+</header>
+<nav>
+    <div class="nav-title">
+        常用操作
+    </div>
+    <div class="nav-content">
+        <a ui-sref="layout.addarticle">
+            发布文章
+        </a>
+        <a ui-sref="layout.article">
+            文章列表
+        </a>
+        <a>
+            回收站
+        </a>
+    </div>
+    <div class="nav-title">
+        网站管理
+    </div>
+    <div class="nav-content">
+        <a>
+            评论管理
+        </a>
+        <a ui-sref="layout.category">
+            栏目设置
+        </a>
+        <a ui-sref="layout.recommend">
+            推荐位管理
+        </a>
+        <a ui-sref="layout.webinfo">
+            网站信息设置
+        </a>
+        <a ui-sref="layout.information">
+            个人信息设置
+        </a>
+        <a ui-sref="layout.friend">
+            友情链接
+        </a>
+        <a ui-sref="layout.user">
+            管理员管理
+        </a>
+        <a>
+            上传文件管理
+        </a>
+    </div>
+</nav>
+<div id="layout-content">
+    <div ui-view="">
+    </div>
+</div>

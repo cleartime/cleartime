@@ -1,0 +1,144 @@
+<div class="manager">
+    <section class="home" ng-if="initRole">
+        <div class="form-horizontal" style="width:600px; margin-top: 20px;">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">登录用户名</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="managerDetail.username" placeholder="登录用户名">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">登录密码</label>
+
+                <div class="col-sm-9">
+                    <input type="text" ng-model="managerDetail.password" class="form-control" placeholder="默认为12345678" value="12345678">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">真实姓名</label>
+
+                <div class="col-sm-9">
+                    <input type="text" ng-model="managerDetail.realName" class="form-control" placeholder="真实姓名" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">手机号码</label>
+
+                <div class="col-sm-9">
+                    <input type="text" ng-model="managerDetail.phone" class="form-control" placeholder="手机号码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">邮箱</label>
+
+                <div class="col-sm-9">
+                    <input type="text" ng-model="managerDetail.email" class="form-control" placeholder="邮箱">
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label class="col-sm-3 control-label">状态</label>-->
+
+            <!--<div class="col-sm-9">-->
+            <!--<input type="text" ng-model="managerDetail.state" class="form-control" placeholder="状态">-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="col-sm-3 control-label">角色</label>
+
+                <div class="col-sm-9">
+                    <span ng-repeat="x in initRole">
+                        <input type="checkbox" ng-model="x.roleId" vaule="x.roleId" > {{x.roleName}}
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <a class="btn btn-default" ng-click="submitManager(x.roleName)">提交</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="panel panel-default" ng-if="!initRole">
+
+        <div class="panel-heading clearfix">
+            管理员管理
+            <div class="btn-group pull-right" role="group" aria-label="...">
+                <button type="button" class="btn btn-warning btn-sm" ng-click="addManager();">新增管理员</button>
+            </div>
+        </div>
+        <table class="table table-bordered table-condensed" >
+            <thead>
+            <tr>
+                <th style="width:20%">
+                    登录用户名
+                </th>
+                <!--<th  style="width:10%">-->
+                <!--登录密码-->
+                <!--</th>-->
+                <th  style="width:10%">
+                    姓名
+                </th>
+                <th  style="width:10%">
+                    手机号码
+                </th>
+                <th  style="width:15%">
+                    邮箱
+                </th>
+                <th  style="width:15%">
+                    最新登录时间
+                </th>
+                <th  style="width:10%">
+                    添加时间
+                </th>
+                <th  style="width:10%">
+                    是否禁用
+                </th>
+                <th  style="width:10%">
+                    操作
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in manager">
+                <td>
+                    {{item.username}}
+                </td>
+                <!--<td>-->
+                <!--{{item.password}}-->
+                <!--</td>-->
+                <td>
+                    {{item.realName}}
+                </td>
+                <td>
+                    {{item.phone}}
+                </td>
+                <td>
+                    {{item.email}}
+                </td>
+                <td>
+                    {{item.lastLoginTime}}
+                </td>
+                <td>
+                    {{item.ctime}}
+                </td>
+                <td>
+                    {{item.isForbiddenStatus}}
+                </td>
+                <td>
+                    <a ng-click="deleteManager(item.managerId)">删除</a>
+                    <a ng-click="updateManager(item.managerId)">编辑</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="panel-footer" style="text-align: center;">
+            <uib-pagination style="margin:0;" ng-change="pageChanged(result.currentPage)" total-items="result.totalSize" ng-model="result.currentPage"
+                            items-per-page="result.pageSize" max-size="5" class="pagination-sm" boundary-links="true"
+                            rotate="false"></uib-pagination>
+        </div>
+
+    </div>
+</div>

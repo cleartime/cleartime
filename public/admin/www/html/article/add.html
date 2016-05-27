@@ -1,0 +1,34 @@
+<div class="addCategory">
+    <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="title" ng-model="article.title">
+    </div>
+    <div class="col-sm-2">
+        <categorylist class="form-control" ng-model="article.category"></categorylist>
+    </div>
+    <div class="col-sm-2">
+        <recommendlist class="form-control" ng-model="article.recommend"></recommendlist>
+    </div>
+    <div class="col-sm-2">
+        <input class="form-control" placeholder="标签,英文逗号分隔" ng-model="article.tag"/>
+    </div>
+    <div class="col-sm-2">
+        <button class="form-control btn btn-info " type="file" ngf-select="uploadImg($file)" accept="image/*">
+            选择图片
+        </button>
+    </div>
+    <div class="col-sm-4">
+        <img ng-src="{{imgPath}}" alt="" ng-show="imgPath" width="60">
+        {{imgPath}}
+    </div>
+    <div class="col-sm-12">
+        <textarea class="form-control" placeholder="描述" ng-model="article.description"
+                  style="display: block; width: 100%; height: 100px;"></textarea>
+    </div>
+    <div class="col-sm-12">
+        <textarea class="form-control" placeholder="内容 mackdown文本" ng-model="article.content"
+                  style="display: block; width: 100%; height: 200px;"></textarea>
+    </div>
+    <div class="col-sm-12">
+        <button type="submit" class="btn btn-default" ng-click="submit()">submit</button>
+    </div>
+</div>

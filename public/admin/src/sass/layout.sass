@@ -1,0 +1,51 @@
+$headerHeight: 50px
+$navWidth: 180px
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: $headerHeight
+    background: #0099CC
+    text-align: center
+    color: #fff
+    line-height: $headerHeight
+    .user
+        margin-right: 20px
+nav
+    position: fixed
+    top: $headerHeight
+    left: 0
+    bottom: 0
+    width: $navWidth
+    background: #293038
+    .nav-title
+        height: 40px
+        padding-left: 20px
+        line-height: 40px
+        background: #22282e
+        color: #fff
+    .nav-content
+        transition: .1s linear all
+        overflow: hidden
+        //height: 160px
+        //&.ng-hide
+        //    height: 0
+        a
+            color: #fff
+            display: block
+            padding-left: 25px
+            height: 40px
+            line-height: 40px
+            &.active
+                background: #0099CC
+            &:hover
+                background: #37424f
+#layout-content
+    position: fixed
+    top: $headerHeight
+    right: 0
+    left: $navWidth
+    bottom: 0
+    background: #EAEDF1
+    padding: 10px

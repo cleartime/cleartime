@@ -1,0 +1,30 @@
+<div class="panel panel-default ">
+    <div class="panel-heading clearfix">
+        新增友情链接
+    </div>
+    <form class="form-horizontal panel-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">标题:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model="data.name" placeholder="标题">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">跳转url:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model="data.url" placeholder="地址">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">排序:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model="data.sort" placeholder="排序">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-success" ng-click="submit();">确认</button>
+            </div>
+        </div>
+    </form>
+</div>

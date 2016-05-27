@@ -1,0 +1,22 @@
+<div class="content">
+
+</div>
+<a ui-sref="layout.adduser" class="btn btn-info">
+    添加管理员
+</a>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in list">
+        <td>{{$index}}</td>
+        <td>{{item.name}}</td>
+        <td ng-click="del(item._id,$index)">删除</td>
+    </tr>
+    </tbody>
+</table>
