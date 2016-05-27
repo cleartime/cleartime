@@ -3,7 +3,7 @@ app.controller('loginController', ['$scope', '$state', 'ajax', 'toast', function
         ajax.post({
             url: '/login',
             data: {
-                name: $scope.name,
+                username: $scope.name,
                 password: $scope.password
             },
             toast: "登录中..."

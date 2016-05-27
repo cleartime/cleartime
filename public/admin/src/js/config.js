@@ -2,7 +2,7 @@
  * Created by Laggo on 11/4/15.
  */
 var config = {
-    'SERVER_URL' : 'http://192.168.1.104:3000/'
+    'SERVER_URL' : 'http://192.168.1.1:3000'
 };
 for(item in config){
     app.constant(item,config[item])
