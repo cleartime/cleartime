@@ -23,13 +23,12 @@ router.get('/', function(req, res, next) {
 
 // 新增 Todo 项目
 router.post('/', function(req, res, next) {
-    console.log(req.body)
     var user = new AV.User();
     user.set('username', req.body.username);
     user.set('password', req.body.password);
     user.signUp().then(function(user) {
+        res.json(user);
         // 注册成功，可以使用了
-        console.log(user);
     }, function(error) {
         // 失败了
         console.log('Error: ' + error.code + ' ' + error.message);
