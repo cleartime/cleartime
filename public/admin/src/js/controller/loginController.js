@@ -9,6 +9,7 @@ app.controller('loginController', ['$scope', '$state', 'ajax', 'toast', function
             toast: "登录中..."
         }).then(
             function (result) {
+                console.log(result);
                 toast.dismiss('登录成功!');
                 $state.go('layout')
             }
