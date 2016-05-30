@@ -8,7 +8,7 @@ var json = require('./config');
 // 新增 Todo 项目
 router.get('/', function(req, res, next) {
     //res.redirect('/todos');
-    res.send('/');
+    res.send('<p>some html</p>');
     //console.log(req,res,next)
     //var user = new AV.User();
     //user.set('username', 'hjiang');
