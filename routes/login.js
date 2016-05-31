@@ -6,7 +6,7 @@ var json = require('./config');
 // 详见： https://leancloud.cn/docs/js_guide.html#对象
 
 // 新增 Todo 项目
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     //res.redirect('/todos');
     res.send('yes');
     //console.log(req,res,next)
