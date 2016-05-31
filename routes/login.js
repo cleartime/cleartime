@@ -8,7 +8,7 @@ var json = require('./config');
 // 新增 Todo 项目
 router.get('/', function(req, res, next) {
     //res.redirect('/todos');
-    res.send('<p>some html</p>');
+    res.send('yes');
     //console.log(req,res,next)
     //var user = new AV.User();
     //user.set('username', 'hjiang');
@@ -23,8 +23,9 @@ router.get('/', function(req, res, next) {
 });
 router.post('/', function (req, res, next) {
     AV.User.logIn(req.body.username, req.body.password).then(function () {
-        console.log('yes');
-        res.render('/login', {title: '用户登录'});
+        console.log('-------');
+        res.send('yes');
+        //res.render('/login', {title: '用户登录'});
     }, function () {
         // 失败了
         console.log('no')
