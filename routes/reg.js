@@ -5,7 +5,7 @@ var AV = require('leanengine');
 
 // 新增 Todo 项目
 router.get('/', function(req, res, next) {
-    res.render('reg');
+    //res.render('reg');
     //console.log(req,res,next)
     //var user = new AV.User();
     //user.set('username', 'hjiang');

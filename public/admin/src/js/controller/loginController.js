@@ -10,7 +10,9 @@ app.controller('loginController', ['$scope', '$state', 'ajax', 'toast', '$http',
             toast: "登录中..."
         }).then(
             function (result) {
+                console.log(result)
             }
         )
     }
+
 }]);

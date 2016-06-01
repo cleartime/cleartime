@@ -3,8 +3,11 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
         var req = {
             method: 'POST',
             url: SERVER_URL + postData.url,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
             data: postData.data
-        }
+        };
         return this.ajax(req, postData);
     };
     this.get = function (postData) {
@@ -12,9 +15,9 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
             method: 'GET',
             url: SERVER_URL + postData.url,
             params: postData.data
-        }
+        };
         return this.ajax(req, postData);
-    }
+    };
     this.ajax = function (req, postData) {
         //if(postData.toast&&$rootScope.toast.has){
         //    alert('不要重复操作!');
@@ -44,7 +47,7 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
             }
         );
         return promise
-    }
+    };
     this.upload = function (file, data) {
         var deferred = $q.defer();
         Upload.upload({

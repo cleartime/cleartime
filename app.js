@@ -59,6 +59,9 @@ routerArr.forEach(function (item) {
     app.use('/' + item, route);
 });
 
+//var login = require('./routes/login');
+//app.use('/login', login);
+
 app.get('/', function (req, res) {
     res.render('index', {currentTime: new Date()});
 });
