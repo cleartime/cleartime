@@ -6,6 +6,12 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
+            transformRequest: function (obj) {
+                var str = [];
+                for (var p in obj)
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                return str.join("&");
+            },
             data: postData.data
         };
         return this.ajax(req, postData);
@@ -32,17 +38,16 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
             function success(response) {
                 if (response.data.code == 200) {
                     defer.resolve(response.data.data);
-                } else if (response.data.code == 202) {
-                    $state.go('login')
                 } else {
                     cAlert.create({
-                        mes: response.data.mes
-                    })
+                        msg: response.data.msg
+                    });
+                    $state.go('login')
                 }
             },
             function failed(response) {
                 cAlert.create({
-                    mes: '服务端错误！'
+                    msg: '服务端错误！'
                 })
             }
         );

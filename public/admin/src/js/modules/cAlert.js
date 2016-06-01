@@ -27,7 +27,7 @@
         return {
             restrict: 'E',
             replace: true,
-            template: "<div class='toast' ng-if='toast.has'>{{toast.mes}}</div>",
+            template: "<div class='toast' ng-if='toast.has'>{{toast.msg}}</div>",
             link: function (scope, ele, attrs) {
             }
         }
@@ -41,7 +41,7 @@
             }
             toast.dismiss();
             $rootScope.cAlert.has = true;
-            $rootScope.cAlert.text = obj.mes;
+            $rootScope.cAlert.text = obj.msg;
             $rootScope.cAlert.back = obj.back;
 
         };
@@ -53,14 +53,14 @@
         }
     }]);
     app.service('toast', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
-        this.create = function (mes) {
-            $rootScope.toast.mes = mes;
+        this.create = function (msg) {
+            $rootScope.toast.msg = msg;
             $rootScope.toast.has = true;
         };
-        this.dismiss = function (mes) {
+        this.dismiss = function (msg) {
             $rootScope;
-            if (mes) {
-                $rootScope.toast.mes = mes;
+            if (msg) {
+                $rootScope.toast.msg = msg;
                 $timeout(function () {
                     $rootScope.toast.has = false;
                 }, 500)

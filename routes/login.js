@@ -3,16 +3,18 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var json = require('./config');
 
+
 router.get('/', function (req, res, next) {
-    res.render('login')
+    res.render('login');
 });
 
 router.post('/', function (req, res, next) {
-    AV.User.logIn(req.body.username, req.body.password).then(function () {
-        console.log('-------yes');
+    AV.User.logIn(req.body.username, req.body.password).then(function (user) {
+        json.msg = '登陆成功!';
         res.send(json);
-    }, function () {
-        console.log('-------no');
+    }, function (error) {
+        json.code = error.code;
+        json.msg = error.message;
         res.send(json);
     });
 });

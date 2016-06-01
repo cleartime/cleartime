@@ -3,7 +3,7 @@
  */
 var json = {
     code: 200,
-    mes: '',
-    data: ''
+    msg: '',
+    data: null
 };
 module.exports = json;

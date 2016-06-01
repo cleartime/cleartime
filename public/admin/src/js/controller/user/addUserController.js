@@ -1,9 +1,9 @@
 app.controller('addUserController', ['$scope', 'ajax', 'toast', '$state', function ($scope, ajax, toast, $state) {
     $scope.submit = function () {
         ajax.post({
-            url: '/users/add',
+            url: '/reg',
             data: {
-                name: $scope.name,
+                username: $scope.name,
                 password: $scope.password
             },
             toast: "添加中..."

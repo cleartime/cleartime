@@ -1,6 +1,16 @@
 'use strict';
 var router = require('express').Router();
 var AV = require('leanengine');
+var json = require('./config');
+
+// 用户列表 Todo 项目
+router.get('/users', function (req, res, next) {
+    //var query = new AV.Query(AV.User);
+    //query.equalTo('gender', 'female');  // find all the women
+    //query.find().then(function(womenList) {
+    //    console.log(womenList);
+    //});
+});
 
 
 // 新增 Todo 项目
@@ -16,11 +26,14 @@ router.post('/', function(req, res, next) {
     user.set('username', req.body.username);
     user.set('password', req.body.password);
     user.signUp().then(function(user) {
-        res.json(user);
+        json.code = 200;
+        json.msg = '新增成功';
+        res.send(json);
         // 注册成功，可以使用了
     }, function(error) {
-        // 失败了
-        console.log('Error: ' + error.code + ' ' + error.message);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
     });
 });
 
