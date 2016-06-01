@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
     //res.redirect('/todos');
     console.log('-------');
     //res.send('yes');
+    res.send('yes');
     //res.status(200).send('Bad Request');
     //res.end()
     //console.log(req,res,next)
@@ -25,14 +26,15 @@ router.get('/', function (req, res, next) {
     //});
 });
 router.post('/', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
     AV.User.logIn(req.body.username, req.body.password).then(function () {
         console.log('-------yes');
         res.send('yes');
+
         //res.render('/login', {title: '用户登录'});
     }, function () {
         // 失败了
-        console.log('-------no')
+        console.log('-------no');
+        res.send('yes');
     });
 });
 
