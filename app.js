@@ -20,7 +20,7 @@ app.use(AV.express());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-
+//
 //app.all('*', function (req, res, next) {
 //    res.header("Access-Control-Allow-Origin", "*");
 //    res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -28,7 +28,7 @@ app.use(cookieParser());
 //    res.header("X-Powered-By", ' 3.2.1');
 //    res.header("Content-Type", "application/json;charset=utf-8");
 //    if (req.method === 'OPTIONS') {
-//        return res.status(200).end();
+//        res.status(200).end();
 //    }
 //    next();
 //});
