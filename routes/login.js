@@ -4,7 +4,7 @@ var AV = require('leanengine');
 var json = require('./config');
 
 router.get('/', function (req, res, next) {
-    //res.render('login')
+    res.render('login')
 });
 
 router.post('/', function (req, res, next) {
@@ -12,7 +12,6 @@ router.post('/', function (req, res, next) {
         console.log('-------yes');
         res.send(json);
     }, function () {
-        // 失败了
         console.log('-------no');
         res.send(json);
     });
