@@ -1,11 +1,12 @@
 app.controller('userController', ['$scope', 'ajax', 'toast', function ($scope, ajax, toast) {
-    ajax.post({
-        url: '/users'
+    ajax.get({
+        url: '/user'
     }).then(
         function (result) {
+            console.log(result);
             $scope.list = result;
         }
-    )
+    );
 
     $scope.del = function(id,index){
         ajax.post({

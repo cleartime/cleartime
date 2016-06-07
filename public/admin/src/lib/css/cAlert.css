@@ -49,8 +49,8 @@
 }
 
 .cAlert-title {
-    border-bottom: 1px solid #4c9546;
-    color: #4c9546;
+    border-bottom: 1px solid #09c;
+    color: #09c;
     line-height: 30px;
     font-size: 18px;
     text-align: center;
@@ -72,7 +72,7 @@
     width: 110px;
 }
 .cAlert-btn-true{
-    background-color: #4c9546;
+    background-color: #09c;
     color: #fff;
 }
 .cAlert-btn-faild{
