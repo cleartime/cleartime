@@ -16,7 +16,7 @@
     <tr ng-repeat="item in list">
         <td>{{$index}}</td>
         <td>{{item.username}}</td>
-        <td ng-click="del(item._id,$index)">删除</td>
+        <td ng-click="del(item.objectId,$index)">删除</td>
     </tr>
     </tbody>
 </table>
