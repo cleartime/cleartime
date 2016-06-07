@@ -12,6 +12,7 @@ router.get('/', function (req, res, next) {
         json.data = results;
         res.send(json);
     }, function (error) {
+        console.log(error);
         json.code = error.code;
         json.msg = error.message;
         res.send(json);
@@ -30,6 +31,7 @@ router.post('/', function (req, res, next) {
         res.send(json);
         // 注册成功，可以使用了
     }, function (error) {
+        console.log(error);
         json.code = error.code;
         json.msg = error.message;
         res.send(json);
@@ -39,8 +41,27 @@ router.post('/', function (req, res, next) {
 
 // 删除管理员
 router.post('/del', function (req, res, next) {
-    AV.Query.doCloudQuery('delete from _User where objectId=' + req.body.objectId + '').then(function (data) {
-        console.log(data);
+    var objectId = req.body.objectId;
+    AV.Query.doCloudQuery('delete from _User where objectId="' + objectId + '"').then(function (data) {
+        json.msg = '删除成功!';
+        res.send(json);
+    }, function (error) {
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
+
+// 修改管理员
+router.post('/updata', function (req, res, next) {
+    var objectId = req.body.objectId;
+    var password = req.body.password;
+    AV.Query.doCloudQuery('update _User set password="' + password + '" where objectId="' + objectId + '"').then(function (data) {
+        var results = data.results;
+        json.msg = '修改成功!';
+        res.send(json);
     }, function (error) {
         console.log(error);
         json.code = error.code;

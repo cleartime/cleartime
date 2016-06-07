@@ -42,7 +42,7 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
                     cAlert.create({
                         msg: response.data.msg
                     });
-                    $state.go('login')
+                    //$state.go('login')
                 }
             },
             function failed(response) {

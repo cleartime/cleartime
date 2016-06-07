@@ -6,4 +6,19 @@ var json = {
     msg: '',
     data: null
 };
+
+
+json.success = {
+    code: 200,
+    msg: '',
+    data: null
+};
+
+json.error = {
+    code: 200,
+    msg: '',
+    data: null
+};
+
+
 module.exports = json;

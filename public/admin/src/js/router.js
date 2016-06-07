@@ -35,7 +35,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             controller: "userController"
         })
         .state('layout.adduser', {
-            url: "/adduser",
+            url: "/adduser/:username/:objectId",
             templateUrl: "www/html/user/add.html",
             controller: "addUserController"
         })
