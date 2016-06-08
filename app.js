@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
 });
 
 
-var routerArr = ['login', 'reg', 'user', 'information'];
+var routerArr = ['login', 'user', 'information'];
 routerArr.forEach(function (item) {
     var route = require('./routes/' + item);
     app.use('/' + item, route);
