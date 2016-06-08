@@ -11,6 +11,7 @@ app.controller('loginController', ['$scope', '$state', 'ajax', 'toast', '$http',
         }).then(
             function (result) {
                 toast.dismiss('登录成功!');
+                console.log(result);
                 $state.go('layout')
             }
         )

@@ -4,8 +4,7 @@ app.controller('informationController', ['$scope', 'ajax', 'cAlert', 'toast', fu
         url: '/information',
         toast: "获取中..."
     }).then(function (result) {
-        $scope.info = result;
-        console.log(result);
+        $scope.info = result[0];
         toast.dismiss('获取成功');
     });
 
