@@ -25,6 +25,8 @@ router.get('/', function (req, res, next) {
         res.send(json);
     });
 });
+
+
 // 新增个人信息
 router.post('/', function (req, res, next) {
     var introduction = req.body.introduction;//个人简介
@@ -34,7 +36,7 @@ router.post('/', function (req, res, next) {
     var github = req.body.github;//github地址
     var email = req.body.email;//邮箱地址
     // 执行 CQL 语句实现新增一个 Information 对象
-    AV.Query.doCloudQuery('insert into Information(head, sign,introduction,weibo,github,email) values(' + head + ',' + sign + ',' + introduction + ',' + weibo + ',' + github + ',' + email + ')').then(function (data) {
+    AV.Query.doCloudQuery('insert into Information(head, sign,introduction,weibo,github,email) values("' + head + '","' + sign + '","' + introduction + '","' + weibo + '","' + github + '","' + email + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results[0];
@@ -51,9 +53,13 @@ router.post('/', function (req, res, next) {
 
 // 修改个人信息
 router.post('/updata', function (req, res, next) {
-    var objectId = req.body.objectId;
-    var password = req.body.password;
-    AV.Query.doCloudQuery('update Information set password="' + password + '" where objectId="' + objectId + '"').then(function (data) {
+    var introduction = req.body.introduction;//个人简介
+    var head = req.body.head;//头像
+    var sign = req.body.sign;//个性签名
+    var weibo = req.body.weibo;//微博地址
+    var github = req.body.github;//github地址
+    var email = req.body.email;//邮箱地址
+    AV.Query.doCloudQuery('update Information set  head="' + head + '", sign="' + sign + '",weibo="' + weibo + '",github="' + github + '",email="' + email + '",introduction="' + introduction + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         var results = data.results;
         json.data = results[0];
         json.msg = '设置成功!';
