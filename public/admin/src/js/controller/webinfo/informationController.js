@@ -1,20 +1,24 @@
-app.controller('informationController', ['$scope', 'ajax', 'cAlert','toast', function ($scope, ajax, cAlert,toast) {
-    ajax.post({
-        url: '/information/query',
+app.controller('informationController', ['$scope', 'ajax', 'cAlert', 'toast', function ($scope, ajax, cAlert, toast) {
+    //查询个人信息
+    ajax.get({
+        url: '/information',
         toast: "获取中..."
-    }).then(function(result){
+    }).then(function (result) {
         $scope.info = result;
+        console.log(result);
         toast.dismiss('获取成功');
-    })
+    });
 
-    $scope.submit = function(){
+
+    //设置个人信息
+    $scope.submit = function () {
         ajax.post({
-            url: '/information/set',
+            url: '/information',
             data: $scope.info,
-            toast: "修改中..."
-        }).then(function(result){
+            toast: "设置中..."
+        }).then(function (result) {
             cAlert.create({
-                mes:'修改成功'
+                mes: '设置成功!'
             })
         })
     }

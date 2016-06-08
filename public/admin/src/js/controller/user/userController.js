@@ -1,7 +1,8 @@
 app.controller('userController', ['$scope', 'ajax', 'toast', function ($scope, ajax, toast) {
     //查询管理员
     ajax.get({
-        url: '/user'
+        url: '/user',
+        toast: "获取中..."
     }).then(
         function (result) {
             $scope.list = result;

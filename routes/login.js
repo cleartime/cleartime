@@ -3,7 +3,7 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var json = require('./config');
 
-
+router.userID = null;
 router.get('/', function (req, res, next) {
     res.render('login');
 });
