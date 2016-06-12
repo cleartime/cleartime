@@ -1,7 +1,7 @@
 app.controller('addCategoryController', ['$scope', 'ajax', 'toast', '$state', function ($scope, ajax, toast, $state) {
     $scope.submit = function () {
         ajax.post({
-            url: '/category/add',
+            url: '/category',
             data: {
                 name: $scope.name,
             },
