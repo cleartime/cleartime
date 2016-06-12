@@ -1,21 +1,34 @@
 app.controller('webInfoController', ['$scope', 'ajax', 'cAlert','toast', function ($scope, ajax, cAlert,toast) {
-    ajax.post({
-        url: '/webinfo/query',
+    $scope.isUpdata = false;
+    //查询个人信息
+    ajax.get({
+        url: '/webinfo',
         toast: "获取中..."
-    }).then(function(result){
-        $scope.info = result;
+    }).then(function (result) {
+        if (result.length < 1) {
+            $scope.isUpdata = true;
+        }
+        $scope.info = result[0];
         toast.dismiss('获取成功');
-    })
+    });
 
-    $scope.submit = function(){
+
+    //设置个人信息
+    $scope.submit = function () {
+        var url = '';
+        var data = '';
+        if ($scope.isUpdata) {
+            url = '/webinfo';
+        } else {
+            url = '/webinfo/updata';
+        }
+        console.log(url);
         ajax.post({
-            url: '/webinfo/set',
+            url: url,
             data: $scope.info,
-            toast: "修改中..."
-        }).then(function(result){
-            cAlert.create({
-                mes:'修改成功'
-            })
+            toast: "设置中..."
+        }).then(function (result) {
+            toast.dismiss('设置成功');
         })
     }
 }]);
