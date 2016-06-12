@@ -8,7 +8,8 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Name</th>
+        <th>名称</th>
+        <th>昵称</th>
         <th>操作</th>
     </tr>
     </thead>
@@ -16,7 +17,8 @@
     <tr ng-repeat="item in list">
         <td>{{$index}}</td>
         <td>{{item.name}}</td>
-        <td ng-click="del(item._id,$index)">删除</td>
+        <td>{{item.nickname}}</td>
+        <td ng-click="del(item.objectId,$index)">删除</td>
     </tr>
     </tbody>
 </table>

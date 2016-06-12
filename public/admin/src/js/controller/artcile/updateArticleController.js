@@ -2,13 +2,13 @@ app.controller('updateArticleController', ['$scope', 'ajax', 'toast', '$state', 
     ajax.post({
         url: '/article/query',
         data: {
-            id: $stateParams.id
+            objectId: $stateParams.id
         },
         toast: "获取数据..."
     }).then(function (result) {
         toast.dismiss('获取成功!');
-        $scope.article = result;
-    })
+        $scope.article = result[0];
+    });
 
     $scope.submit = function () {
         $scope.article.updateTime = new Date();

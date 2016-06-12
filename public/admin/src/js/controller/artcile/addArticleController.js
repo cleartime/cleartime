@@ -7,7 +7,7 @@ app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state','SER
         }).then(
             function (result) {
                 toast.dismiss('添加成功!');
-                $state.go('layout.article');
+                $state.go('layout.article')
             }
         )
     };

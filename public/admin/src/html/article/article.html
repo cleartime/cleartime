@@ -15,9 +15,10 @@
     <tr ng-repeat="item in list">
         <td>{{$index}}</td>
         <td>{{item.title}}</td>
-        <td>{{item.category.name}}</td>
+        <td>{{item.category}}</td>
         <td>{{item.tag}}</td>
-        <td><a ng-click="del(item._id,$index)">删除</a> <a ui-sref="layout.updatearticle({id:item._id})">修改</a></td>
+        <td><a ng-click="del(item.objectId,$index)">删除</a> <a ui-sref="layout.updatearticle({id:item.objectId})">修改</a>
+        </td>
     </tr>
     </tbody>
 </table>

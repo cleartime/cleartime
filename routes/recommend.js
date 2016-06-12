@@ -6,12 +6,12 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var json = require('./config');
 
-var Webinfo = AV.Object.extend('Webinfo');// 网站信息
+var Recommend = AV.Object.extend('recommend');// 网站信息
 
-// 查询栏目
+// 查询推荐位
 router.get('/', function (req, res, next) {
     var currentUser = AV.User.current();
-    var cql = 'select * from Category';
+    var cql = 'select * from recommend';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -27,10 +27,11 @@ router.get('/', function (req, res, next) {
 });
 
 
-// 新增栏目
+// 新增推荐位
 router.post('/', function (req, res, next) {
-    var name = req.body.name;//头像
-    AV.Query.doCloudQuery('insert into Category (name) values("' + name + '")').then(function (data) {
+    var name = req.body.name;//推荐位名
+    var nickname = req.body.nickname;//推荐位昵称
+    AV.Query.doCloudQuery('insert into recommend (name,nickname) values("' + name + '","' + nickname + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;
@@ -45,10 +46,11 @@ router.post('/', function (req, res, next) {
     });
 });
 
-//修改栏目
+//修改推荐位
 router.post('/updata', function (req, res, next) {
-    var name = req.body.name;//头像
-    AV.Query.doCloudQuery('update Webinfo set  name="' + name + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    var name = req.body.name;//推荐位名
+    var nickname = req.body.nickname;//推荐位昵称
+    AV.Query.doCloudQuery('update recommend set  name="' + name + '" nickname="' + nickname + '"  where objectId="' + req.body.objectId + '"').then(function (data) {
         var results = data.results;
         json.data = results;
         json.msg = '设置成功!';

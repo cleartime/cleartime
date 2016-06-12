@@ -43,6 +43,8 @@ router.post('/', function (req, res, next) {
 router.post('/del', function (req, res, next) {
     var objectId = req.body.objectId;
     AV.Query.doCloudQuery('delete from _User where objectId="' + objectId + '"').then(function (data) {
+        var results = data.results;
+        json.data = results;
         json.msg = '删除成功!';
         res.send(json);
     }, function (error) {
