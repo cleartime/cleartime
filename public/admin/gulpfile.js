@@ -23,7 +23,7 @@ var cssSprite = require('gulp-css-spritesmith');
 // 自动雪碧图
 // autoSprite, with media query
 gulp.task('autoSprite', function() {
-    gulp.src('css/*.css').pipe(cssSprite({
+    gulp.src('./src/sass*.sass').pipe(cssSprite({
             // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
             imagepath: './src/img',
             // 映射CSS中背景路径，支持函数和数组，默认为 null
