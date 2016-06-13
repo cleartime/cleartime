@@ -23,6 +23,11 @@
     "node-notifier": "^4.3.1"
   },
   "dependencies": {
-    "gulp-compass": "^2.1.0"
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-css-spritesmith": "0.0.5",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-sass": "^2.3.1",
+    "gulp.spritesmith": "^6.2.1"
   }
 }
