@@ -6,6 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AV = require('leanengine');
 var app = express();
+// 服务端需要使用 connect-busboy（通过 npm install 安装）
+var busboy = require('connect-busboy');
+// 使用这个中间件
+app.use(busboy());
+
 
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
@@ -54,7 +59,7 @@ app.use(function (req, res, next) {
 });
 
 //路由配置
-var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend'];
+var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend','upload'];
 routerArr.forEach(function (item) {
     var route = require('./routes/' + item);
     app.use('/' + item, route);

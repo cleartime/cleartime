@@ -12,9 +12,11 @@
         <input class="form-control" placeholder="标签,英文逗号分隔" ng-model="article.tag" />
     </div>
     <div class="col-sm-2">
-        <button class="form-control btn btn-info " type="file" ngf-select="uploadImg($file)" accept="image/*">
-            选择图片
-        </button>
+        <input type="file" file-model="myFile"/>
+        <div class="col-md-12">
+            <img ng-src="{{imageSrc}}" style="max-width:300px;max-height:300px;margin:0 auto;display:block;" />
+        </div>
+        <button ng-click="uploadImg(myFile)">点击上传</button>
     </div>
     <div class="col-sm-4">
         <img ng-src="{{imgPath}}" alt="" ng-show="imgPath" width="60"> {{imgPath}}

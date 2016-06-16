@@ -54,6 +54,36 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
         return promise
     };
     this.upload = function (file, data) {
+
+
+
+
+        //// 前端代码，基于 jQuery
+        //function uploadPhoto() {
+        //    var uploadFormDom = $('#upload-file-form');
+        //    var uploadInputDom = uploadFormDom.find('input[type=file]');
+        //    // 获取浏览器 file 对象
+        //    var files = uploadInputDom[0].files;
+        //    // 创建 formData 对象
+        //    var formData = new window.FormData(uploadFormDom[0]);
+        //    if (files.length) {
+        //        this.ajax({
+        //            // 注意，这个 url 地址是一个例子，真实使用时需替换为自己的上传接口 url
+        //            url: SERVER_URL + '/upload',
+        //            method: 'post',
+        //            data: formData,
+        //            processData: false,
+        //            contentType: false
+        //        }).then(function(data){
+        //            // 上传成功，服务端设置返回
+        //            console.log(data);
+        //    });
+        //    }
+        //};
+
+
+
+
         var deferred = $q.defer();
         Upload.upload({
             //服务端接收
