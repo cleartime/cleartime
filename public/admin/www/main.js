@@ -107,8 +107,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         })
 }]);
 
-app.controller('layoutController', ['$scope', '$window', function ($scope, $window) {
-    $scope.goBack = function () {
+app.controller('layoutController', ['$scope','$window',function ($scope,$window) {
+    $scope.goBack = function(){
         $window.history.back();
     }
 }]);
@@ -262,11 +262,11 @@ app.filter('categoryType', ['categoryService', function (categoryService) {
         $rootScope.canverImageShow = function(url){
             $rootScope.canverImage.url = url;
             $rootScope.canverImage.show = true;
-        };
+        }
         $rootScope.canverImageClose = function(){
             $rootScope.canverImage.url = '';
             $rootScope.canverImage.show = false;
-        };
+        }
         angular.element(document.body).append("<canverimage></canverimage>");
     }]);
     app.directive('canverimage', ['$rootScope', function ($rootScope) {
@@ -424,10 +424,10 @@ app.controller('addCategoryController', ['$scope', 'ajax', 'toast', '$state', fu
         )
     }
 }]);
-app.controller('listCategoryController', ['$scope', 'ajax', 'toast', 'categoryService', function ($scope, ajax, toast, categoryService) {
-    categoryService.list().then(function (result) {
+app.controller('listCategoryController', ['$scope', 'ajax', 'toast','categoryService', function ($scope, ajax, toast,categoryService) {
+    categoryService.list().then(function(result){
         $scope.list = result;
-    });
+    })
 
     $scope.del = function (id, index) {
         ajax.post({
@@ -539,7 +539,7 @@ app.controller('friendController', ['$scope', 'ajax', 'toast', '$state', 'cAlert
         $scope.resultData = result;
         toast.dismiss('end..!');
         $state.go('layout.friend');
-    });
+    })
 
 
     $scope.del = function (id, index) {
@@ -590,7 +590,7 @@ app.controller('addRecommendController', ['$scope', 'ajax', 'toast', '$state', f
 app.controller('recommendController', ['$scope', 'ajax', 'toast', 'recommendService', function ($scope, ajax, toast, recommendService) {
     recommendService.list().then(function(result){
         $scope.list = result;
-    });
+    })
 
     $scope.del = function (id, index) {
         ajax.post({
