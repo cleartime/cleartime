@@ -53,7 +53,7 @@ app.use(function (req, res, next) {
     d.run(next);
 });
 
-
+//路由配置
 var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend'];
 routerArr.forEach(function (item) {
     var route = require('./routes/' + item);
