@@ -1,5 +1,18 @@
 app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SERVER_URL', function ($scope, ajax, toast, $state, SERVER_URL) {
+    $scope.article = {};
+
+    $scope.uploadImg = function (file) {
+        ajax.upload(file).then(function (result) {
+            $scope.article.fileId = result.fileId;
+            $scope.imgPath = result.fileUrl;
+        })
+    }
+
     $scope.submit = function () {
+        if(!$scope.article.fileId){
+            alert('请上传图片!');
+            return false
+        }
         ajax.post({
             url: '/article',
             data: $scope.article,
@@ -12,9 +25,5 @@ app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SE
         )
     };
 
-    $scope.uploadImg = function (file) {
-        ajax.upload(file).then(function (result) {
-            $scope.imgPath = result.fileUrl;
-        })
-    }
+
 }]);

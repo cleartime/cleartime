@@ -52,8 +52,8 @@ router.post('/', function (req, res, next) {
     var tag = req.body.tag;//文章标签
     var description = req.body.description;//文章描述
     var content = req.body.content;//文章内容
-
-    AV.Query.doCloudQuery('insert into Article(title,tag,description,content,recommend,category) values("' + title + '","' + tag + '","' + description + '","' + content + '","' + recommend + '",' + category + ')').then(function (data) {
+    var fileId = req.body.fileId;//图片id
+    AV.Query.doCloudQuery('insert into Article(title,tag,description,content,recommend,category,fileId) values("' + title + '","' + tag + '","' + description + '","' + content + '","' + recommend + '",' + category + ',"' + fileId + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;
@@ -77,8 +77,9 @@ router.post('/update', function (req, res, next) {
     var tag = req.body.tag;//文章标签
     var description = req.body.description;//文章描述
     var content = req.body.content;//文章内容
+    var fileId = req.body.fileId;//图片id
 
-    AV.Query.doCloudQuery('update Article set title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category="' + category + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    AV.Query.doCloudQuery('update Article set fileId="' + fileId + '", title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category="' + category + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;
