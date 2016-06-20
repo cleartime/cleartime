@@ -8,6 +8,7 @@ var json = require('./config');
 
 var Recommend = AV.Object.extend('recommend');// 网站信息
 
+
 // 查询推荐位
 router.get('/', function (req, res, next) {
     var currentUser = AV.User.current();
