@@ -64,5 +64,24 @@ router.post('/updata', function (req, res, next) {
 });
 
 
+
+//删除推荐位
+router.post('/del', function (req, res, next) {
+    AV.Query.doCloudQuery('delete from recommend where objectId="' + req.body.objectId + '"').then(function (data) {
+        // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
+        var results = data.results;
+        json.data = results;
+        json.msg = '删除成功!';
+        res.send(json);
+    }, function (error) {
+        //查询失败，查看 error
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
+
 module.exports = router;
 

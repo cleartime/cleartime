@@ -11,7 +11,6 @@ app.directive("categorylist", ['categoryService',function (categoryService) {
             categoryService.list().then(function(result){
                 scope.list = result
             })
-
         },
     }
 }]);

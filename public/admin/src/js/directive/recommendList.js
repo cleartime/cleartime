@@ -8,7 +8,6 @@ app.directive("recommendlist", ['recommendService',function (recommendService) {
         replace: true,
         transclude: true,
         scope: {
-
         },
         link: function (scope, ele, attr) {
             recommendService.list().then(function(result){

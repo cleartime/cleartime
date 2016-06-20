@@ -7,7 +7,7 @@ app.controller('listCategoryController', ['$scope', 'ajax', 'toast','categorySer
         ajax.post({
             url: '/category/del',
             data: {
-                _id: id
+                objectId: id
             },
             toast: "删除中..."
         }).then(
