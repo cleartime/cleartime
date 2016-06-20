@@ -53,20 +53,18 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
         );
         return promise
     };
-    this.upload = function (file, data) {
+    this.upload = function (file) {
         var deferred = $q.defer();
         Upload.upload({
-            //服务端接收
             url: SERVER_URL + '/upload',
-            //上传的同时带的参数
-            data: data,
-            file: file
-        }).then(function (resp) {
-            deferred.resolve(resp.data);
+            file: file,
+            toast: "上传中..."
+        }).then(function (res) {
+            deferred.resolve(res.data);
         }, function (resp) {
-            console.log('Error status: ' + resp.status);
+            //console.log('Error status: ' + resp.status);
         }, function (evt) {
-            console.log(evt);
+            //console.log(evt);
             // var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             // deferred.resolve(progressPercentage);
             //console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
