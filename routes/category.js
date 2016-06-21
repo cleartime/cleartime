@@ -9,12 +9,11 @@ var json = require('./config');
 var Webinfo = AV.Object.extend('Webinfo');// 网站信息
 
 // 查询单个栏目(根据cod)
-router.post('/query', function (req, res, next) {
-    var cql = 'select name from Category where categoryID = "' + req.body.cod + '"';
-    var pvalues = [0];
-    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
-        var results = data.results;
-        json.data = results;
+router.post('/query', function (req, res) {
+
+    var cql = 'select * from Category where categoryID = '+req.body.categoryID+'';
+    AV.Query.doCloudQuery(cql).then(function (data) {
+        json.data = data.results[0]._serverData.name;
         json.msg = '获取成功!';
         res.send(json);
     }, function (error) {
