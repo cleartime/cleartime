@@ -72,14 +72,14 @@ router.post('/', function (req, res, next) {
 // 修改单个文章
 router.post('/update', function (req, res, next) {
     var title = req.body.title;//文章标题
-    var category = req.body.category;//文章栏目
+    var category = parseInt(req.body.category);//文章栏目
     var recommend = req.body.recommend;//文章推荐位
     var tag = req.body.tag;//文章标签
     var description = req.body.description;//文章描述
     var content = req.body.content;//文章内容
     var fileId = req.body.fileId;//图片id
 
-    AV.Query.doCloudQuery('update Article set  title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category="' + category + '",fileId="' + fileId + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    AV.Query.doCloudQuery('update Article set  title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category=' + category + ',fileId="' + fileId + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;

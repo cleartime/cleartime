@@ -8,6 +8,7 @@ app.controller('updateArticleController', ['$scope', 'ajax', 'toast', '$state', 
     }).then(function (result) {
         toast.dismiss('获取成功!');
         $scope.article = result[0];
+        $scope.article.category = $scope.article.category.toString();
         var fileId = result[0].fileId;
         if(fileId){
             ajax.post({
