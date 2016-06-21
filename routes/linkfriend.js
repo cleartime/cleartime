@@ -68,9 +68,10 @@ router.post('/updata', function (req, res, next) {
 
 // 删除友情链接
 router.post('/del', function (req, res, next) {
-    AV.Query.doCloudQuery('delete form Linkfriend where objectId="' + req.body.objectId + '"').then(function (data) {
+    var objectId = req.body.objectId;
+    AV.Query.doCloudQuery('delete from Linkfriend where objectId="' + objectId + '"').then(function (data) {
         var results = data.results;
-        json.data = results[0];
+        json.data = results;
         json.msg = '删除成功!';
         res.send(json);
     }, function (error) {
