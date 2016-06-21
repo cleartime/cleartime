@@ -10,7 +10,7 @@ var Webinfo = AV.Object.extend('Webinfo');// 网站信息
 
 // 查询单个栏目(根据cod)
 router.post('/query', function (req, res, next) {
-    var cql = 'select name from Category where cod = "' + req.body.cod + '"';
+    var cql = 'select name from Category where categoryID = "' + req.body.cod + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;

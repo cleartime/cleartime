@@ -17,7 +17,7 @@
         <td>{{item.title}}</td>
         <td>{{item.category}}</td>
         <td>{{item.tag}}</td>
-        <td><a ng-click="del(item.objectId,$index)">删除</a> <a ui-sref="layout.updatearticle({id:item.objectId})">修改</a>
+        <td><a ng-click="del(item.objectId,$index,item.fileId)">删除</a> <a ui-sref="layout.updatearticle({id:item.objectId})">修改</a>
         </td>
     </tr>
     </tbody>

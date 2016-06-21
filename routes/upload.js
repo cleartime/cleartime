@@ -71,5 +71,25 @@ router.post('/query', function (req, res) {
 
 
 
+
+// 删除单个图片
+router.post('/del', function (req, res) {
+    var cql = 'delete from _File where objectId="' + req.body.objectId + '"';
+    var pvalues = [0];
+    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
+        var results = data.results;
+        json.data = results;
+        json.msg = '删除成功!';
+        res.send(json);
+    }, function (error) {
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
+
+
 module.exports = router;
 

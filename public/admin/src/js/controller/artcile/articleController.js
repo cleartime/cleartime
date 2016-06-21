@@ -4,7 +4,7 @@ app.controller('articleController', ['$scope', 'ajax', 'toast', 'articleService'
         $scope.list = result;
     });
 
-    $scope.del = function (id, index) {
+    $scope.del = function (id, index,fileId) {
         ajax.post({
             url: '/article/del',
             data: {
@@ -13,8 +13,19 @@ app.controller('articleController', ['$scope', 'ajax', 'toast', 'articleService'
             toast: "删除中..."
         }).then(
             function (result) {
-                toast.dismiss('OK!');
-                $scope.list.splice(index, 1)
+                //同时删除图片
+                ajax.post({
+                    url: '/upload/del',
+                    data: {
+                        objectId:fileId
+                    },
+                    toast: "删除中..."
+                }).then(
+                    function (result) {
+                        toast.dismiss('OK!');
+                        $scope.list.splice(index, 1)
+                    }
+                )
             }
         )
     }
