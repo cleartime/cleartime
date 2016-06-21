@@ -7,7 +7,7 @@ var AV = require('leanengine');
 var json = require('./config');
 
 
-// 新增推荐位
+// 上传图片
 router.post('/', function (req, res) {
     if (req.busboy) {
         var base64data = [];
@@ -49,6 +49,26 @@ router.post('/', function (req, res) {
         res.status(502);
     }
 });
+
+
+
+// 查询单个图片
+router.post('/query', function (req, res) {
+    var cql = 'select url from _File where objectId="' + req.body.objectId + '"';
+    var pvalues = [0];
+    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
+        var results = data.results;
+        json.data = results;
+        json.msg = '获取成功!';
+        res.send(json);
+    }, function (error) {
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
 
 
 module.exports = router;

@@ -79,11 +79,11 @@ router.post('/update', function (req, res, next) {
     var content = req.body.content;//文章内容
     var fileId = req.body.fileId;//图片id
 
-    AV.Query.doCloudQuery('update Article set fileId="' + fileId + '", title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category="' + category + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    AV.Query.doCloudQuery('update Article set  title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category="' + category + '",fileId="' + fileId + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;
-        json.msg = '设置成功!';
+        json.msg = '修改成功!';
         res.send(json);
     }, function (error) {
         //查询失败，查看 error
