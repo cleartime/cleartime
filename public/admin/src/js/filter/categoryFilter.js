@@ -1,5 +1,5 @@
-app.filter('categoryType', ['categoryService', function (categoryService) {
+app.filter('categoryType', ['categoryService', '$http', function (categoryService, $http) {
     return function categoryType(cod) {
-        return cod
+        return
     }
 }]);

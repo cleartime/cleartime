@@ -1,9 +1,9 @@
 /**
- * Created by Hou on 16/3/29.
+ * Created by gxx on 16/3/29.
  */
 app.controller('friendController', ['$scope', 'ajax', 'toast', '$state', 'cAlert', function ($scope, ajax, toast, $state, cAlert) {
     ajax.post({
-        url: '/friend/query',
+        url: '/linkfriend/query',
         toast: "do..."
     }).then(function (result) {
         $scope.resultData = result;
@@ -18,7 +18,7 @@ app.controller('friendController', ['$scope', 'ajax', 'toast', '$state', 'cAlert
             comfirm: true,
             back: function () {
                 ajax.post({
-                    url: '/friend/del',
+                    url: '/linkfriend/del',
                     data: {
                         _id: id
                     },

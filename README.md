@@ -43,7 +43,7 @@ lean deploy
 
 将预备环境的代码发布到生产环境：
 ```
-lean publish(1)
+lean publish
 ```
 
 ## 相关文档

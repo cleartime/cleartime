@@ -22,7 +22,7 @@
                     {{$index+1}}
                 </td>
                 <td>
-                    {{item.name}}
+                    {{item.title}}
                 </td>
                 <td>
                     <a href="{{item.url}}" target="_blank">{{item.url}}</a>
@@ -31,7 +31,7 @@
                     {{item.sort}}
                 </td>
                 <td>
-                    <span class="btn btn-default btn-xs" ng-click="del(item._id,$index)">删除</span>
+                    <span class="btn btn-default btn-xs" ng-click="del(item.objectId,$index)">删除</span>
                 </td>
             </tr>
             </tbody>

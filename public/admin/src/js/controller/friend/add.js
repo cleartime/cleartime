@@ -1,7 +1,7 @@
 app.controller('addFriendController', ['$scope', 'ajax', 'toast', '$state', function ($scope, ajax, toast, $state) {
     $scope.submit = function () {
         ajax.post({
-            url: '/friend/add',
+            url: '/linkfriend',
             data: $scope.data,
             toast: "添加中..."
         }).then(function (result) {
