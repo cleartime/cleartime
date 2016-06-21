@@ -16,9 +16,8 @@
             选择图片
         </button>
     </div>
-    <div class="col-sm-4">
-        <img ng-src="{{imgPath}}" alt="" ng-show="imgPath" width="60">
-        {{imgPath}}
+    <div class="col-sm-2">
+        <img ng-src="{{imgPath}}" alt="" ng-show="imgPath" width="60" height="60">
     </div>
     <div class="col-sm-12">
         <textarea class="form-control" placeholder="描述" ng-model="article.description"

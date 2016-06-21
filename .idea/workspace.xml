@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/linkfriend.js" afterPath="$PROJECT_DIR$/routes/linkfriend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/src/html/article/add.html" afterPath="$PROJECT_DIR$/public/admin/src/html/article/add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/www/html/article/add.html" afterPath="$PROJECT_DIR$/public/admin/www/html/article/add.html" />
     </list>
     <ignored path="cleartime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linkfriend.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="linkfriend.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/linkfriend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5118343">
-              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -49,6 +50,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="64" column="3" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="article.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/article.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43711656">
+              <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -80,7 +101,6 @@
       <list>
         <option value="$PROJECT_DIR$/public/admin/gulpfile.js" />
         <option value="$PROJECT_DIR$/routes/uploadimg.js" />
-        <option value="$PROJECT_DIR$/public/admin/src/html/article/add.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/public/admin/src/js/directive/recommendList.js" />
         <option value="$PROJECT_DIR$/public/admin/src/js/service/recommend.js" />
@@ -107,6 +127,7 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/admin/src/js/controller/friend/friend.js" />
         <option value="$PROJECT_DIR$/routes/linkfriend.js" />
+        <option value="$PROJECT_DIR$/public/admin/src/html/article/add.html" />
       </list>
     </option>
   </component>
@@ -758,7 +779,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466496338082</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="完善友情链接删除">
+      <created>1466496763985</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1466496763985</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -825,7 +852,8 @@
     <MESSAGE value="友情连接路由" />
     <MESSAGE value="Merge branch 'frist'&#10;&#10;# Conflicts:&#10;#&#9;public/admin/www/main.js&#10;" />
     <MESSAGE value="友情链接删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="友情链接删除" />
+    <MESSAGE value="完善友情链接删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善友情链接删除" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -976,13 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24408284">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.115030676">
-          <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1146,14 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18404908">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/information.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5769231">
@@ -1220,8 +1233,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/linkfriend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5118343">
-          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="47" selection-end-line="69" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/src/html/article/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43711656">
+          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
           <folding />
         </state>
       </provider>
