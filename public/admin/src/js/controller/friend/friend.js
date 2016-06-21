@@ -2,8 +2,8 @@
  * Created by gxx on 16/3/29.
  */
 app.controller('friendController', ['$scope', 'ajax', 'toast', '$state', 'cAlert', function ($scope, ajax, toast, $state, cAlert) {
-    ajax.post({
-        url: '/linkfriend/query',
+    ajax.get({
+        url: '/linkfriend',
         toast: "do..."
     }).then(function (result) {
         $scope.resultData = result;
@@ -20,7 +20,7 @@ app.controller('friendController', ['$scope', 'ajax', 'toast', '$state', 'cAlert
                 ajax.post({
                     url: '/linkfriend/del',
                     data: {
-                        _id: id
+                        objectId: id
                     },
                     toast: "删除中..."
                 }).then(
