@@ -53,18 +53,50 @@ app.service('ajax', ['$q', '$http', '$rootScope', 'SERVER_URL', '$state', 'cAler
         );
         return promise
     };
-    this.upload = function (file) {
+    this.upload = function (file, data) {
+
+
+
+
+        //// 前端代码，基于 jQuery
+        //function uploadPhoto() {
+        //    var uploadFormDom = $('#upload-file-form');
+        //    var uploadInputDom = uploadFormDom.find('input[type=file]');
+        //    // 获取浏览器 file 对象
+        //    var files = uploadInputDom[0].files;
+        //    // 创建 formData 对象
+        //    var formData = new window.FormData(uploadFormDom[0]);
+        //    if (files.length) {
+        //        this.ajax({
+        //            // 注意，这个 url 地址是一个例子，真实使用时需替换为自己的上传接口 url
+        //            url: SERVER_URL + '/upload',
+        //            method: 'post',
+        //            data: formData,
+        //            processData: false,
+        //            contentType: false
+        //        }).then(function(data){
+        //            // 上传成功，服务端设置返回
+        //            console.log(data);
+        //    });
+        //    }
+        //};
+
+
+
+
         var deferred = $q.defer();
         Upload.upload({
+            //服务端接收
             url: SERVER_URL + '/upload',
-            file: file,
-            toast: "上传中..."
-        }).then(function (res) {
-            deferred.resolve(res.data);
+            //上传的同时带的参数
+            data: data,
+            file: file
+        }).then(function (resp) {
+            deferred.resolve(resp.data);
         }, function (resp) {
-            //console.log('Error status: ' + resp.status);
+            console.log('Error status: ' + resp.status);
         }, function (evt) {
-            //console.log(evt);
+            console.log(evt);
             // var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             // deferred.resolve(progressPercentage);
             //console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
