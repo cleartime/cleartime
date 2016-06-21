@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/src/js/controller/friend/friend.js" afterPath="$PROJECT_DIR$/public/admin/src/js/controller/friend/friend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/www/main.js" afterPath="$PROJECT_DIR$/public/admin/www/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/linkfriend.js" afterPath="$PROJECT_DIR$/routes/linkfriend.js" />
     </list>
     <ignored path="cleartime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -748,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466495246843</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="友情链接删除">
+      <created>1466496331740</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1466496331740</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -814,7 +817,8 @@
     <MESSAGE value="友情链接路由" />
     <MESSAGE value="友情连接路由" />
     <MESSAGE value="Merge branch 'frist'&#10;&#10;# Conflicts:&#10;#&#9;public/admin/www/main.js&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'frist'&#10;&#10;# Conflicts:&#10;#&#9;public/admin/www/main.js&#10;" />
+    <MESSAGE value="友情链接删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="友情链接删除" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
