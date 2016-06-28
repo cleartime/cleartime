@@ -1,27 +1,23 @@
-# blog
+# Vue.js HackerNews clone
 
-> A Vue.js project
+[Live demo](http://vuejs.github.io/vue-hackernews/)
 
-## Build Setup
+Built with [Vue.js](http://vuejs.org), [vue-router](https://github.com/vuejs/vue-router) and the official [HackerNews API](https://github.com/HackerNews/API), with routing, comments, comment folding, user profile & realtime updates.
+
+The build setup uses [Webpack](http://webpack.github.io/) and the [vue-loader](https://github.com/vuejs/vue-loader) plugin, which enables Vue components to be written in a format that encapsulates a component's style, template and logic in a single file.
+
+If you are using SublimeText you can get proper syntax highlighting for `*.vue` files with [vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight).
+
+### Building
 
 ``` bash
-# install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
+# watch:
 npm run dev
-
-# build for production with minification
+# build:
 npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### License
+
+[MIT](http://opensource.org/licenses/MIT)
