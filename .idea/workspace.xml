@@ -2,22 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/.babelrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/.eslintrc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/build.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/dev-client.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/dev-server.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/webpack.base.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/webpack.dev.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/build/webpack.prod.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/static/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/test/unit/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/test/unit/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/test/unit/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/blog2/test/unit/specs/Hello.spec.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/static/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/dev-client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/dev-server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/webpack.base.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/webpack.dev.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/build/webpack.prod.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/App.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/assets/lib/github-markdown.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/article.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/backTop.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/footer.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/header.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/hint.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/list.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/pagination.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/components/siderbar.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/filters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/routers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/404.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/create.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/login.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/message.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/page.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/post.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/views/user.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/vuex/actions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/vuex/getters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/vuex/middlewares.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/test/unit/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/test/unit/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/test/unit/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/test/unit/specs/Hello.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cleartime.iws" />
@@ -38,7 +68,18 @@
     <favorites_list name="cleartime" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -572,7 +613,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467103880481</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="开始用VUE">
+      <created>1467103898750</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1467103898750</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -586,9 +633,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24781573" sideWeight="0.4815341" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24781573" sideWeight="0.4815341" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -707,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44378698">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
