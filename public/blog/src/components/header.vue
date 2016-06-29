@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<a v-link="{name: 'index'}" class="brand">
-      <img src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" alt="cnodejs-logo">
+      <img src="../assets/head.jpeg" alt="logo">
     </a>
 		<ul class="navbar">
 			<li><a v-link="{name: 'index'}">首页</a></li>

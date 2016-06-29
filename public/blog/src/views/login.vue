@@ -7,11 +7,17 @@
         <span class="c"> 登入</span>
       </div>
       <div class="inner padding login">
-       <!--  <p v-show="!tokenAvail" class="prompt">请输入有效的token</p> -->
-        <p class="prompt"><c-hint v-if="hint.show"></c-hint></p>
+        <!--  <p v-show="!tokenAvail" class="prompt">请输入有效的token</p> -->
+        <p class="prompt">
+          <c-hint v-if="hint.show"></c-hint>
+        </p>
         <div class="login-form">
-          <label for="token">accessToken:</label>
-          <input type="text" id="token" maxlength="36" v-model="tmpToken" @change="simCheck" @focus="changeTokenAvail(true)">
+          <label for="username">用户名:</label>
+          <input type="text" id="username" maxlength="36" v-model="username" >
+        </div>
+        <div class="login-form">
+          <label for="password">密码:</label>
+          <input type="text" id="password" maxlength="36" v-model="password" >
         </div>
         <a href="#" class="btn btn-primary" @click.prevent.stop="login">登入</a>
       </div>
@@ -31,7 +37,8 @@
   export default {
     data() {
       return {
-        tmpToken: '',
+        username: '',
+        password: '',
       };
     },
     vuex: {
@@ -54,33 +61,10 @@
     },
     /* eslint-disable max-len */
     methods: {
-      // 简单检测用户输入的token长度
-      simCheck() {
-        if (this.tmpToken.length !== 36) {
-          this.changeTokenAvail(false);
-        }
-      },
       // 登入
       login() {
-        if (this.tmpToken.length !== 36) {
-          this.changeTokenAvail(false);
-        } else {
-          this.checkToken(this.tmpToken)
-          .then((loginName) => {
-            this.changeToken(this.tmpToken);
-            this.fetchUser(loginName)
-              .then((info) => {
-                this.changeLoginUser(info);
-                const d = new Date();
-                d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
-                const expires = d.toGMTString();
-                document.cookie = `token=${this.token};expires=${expires}`;
-                const redirect = decodeURIComponent(this.$route.query.redirect || '/');
-                this.$route.router.go(redirect);
-              });
-          })
-          .catch((e) => console.log(e));
-        }
+
+
       },
     },
     route: {
