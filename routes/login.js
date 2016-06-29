@@ -8,6 +8,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+    console.log(req.body.username, req.body.password);
     AV.User.logIn(req.body.username, req.body.password).then(function (user) {
         json.msg = '登陆成功!';
         json.data = user;

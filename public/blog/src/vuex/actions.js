@@ -12,9 +12,9 @@ import 'whatwg-fetch';
 const _get = ({ url, query }) => {
   let _url;
   if (query) {
-    _url = `https://cnodejs.org/api/v1${url}?${query}`;
+    _url = `http://localhost:3000${url}?${query}`;
   } else {
-    _url = `https://cnodejs.org/api/v1${url}`;
+    _url = `http://localhost:3000${url}`;
   }
 
   return fetch(_url)
@@ -33,11 +33,11 @@ const _get = ({ url, query }) => {
  * @return {Promise}        Promise
  */
 const _post = (url, params) => {
-  return fetch(`https://cnodejs.org/api/v1${url}`, {
+  return fetch(`http://localhost:3000${url}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     },
     body: JSON.stringify(params),
   })
@@ -277,7 +277,7 @@ export const markAllMsg = ({ dispatch }, accesstoken) => {
     .then((json) => {
       if (json.success) {
         dispatch('MARK_ALLMSG_SUCCESS');
-        return console.log('mark_all success');
+        return 1;
       }
       return Promise.reject(new Error('mark_all failure'));
     });
@@ -332,7 +332,6 @@ export const star = ({ dispatch }, reply_id, accesstoken) => {
   return _post(url, params)
     .then((json) => {
       if (json.success) {
-        console.log('star/unstar success');
         return json.action;
       }
       return Promise.reject(new Error('star failure'));
@@ -360,7 +359,6 @@ export const reply = ({ dispatch }, { topic_id, content, accesstoken, reply_id, 
   return _post(url, params)
     .then((json) => {
       if (json.success) {
-        console.log('reply success');
         /* eslint-disable no-param-reassign */
         replyData.reply_id = json.reply_id;
         return replyData;
@@ -399,3 +397,26 @@ export const showHint = ({ dispatch }) => dispatch('SHOW_HINT');
  * @param  {Object} info             自定义信息
  */
 export const customHint = ({ dispatch }, info) => dispatch('CUSTOM_HINT', info);
+
+
+/**
+ * 登陆
+ * @param dispatch
+ * @param username 用户名
+ * @param password 密码
+ * @returns {*}
+ */
+export const login1 = (username, password) => {
+  const url = '/login';
+  const params = { username, password };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        return json.data;
+      }
+      return Promise.reject(new Error('checkToken failure'));
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};

@@ -13,13 +13,13 @@
         </p>
         <div class="login-form">
           <label for="username">用户名:</label>
-          <input type="text" id="username" maxlength="36" v-model="username" >
+          <input type="text" id="username" maxlength="36" v-model="username">
         </div>
         <div class="login-form">
-          <label for="password">密码:</label>
-          <input type="text" id="password" maxlength="36" v-model="password" >
+          <label for="password">密<span class="text-hidden">啊</span>码:</label>
+          <input type="password" id="password" maxlength="36" v-model="password">
         </div>
-        <a href="#" class="btn btn-primary" @click.prevent.stop="login">登入</a>
+        <a href="#" class="btn btn-primary" @click.prevent.stop="login">登陆</a>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
 <script>
   /* eslint-disable max-len */
   import { getToken, getHint } from '../vuex/getters';
-  import { changeTokenAvail, changeToken, checkToken, fetchUser, initHint, changeLoginUser } from '../vuex/actions';
+  import { changeTokenAvail, changeToken, checkToken, fetchUser, initHint, changeLoginUser, login1 } from '../vuex/actions';
   import cSiderbar from '../components/siderbar';
   import cHint from '../components/hint';
   export default {
@@ -63,8 +63,8 @@
     methods: {
       // 登入
       login() {
-
-
+        login1(this.username, this.password)
+          .then();
       },
     },
     route: {
@@ -77,6 +77,10 @@
 </script>
 
 <style lang="scss">
+  .text-hidden {
+    opacity: 0;
+  }
+
   a.home {
     margin: 0;
   }
