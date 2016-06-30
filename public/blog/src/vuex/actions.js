@@ -34,10 +34,10 @@ const _get = ({ url, query }) => {
  */
 const transformRequest = (obj) => {
   const str = [];
-  for (const p in obj) {
-    str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
-    return str.join('&');
+  for (const p of Object.keys(obj)) {
+    str.push(`${encodeURIComponent(p)}=${encodeURIComponent(obj[p])}`);
   }
+  return str.join('&');
 };
 
 /**
