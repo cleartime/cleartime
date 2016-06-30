@@ -26,6 +26,20 @@ const _get = ({ url, query }) => {
     });
 };
 
+
+/**
+ * 字符串序列化
+ * @param obj
+ * @returns {string}
+ */
+const transformRequest = (obj) => {
+  const str = [];
+  for (const p in obj) {
+    str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+    return str.join('&');
+  }
+};
+
 /**
  * post请求
  * @param  {String} url    api地址
@@ -39,7 +53,7 @@ const _post = (url, params) => {
       Accept: 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     },
-    body: JSON.stringify(params),
+    body: transformRequest(params),
   })
   .then((res) => {
     if (res.status >= 200 && res.status < 300) {

@@ -27,6 +27,7 @@ app.use(cookieParser());
 
 //设置跨域处理头部
 app.all('*', function (req, res, next) {
+    console.log(res)
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
