@@ -64,7 +64,10 @@
       // 登入
       login() {
         login1(this.username, this.password)
-          .then();
+          .then((data) => {
+            this.$route.router.go({ name: 'index', params: { data } });
+          })
+          .catch((e) => console.log(e));
       },
     },
     route: {

@@ -8,10 +8,10 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    //console.log(req.body)
     AV.User.logIn(req.body.username, req.body.password).then(function (user) {
         json.msg = '登陆成功!';
         json.data = user;
+        console.log(json);
         res.send(json);
     }, function (error) {
         json.code = error.code;
