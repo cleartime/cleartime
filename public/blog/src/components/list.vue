@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-
+      
       <div class="cell" v-for="topicItem in items">
         <span class="hello" v-if="!topicItem.author_id"></span>
         <a v-link="{name: 'user', params: {name: topicItem.author.loginname}}" class="avatar"><img :src="topicItem.author.avatar_url" alt="avator"></a>

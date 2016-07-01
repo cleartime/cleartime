@@ -71,7 +71,7 @@
 <style lang="scss">
   .content {
     float: left;
-    width: 70%;
+    width: 100%;
     min-height: 1px
   }
 
@@ -80,6 +80,7 @@
     width: 30%;
     box-sizing: border-box;
     padding-left: 20px;
+    display: none;
   }
 
   @media (max-width: 512px) {

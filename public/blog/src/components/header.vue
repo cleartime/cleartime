@@ -81,16 +81,19 @@
 <style lang="scss" scoped>
   header {
     overflow: hidden;
-    background-color: #444;
+    background-color: #3090e4;
     padding: 0 5%;
     margin-bottom: 20px;
   }
 
   .brand {
     float: left;
-    width: 120px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
     padding: 5px 20px;
+      img{
+        border-radius: 50%;
+      }
   }
 
   .navbar {
@@ -103,7 +106,8 @@
     }
 
     a {
-      font-size: 13px;
+      color: #fff;
+      font-size: 16px;
       display: block;
       padding: 16px;
     }

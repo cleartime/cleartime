@@ -64,29 +64,6 @@ const _post = (url, params) => {
 };
 
 /**
- * 获取文章列表
- * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
- * @param  {String} topicTab         主题分类
- * @param  {Number} page             页数
- * @return {Promise}                  Promise
- */
-export const fetchTopicLists = ({ dispatch }, topicTab, page) => {
-  const url = '/topics';
-  const query = `tab=${topicTab}&page=${page}`;
-  return _get({ url, query }, topicTab)
-    .then((json) => {
-      if (json.success) {
-        return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data, topicTab, page);
-      }
-      return Promise.reject(new Error('fetchTopicLists failure'));
-    })
-    .catch((error) => {
-      dispatch('FETCH_TOPIC_LISTS_FAILURE', topicTab, page);
-      return Promise.reject(error);
-    });
-};
-
-/**
  * 获取某一文章
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {String} id               文章id
@@ -431,6 +408,29 @@ export const login1 = (username, password) => {
       return Promise.reject(new Error('checkToken failure'));
     })
     .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+
+/**
+ * 获取文章列表
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} topicTab         主题分类
+ * @param  {Number} page             页数
+ * @return {Promise}                  Promise
+ */
+export const fetchTopicLists = ({ dispatch }) => {
+  const url = '/article';
+  return _get({ url })
+    .then((json) => {
+      if (json.success) {
+        return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
+      }
+      return Promise.reject(new Error('fetchTopicLists failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_LISTS_FAILURE');
       return Promise.reject(error);
     });
 };

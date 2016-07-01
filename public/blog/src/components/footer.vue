@@ -1,11 +1,9 @@
 <template>
   <footer>
     <div class="link">
-      <a href="https://github.com/beilunyang/cnodejs-vue">RSS</a>
-      <span>|</span>
-      <a href="https://github.com/beilunyang/cnodejs-vue">源码</a>
+      <a href="https://github.com/cleartime/cleartime/tree/master/public/blog">源码</a>
     </div>
-    <p>此网站仅为练习之作，采用vuejs + vue-router + vuex 搭建，感谢cnodejs社区提供API</p>
+    <p>此网站采用vuejs + vue-router + vuex 搭建</p>
   </footer>
 </template>
 
