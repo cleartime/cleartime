@@ -8,22 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
-  topicTabs: [{
-    name: '全部',
-    ename: 'all',
-  }, {
-    name: '精华',
-    ename: 'good',
-  }, {
-    name: '分享',
-    ename: 'share',
-  }, {
-    name: '问答',
-    ename: 'ask',
-  }, {
-    name: '招聘',
-    ename: 'job',
-  }],
+  topicTabs: [],
   currentTab: '',
   currentPage: '',
   topicLists: [],
@@ -187,7 +172,8 @@ const mutations = {
     state.loginUser = '';
   },
   // 初始化hint
-  INIT_HINT(state) {
+  INIT_HINT(state, topicTabs) {
+    state.topicTabs = topicTabs;
     state.hint.show = false;
     state.hint.colorRed = false;
     state.hint.info = '正在加载中...';

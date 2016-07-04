@@ -405,9 +405,32 @@ export const login1 = (username, password) => {
       if (json.code === 200) {
         return json.data;
       }
-      return Promise.reject(new Error('checkToken failure'));
+      return Promise.reject(json.msg);
     })
     .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+
+/**
+ * 获取栏目
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} topicTab         主题分类
+ * @param  {Number} page             页数
+ * @return {Promise}                  Promise
+ */
+export const loginSuccuess = ({ dispatch }) => {
+  const url = '/category';
+  return _get({ url })
+    .then((json) => {
+      if (json.code === 200) {
+        return dispatch('INIT_HINT', json.data);
+      }
+      return Promise.reject(json.msg);
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_LISTS_FAILURE');
       return Promise.reject(error);
     });
 };

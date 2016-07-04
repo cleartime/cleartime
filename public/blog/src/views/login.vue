@@ -67,7 +67,7 @@
           .then((data) => {
             this.$route.router.go({ name: 'index', params: { data } });
           })
-          .catch((e) => console.log(e));
+          .catch((e) => alert(e));
       },
     },
     route: {

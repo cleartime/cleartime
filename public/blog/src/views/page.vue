@@ -18,7 +18,7 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import cSiderbar from '../components/siderbar';
-  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser } from '../vuex/actions';
+  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess } from '../vuex/actions';
   import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser } from '../vuex/getters';
   export default {
     components: {
@@ -28,6 +28,7 @@
     },
     vuex: {
       actions: {
+        loginSuccuess,
         fetchTopicLists,
         fetchUser,
         changeUser,
@@ -59,6 +60,8 @@
         this.showHint();
         const topicTab = tab;
         const currentPage = page;
+        // 获取栏目
+        this.loginSuccuess();
         // 获取文章列表
         this.fetchTopicLists(topicTab, currentPage)
             .catch((e) => console.log(e));
