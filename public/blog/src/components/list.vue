@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      
+
       <div class="cell" v-for="topicItem in items">
         <span class="hello" v-if="!topicItem.author_id"></span>
         <a v-link="{name: 'user', params: {name: topicItem.author.loginname}}" class="avatar"><img :src="topicItem.author.avatar_url" alt="avator"></a>
@@ -14,7 +14,7 @@
           <span>{{ topicItem.last_reply_at | timeToNow }}</span>
         </a>
         <div class="topic-wrapper">
-          <a v-link="{name: 'post', params: {id: topicItem.id}}" title=" {{ topicItem.title }}">
+          <a v-link="{name: 'post', params: {id: topicItem.objectId}}" title=" {{ topicItem.title }}">
             <template v-if="topicItem.author_id">
               <span class="top" v-if="topicItem.top">置顶</span>
               <span class="top" v-else v-if="topicItem.good">精华</span>

@@ -53,18 +53,15 @@
       }
     },
     route: {
-      data({ to: { params: { tab = 'all', page = 1 } } }) {
+      data() {
         // 初始化hint
         this.initHint();
         // 显示hint
         this.showHint();
-        const topicTab = tab;
-        const currentPage = page;
         // 获取栏目
         this.loginSuccuess();
         // 获取文章列表
-        this.fetchTopicLists(topicTab, currentPage)
-            .catch((e) => console.log(e));
+        this.fetchTopicLists();
       },
     },
   };

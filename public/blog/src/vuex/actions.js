@@ -64,28 +64,6 @@ const _post = (url, params) => {
 };
 
 /**
- * 获取某一文章
- * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
- * @param  {String} id               文章id
- * @return {Promise}                  Promise
- */
-export const fetchTopic = ({ dispatch }, id) => {
-  const url = `/topic/${id}`;
-  return _get({ url })
-    .then((json) => {
-      if (json.success) {
-        dispatch('FETCH_TOPIC_SUCCESS', json.data);
-        return json.data.author.loginname;
-      }
-      return Promise.reject(new Error('fetchTopic failure'));
-    })
-    .catch((error) => {
-      dispatch('FETCH_TOPIC_FAILURE');
-      return Promise.reject(error);
-    });
-};
-
-/**
  * 改变token的有效性
  * @param  {Function}  options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {Boolean} isAvail          token是否有效
@@ -447,13 +425,37 @@ export const fetchTopicLists = ({ dispatch }) => {
   const url = '/article';
   return _get({ url })
     .then((json) => {
-      if (json.success) {
+      if (json.code === 200) {
         return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
       }
       return Promise.reject(new Error('fetchTopicLists failure'));
     })
     .catch((error) => {
       dispatch('FETCH_TOPIC_LISTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+
+/**
+ * 获取某一文章
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const fetchTopic = ({ dispatch }, objectId) => {
+  const url = '/article/query';
+  const params = { objectId };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_TOPIC_SUCCESS', json.data[0]);
+        return json.data[0];
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_FAILURE');
       return Promise.reject(error);
     });
 };
