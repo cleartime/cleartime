@@ -2,7 +2,7 @@
   <div class="content">
     <div class="panel">
       <div class="panel-header">
-        <a v-link="{name: 'tab', params: {tab: tab.ename, page: 1}}"  v-for="tab in topicTabs" :class="tab.ename === currentTab ? 'active' : ''">{{ tab.name }}</a>
+        <a v-link="{name: 'tab', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
       <c-hint v-if="hint.show"></c-hint>
       <c-list :items='topicLists' v-else></c-list>
@@ -18,7 +18,7 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import cSiderbar from '../components/siderbar';
-  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess } from '../vuex/actions';
+  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists } from '../vuex/actions';
   import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser } from '../vuex/getters';
   export default {
     components: {
@@ -28,6 +28,7 @@
     },
     vuex: {
       actions: {
+        fetchCategoryicLists,
         loginSuccuess,
         fetchTopicLists,
         fetchUser,
@@ -53,7 +54,7 @@
       }
     },
     route: {
-      data() {
+      data({ to: { params: { categoryId } } }) {
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -61,7 +62,11 @@
         // 获取栏目
         this.loginSuccuess();
         // 获取文章列表
-        this.fetchTopicLists();
+        if (!!categoryId) {
+          this.fetchCategoryicLists(Number(categoryId));
+        } else {
+          this.fetchTopicLists();
+        }
       },
     },
   };

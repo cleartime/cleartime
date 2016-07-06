@@ -4,7 +4,7 @@ export default (router) => router.map({
     component: require('./views/page'),
   },
 
-  '/tab/:tab/page/:page': {
+  '/tab/:categoryId': {
     name: 'tab',
     component: require('./views/page'),
   },

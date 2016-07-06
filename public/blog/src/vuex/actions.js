@@ -392,7 +392,7 @@ export const login1 = (username, password) => {
 
 
 /**
- * 获取栏目
+ * 获取所有栏目
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {String} topicTab         主题分类
  * @param  {Number} page             页数
@@ -413,9 +413,32 @@ export const loginSuccuess = ({ dispatch }) => {
     });
 };
 
+/**
+ * 获取单个栏目文章列表
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} topicTab         主题分类
+ * @param  {Number} page             页数
+ * @return {Promise}                  Promise
+ */
+export const fetchCategoryicLists = ({ dispatch }, categoryId) => {
+  const url = '/article/queryCategory';
+  const params = { categoryId };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
+      }
+      return Promise.reject(json.msg);
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_LISTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
 
 /**
- * 获取文章列表
+ * 获取所有文章列表
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {String} topicTab         主题分类
  * @param  {Number} page             页数

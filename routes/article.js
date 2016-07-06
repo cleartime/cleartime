@@ -10,6 +10,24 @@ var Article = AV.Object.extend('Article');// 网站信息
 
 
 // 查询单个文章
+router.post('/queryCategory', function (req, res, next) {
+    var cql = 'select * from Article where category=' + req.body.categoryId + '';
+    var pvalues = [0];
+    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
+        var results = data.results;
+        json.data = results;
+        json.msg = '获取成功!';
+        res.send(json);
+    }, function (error) {
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
+
+// 查询单个文章
 router.post('/query', function (req, res, next) {
     var cql = 'select * from Article where objectId="' + req.body.objectId + '"';
     var pvalues = [0];

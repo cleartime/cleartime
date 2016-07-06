@@ -10,10 +10,10 @@ var Webinfo = AV.Object.extend('Webinfo');// 网站信息
 
 // 查询单个栏目(根据cod)
 router.post('/query', function (req, res) {
-
-    var cql = 'select * from Category where categoryID = '+req.body.categoryID+'';
+    var cql = 'select * from Category where objectId = '+req.body.objectId+'';
     AV.Query.doCloudQuery(cql).then(function (data) {
-        json.data = data.results[0]._serverData.name;
+        json.data = data.results;
+        json.code = 200;
         json.msg = '获取成功!';
         res.send(json);
     }, function (error) {
@@ -31,6 +31,7 @@ router.get('/', function (req, res, next) {
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
         json.data = results;
+        json.code = 200;
         json.msg = '获取成功!';
         res.send(json);
     }, function (error) {
