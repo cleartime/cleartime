@@ -89,7 +89,7 @@
     overflow: hidden;
 
     &:hover {
-      background-color:#E1E1E1;
+      background-color:#22c4f5;
     }
 
   }

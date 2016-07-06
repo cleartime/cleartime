@@ -2,7 +2,7 @@
   <div class="content">
     <div class="panel">
       <div class="panel-header">
-        <a v-link="{name: 'tab', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
+        <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tab', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
       <c-hint v-if="hint.show"></c-hint>
       <c-list :items='topicLists' v-else></c-list>
