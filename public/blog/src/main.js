@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './App';
+import App from './views/welcome';
 import VueRouter from 'vue-router';
 import configRouter from './routers';
 import { timeToNow, transTab } from './filters';

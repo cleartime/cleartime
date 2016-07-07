@@ -1,15 +1,25 @@
 <template>
-  <div class="bg"></div>
+  <div class="bg"><a href="#" @click.prevent.stop="login">21321</a>
+  </div>
   <div class="menu">
+
     <div class="pic"></div>
   </div>
+  <app v-if="store"></app>
 </template>
 
 <script>
   import app from '../app';
+  import store from '../vuex/store';
+
   export default {
     components: {
       app,
+    },
+    methods: {
+      login() {
+        this.$route.router.go({ name: 'index' });
+      },
     },
   };
 </script>

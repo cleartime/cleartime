@@ -25,3 +25,4 @@ export const getMsgCount = (state) => state.msgCount;
 export const getMessages = (state) => state.messages;
 
 export const getHint = (state) => state.hint;
+

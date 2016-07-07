@@ -26,6 +26,7 @@ const state = {
     colorRed: false,
     info: '正在加载中...',
   },
+  welcome: true
 };
 
 const mutations = {
