@@ -26,6 +26,7 @@ const state = {
     colorRed: false,
     info: '正在加载中...',
   },
+  welcome: true,
 };
 
 const mutations = {
@@ -129,6 +130,10 @@ const mutations = {
   // 改变登入用户信息
   CHANGE_LOGIN_USER(state, info) {
     state.loginUser = info;
+  },
+  // 改变welcome状态
+  CHANGE_WELCOME_STATE(state, info) {
+    state.welcome = info;
   },
   // 收藏成功
   ADD_COLLECTION_SUCCESS(state, id) {

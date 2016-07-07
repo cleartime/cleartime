@@ -8,10 +8,16 @@
 </template>
 
 <script>
+  import { getWelcome } from '../vuex/getters';
   export default {
+    vuex: {
+      getters: {
+        welcome: getWelcome,
+      },
+    },
     methods: {
       login() {
-        this.$route.router.go({ name: 'index' });
+        dispatch('CHANGE_WELCOME_STATE', false);
       },
     },
   };

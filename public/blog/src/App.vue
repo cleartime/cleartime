@@ -6,8 +6,8 @@
     </div>
     <c-footer></c-footer>
     <c-back></c-back>
+    <welcome v-if="isShow"></welcome>
   </div>
-  <welcome></welcome>
 </template>
 
 <script>
@@ -18,6 +18,11 @@ import welcome from './views/welcome';
 import store from './vuex/store';
 
 export default {
+  data() {
+    return {
+      isShow: store.state.welcome,
+    };
+  },
   components: {
     cHeader,
     cFooter,
@@ -25,6 +30,7 @@ export default {
     welcome,
   },
   store,
+
 };
 </script>
 
