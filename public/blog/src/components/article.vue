@@ -2,16 +2,11 @@
   <article class="panel">
     <div class="panel-header article-header">
       <h2>
-        <span class="top" v-if="topic.top">置顶</span>
-        <span class="top" v-else v-if="topic.good">精华</span>
         {{ topic.title }}
       </h2>
       <div class="info">
         <span>发布于{{ topic.updatedAt | timeToNow }}</span>
-        <template v-if="token">
-          <a href="#" class="btn btn-success" v-if="!inCollection" @click.prevent.stop="collect">收藏</a>
-          <a href="#" class="btn btn-failure" v-else @click.prevent.stop="deCollect">取消收藏</a>
-        </template>
+        <p>{{ topic.description }}</p>
       </div>
     </div>
     <div class="inner padding">

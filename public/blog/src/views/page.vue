@@ -48,11 +48,6 @@
         loginUser: getLoginUser,
       },
     },
-    ready() {
-      if (this.loginUser) {
-        this.changeUser(this.loginUser);
-      }
-    },
     route: {
       data({ to: { params: { categoryId } } }) {
         // 初始化hint
