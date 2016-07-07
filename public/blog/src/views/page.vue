@@ -8,6 +8,7 @@
       <c-list :items='topicLists' v-else></c-list>
     </div>
   </div>
+  <welcome></welcome>
   <div class="sider">
     <c-siderbar></c-siderbar>
   </div>
@@ -18,6 +19,7 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import cSiderbar from '../components/siderbar';
+  import welcome from '../components/welcome';
   import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists } from '../vuex/actions';
   import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser } from '../vuex/getters';
   export default {
@@ -25,6 +27,7 @@
       cHint,
       cList,
       cSiderbar,
+      welcome,
     },
     vuex: {
       actions: {
