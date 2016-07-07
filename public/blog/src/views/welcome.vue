@@ -1,18 +1,22 @@
 <template>
-  <div class="bg"><a href="#" @click.prevent.stop="login">2313213123</a>
+  <div class="bg">
   </div>
   <div class="menu">
-    <div class="pic"></div>
+    <div class="pic" @click.prevent.stop="closeWelcomePage"></div>
   </div>
-
 </template>
 
 <script>
-  import state from '../vuex/store';
+  import { setWelcome } from '../vuex/actions';
   export default {
+    vuex: {
+      actions: {
+        setWelcome,
+      },
+    },
     methods: {
-      login() {
-        state._vm.welcome = false;
+      closeWelcomePage() {
+        this.$dispatch('isShow', false);
       },
     },
   };
@@ -58,6 +62,5 @@
       width: 100%;
       height: 100%;
     }
-
   }
 </style>

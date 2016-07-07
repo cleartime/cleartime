@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="!isShow">
     <c-header></c-header>
     <div class="main">
       <router-view></router-view>
     </div>
     <c-footer></c-footer>
     <c-back></c-back>
-    <welcome v-if="isShow"></welcome>
   </div>
+  <welcome v-if="isShow" v-on:isShow="isShow"></welcome>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ import store from './vuex/store';
 export default {
   data() {
     return {
-      isShow: store.state.welcome,
+      isShow: true,
     };
   },
   components: {
@@ -30,7 +30,12 @@ export default {
     welcome,
   },
   store,
-
+  events: {
+    isShow(msg) {
+      // 事件回调内的 `this` 自动绑定到注册它的实例上
+      this.isShow = msg;
+    },
+  },
 };
 </script>
 

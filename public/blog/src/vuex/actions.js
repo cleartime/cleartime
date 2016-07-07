@@ -367,7 +367,6 @@ export const showHint = ({ dispatch }) => dispatch('SHOW_HINT');
  */
 export const customHint = ({ dispatch }, info) => dispatch('CUSTOM_HINT', info);
 
-
 /**
  * 登陆
  * @param dispatch
