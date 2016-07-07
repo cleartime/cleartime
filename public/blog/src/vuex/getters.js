@@ -26,5 +26,3 @@ export const getMessages = (state) => state.messages;
 
 export const getHint = (state) => state.hint;
 
-export const getWelcome = (state) => state.welcome;
-

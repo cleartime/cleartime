@@ -1,5 +1,5 @@
 <template>
-  <div class="bg"><a href="#" @click.prevent.stop="login"></a>
+  <div class="bg"><a href="#" @click.prevent.stop="login">2313213123</a>
   </div>
   <div class="menu">
     <div class="pic"></div>
@@ -8,16 +8,11 @@
 </template>
 
 <script>
-  import { getWelcome } from '../vuex/getters';
+  import state from '../vuex/store';
   export default {
-    vuex: {
-      getters: {
-        welcome: getWelcome,
-      },
-    },
     methods: {
       login() {
-        dispatch('CHANGE_WELCOME_STATE', false);
+        state._vm.welcome = false;
       },
     },
   };

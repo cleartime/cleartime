@@ -131,10 +131,6 @@ const mutations = {
   CHANGE_LOGIN_USER(state, info) {
     state.loginUser = info;
   },
-  // 改变welcome状态
-  CHANGE_WELCOME_STATE(state, info) {
-    state.welcome = info;
-  },
   // 收藏成功
   ADD_COLLECTION_SUCCESS(state, id) {
     state.collection.add(id);
