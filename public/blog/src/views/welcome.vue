@@ -2,10 +2,6 @@
   <div class="bg"></div>
   <div class="menu">
     <div class="pic"></div>
-    <div>文章</div>
-    <div>关于我</div>
-    <div>留言</div>
-    <div>1111</div>
   </div>
 </template>
 
@@ -18,7 +14,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-size: 100%;
+    background-size: 100% 100%;
     top: 0;
     left: 0;
     opacity: .5;
@@ -51,22 +47,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-    }
-    &>div:nth-child(2){
-      border:1px solid red;
-      z-index: 1;
-    }
-    &>div:nth-child(3){
-      border:1px solid green;
-      z-index: 2;
-    }
-    &>div:nth-child(4){
-      border:1px solid gray;
-      z-index: 3;
-    }
-    &>div:nth-child(5){
-      border:1px solid yellow;
-      z-index: 4;
     }
 
   }

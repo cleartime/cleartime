@@ -3,7 +3,10 @@ export default (router) => router.map({
     name: 'index',
     component: require('./views/page'),
   },
-
+  '/welcome': {
+    name: 'welcome',
+    component: require('./views/welcome'),
+  },
   '/tab/:categoryId': {
     name: 'tab',
     component: require('./views/page'),
