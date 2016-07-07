@@ -6,6 +6,12 @@
 </template>
 
 <script>
+  import app from '../app';
+  export default {
+    components: {
+      app,
+    },
+  };
 </script>
 
 <style lang="scss">
