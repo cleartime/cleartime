@@ -2,26 +2,15 @@
   <div class="bg"><a href="#" @click.prevent.stop="login"></a>
   </div>
   <div class="menu">
-
     <div class="pic"></div>
   </div>
-    <app></app>
+
 </template>
 
 <script>
-  import app from '../app';
   export default {
-    data() {
-      return {
-        isShow: false,
-      };
-    },
-    components: {
-      app,
-    },
     methods: {
       login() {
-        console.log(this.aaa);
         this.$route.router.go({ name: 'index' });
       },
     },

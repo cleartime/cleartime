@@ -7,12 +7,14 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
+  <welcome></welcome>
 </template>
 
 <script>
 import cHeader from './components/header';
 import cFooter from './components/footer';
 import cBack from './components/backTop';
+import welcome from './views/welcome';
 import store from './vuex/store';
 
 export default {
@@ -20,6 +22,7 @@ export default {
     cHeader,
     cFooter,
     cBack,
+    welcome,
   },
   store,
 };
