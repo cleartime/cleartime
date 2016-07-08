@@ -4,7 +4,7 @@
       <div class="panel-header">
         <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tabA', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
-      <div class="panel-header">
+      <div class="panel-header recommend-header">
         <a v-link="{name: 'tabB', params: {recommend: tab.nickname}}"  v-for="tab in recommendList" :class="tab.nickname === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
       <c-hint v-if="hint.show"></c-hint>
@@ -65,9 +65,9 @@
         // 获取标签
         this.getRecommend();
         // 获取文章列表
-        if (!!categoryId) {
+        if (categoryId) {
           this.fetchCategoryicLists(Number(categoryId));
-        } else if (!!recommend) {
+        } else if (recommend) {
           this.getRecommendOne(recommend);
         } else {
           this.fetchTopicLists();

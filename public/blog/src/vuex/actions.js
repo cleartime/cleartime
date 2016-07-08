@@ -367,6 +367,15 @@ export const showHint = ({ dispatch }) => dispatch('SHOW_HINT');
  */
 export const customHint = ({ dispatch }, info) => dispatch('CUSTOM_HINT', info);
 
+
+/**
+ * 获取图片
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+
+
 /**
  * 登陆
  * @param dispatch

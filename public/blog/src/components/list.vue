@@ -3,7 +3,7 @@
     <div class="topic-list">
 
       <div class="cell" v-for="topicItem in items">
-        <a v-link="{name: 'post', params: {id: topicItem.objectId}}"  class="avatar"><img :src="topicItem.fileId" alt="avator"></a>
+        <a v-link="{name: 'post', params: {id: topicItem.objectId}}"  class="avatar"><img :src="topicItem.url" alt="topicItem.name"></a>
         <a href="#" class="last-time">
           <span>{{ topicItem.last_reply_at | timeToNow }}</span>
         </a>

@@ -37,7 +37,6 @@ router.post('/queryRecommend', function (req, res, next) {
         json.msg = '获取成功!';
         res.send(json);
     }, function (error) {
-        console.log(error);
         json.code = error.code;
         json.msg = error.message;
         res.send(json);
