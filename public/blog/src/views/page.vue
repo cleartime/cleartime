@@ -2,7 +2,10 @@
   <div class="content">
     <div class="panel">
       <div class="panel-header">
-        <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tab', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
+        <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tabA', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs" :class="tab.categoryID === currentTab ? 'active' : ''">{{ tab.name }}</a>
+      </div>
+      <div class="panel-header">
+        <a v-link="{name: 'tabB', params: {recommend: tab.nickname}}"  v-for="tab in recommendList" :class="tab.nickname === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
       <c-hint v-if="hint.show"></c-hint>
       <c-list :items='topicLists' v-else></c-list>
@@ -18,8 +21,8 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import cSiderbar from '../components/siderbar';
-  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists } from '../vuex/actions';
-  import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser } from '../vuex/getters';
+  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne } from '../vuex/actions';
+  import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser, getRecommendLists } from '../vuex/getters';
   export default {
     components: {
       cHint,
@@ -28,6 +31,8 @@
     },
     vuex: {
       actions: {
+        getRecommendOne,
+        getRecommend,
         fetchCategoryicLists,
         loginSuccuess,
         fetchTopicLists,
@@ -41,6 +46,7 @@
         changeLoginUser,
       },
       getters: {
+        recommendList: getRecommendLists,
         topicTabs: getTopicTabs,
         currentTab: getCurrentTab,
         topicLists: getTopicLists,
@@ -49,16 +55,20 @@
       },
     },
     route: {
-      data({ to: { params: { categoryId } } }) {
+      data({ to: { params: { categoryId, recommend } } }) {
         // 初始化hint
         this.initHint();
         // 显示hint
         this.showHint();
         // 获取栏目
         this.loginSuccuess();
+        // 获取标签
+        this.getRecommend();
         // 获取文章列表
         if (!!categoryId) {
           this.fetchCategoryicLists(Number(categoryId));
+        } else if (!!recommend) {
+          this.getRecommendOne(recommend);
         } else {
           this.fetchTopicLists();
         }

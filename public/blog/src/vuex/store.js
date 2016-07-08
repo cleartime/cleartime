@@ -8,6 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  recommend: [],
   topicTabs: [],
   currentTab: '',
   currentPage: '',
@@ -29,6 +30,13 @@ const state = {
 };
 
 const mutations = {
+  // 获取推荐位成功
+  FETCH_RECOMMEND_SUCCESS(state, recommend, topicTab, page) {
+    state.hint.show = false;
+    state.recommend = recommend;
+    state.currentTab = topicTab;
+    state.currentPage = page;
+  },
   // 获取文章列表成功
   FETCH_TOPIC_LISTS_SUCCESS(state, topicLists, topicTab, page) {
     state.hint.show = false;

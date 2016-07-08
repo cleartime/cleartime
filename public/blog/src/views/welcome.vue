@@ -43,6 +43,7 @@
     margin-left: -100px;
     margin-top: -100px;
     .pic{
+      cursor: pointer;
       position: relative;
       left: 50%;
       top: 50%;
@@ -53,6 +54,11 @@
       height: 50px;
       background: url("../assets/head.jpeg") no-repeat center center;
       background-size: 100%;
+      transition: transform 2s;
+      -webkit-transition: -webkit-transform 2s;
+      &:hover{
+        transform: rotate(360deg) scale(2)
+      }
     }
     &>div:not(.pic){
       position: absolute;

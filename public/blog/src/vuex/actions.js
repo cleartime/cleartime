@@ -391,6 +391,52 @@ export const login1 = (username, password) => {
 
 
 /**
+ * 获取所有推荐位
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} topicTab         主题分类
+ * @param  {Number} page             页数
+ * @return {Promise}                  Promise
+ */
+export const getRecommend = ({ dispatch }) => {
+  const url = '/recommend';
+  return _get({ url })
+    .then((json) => {
+      if (json.code === 200) {
+        return dispatch('FETCH_RECOMMEND_SUCCESS', json.data);
+      }
+      return Promise.reject(json.msg);
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_LISTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+/**
+ * 获取单个推荐位文章列表
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} topicTab         主题分类
+ * @param  {Number} page             页数
+ * @return {Promise}                  Promise
+ */
+export const getRecommendOne = ({ dispatch }, recommend) => {
+  const url = '/article/queryRecommend';
+  const params = { recommend };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
+      }
+      return Promise.reject(json.msg);
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_LISTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+
+/**
  * 获取所有栏目
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {String} topicTab         主题分类

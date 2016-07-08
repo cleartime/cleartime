@@ -6,6 +6,8 @@ export const getTopic = (state) => state.topic;
 
 export const getCurrentTab = (state) => state.currentTab;
 
+export const getRecommendLists = (state) => state.recommend;
+
 export const getCurrentPage = (state) => Number(state.currentPage);
 
 export const getToken = (state) => state.token;

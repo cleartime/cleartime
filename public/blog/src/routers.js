@@ -7,8 +7,12 @@ export default (router) => router.map({
     name: 'welcome',
     component: require('./views/welcome'),
   },
-  '/tab/:categoryId': {
-    name: 'tab',
+  '/tab/:categoryId/:recommend': {
+    name: 'tabA',
+    component: require('./views/page'),
+  },
+  '/tab/:recommend': {
+    name: 'tabB',
     component: require('./views/page'),
   },
 

@@ -3,39 +3,27 @@
     <div class="topic-list">
 
       <div class="cell" v-for="topicItem in items">
-        <span class="hello" v-if="!topicItem.author_id"></span>
-        <a v-link="{name: 'user', params: {name: topicItem.author.loginname}}" class="avatar"><img :src="topicItem.author.avatar_url" alt="avator"></a>
-        <span class="info-count" v-if="topicItem.author_id">
-          <span class="reply-count">{{ topicItem.reply_count }}</span>
-          <span class="seperator">/</span>
-          <span class="visited-count">{{ topicItem.visit_count }}</span>
-        </span>
+        <a v-link="{name: 'post', params: {id: topicItem.objectId}}"  class="avatar"><img :src="topicItem.fileId" alt="avator"></a>
         <a href="#" class="last-time">
           <span>{{ topicItem.last_reply_at | timeToNow }}</span>
         </a>
         <div class="topic-wrapper">
           <a v-link="{name: 'post', params: {id: topicItem.objectId}}" title=" {{ topicItem.title }}">
-            <template v-if="topicItem.author_id">
-              <span class="top" v-if="topicItem.top">置顶</span>
-              <span class="top" v-else v-if="topicItem.good">精华</span>
-              <span class="top normal" v-if="!topicItem.top && !topicItem.good && topicItem.tab">{{ topicItem.tab | transTab }}</span>
-            </template>
             {{ topicItem.title }}
+            <br>
+            {{ topicItem.description }}
           </a>
         </div>
       </div>
 
     </div>
-    <c-pagination v-if="items[0].author_id"></c-pagination>
   </div>
 </template>
 
 <script>
-  import cPagination from './pagination';
   export default {
     props: ['items'],
     components: {
-      cPagination,
     },
   };
 </script>
