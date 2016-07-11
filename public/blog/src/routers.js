@@ -16,7 +16,7 @@ export default (router) => router.map({
     component: require('./views/page'),
   },
 
-  '/post/:id': {
+  '/post/:id/:fileId': {
     name: 'post',
     component: require('./views/post'),
   },

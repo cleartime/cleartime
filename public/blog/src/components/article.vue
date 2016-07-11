@@ -10,43 +10,37 @@
       </div>
     </div>
     <div class="inner padding">
+      <img :src="setimg.url" alt="setimg" >
       <div class="markdown-body">
         {{{ topic.content }}}
       </div>
     </div>
-
   </article>
 </template>
 
 <script>
-  import { getTopic, getCollectStatus, getToken } from '../vuex/getters';
-  import { addCollection, changeCollectStatus, deCollection, fetchCollection } from '../vuex/actions';
+  import { getTopic, getCollectStatus, getToken, getImg } from '../vuex/getters';
+  import {
+    addCollection,
+    changeCollectStatus,
+    deCollection,
+    fetchCollection,
+    fetchImg,
+  } from '../vuex/actions';
   export default {
     vuex: {
       getters: {
+        setimg: getImg,
         topic: getTopic,
         inCollection: getCollectStatus,
         token: getToken,
       },
       actions: {
+        fetchImg,
         addCollection,
         changeCollectStatus,
         deCollection,
         fetchCollection,
-      },
-    },
-    methods: {
-      // 收藏
-      collect() {
-        this.addCollection(this.topic.id, this.token)
-          .then(this.changeCollectStatus(true))
-          .catch((e) => console.log(e));
-      },
-      // 取消收藏
-      deCollect() {
-        this.deCollection(this.topic.id, this.token)
-          .then(this.changeCollectStatus(false))
-          .catch((e) => console.log(e));
       },
     },
   };
@@ -54,6 +48,10 @@
 
 <style lang="scss">
   @import '../assets/lib/github-markdown';
+  .panel img{
+    width: 100%;
+    height: 100%;
+  }
   .article-header {
     background-color: #FFF;
     border-bottom: 1px solid #E5E5E5;

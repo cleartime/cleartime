@@ -28,3 +28,5 @@ export const getMessages = (state) => state.messages;
 
 export const getHint = (state) => state.hint;
 
+export const getImg = (state) => state.image;
+

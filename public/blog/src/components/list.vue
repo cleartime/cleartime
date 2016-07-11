@@ -3,12 +3,11 @@
     <div class="topic-list">
 
       <div class="cell" v-for="topicItem in items">
-        <a v-link="{name: 'post', params: {id: topicItem.objectId}}"  class="avatar"><img :src="topicItem.url" alt="topicItem.name"></a>
         <a href="#" class="last-time">
           <span>{{ topicItem.last_reply_at | timeToNow }}</span>
         </a>
         <div class="topic-wrapper">
-          <a v-link="{name: 'post', params: {id: topicItem.objectId}}" title=" {{ topicItem.title }}">
+          <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
             {{ topicItem.title }}
             <br>
             {{ topicItem.description }}

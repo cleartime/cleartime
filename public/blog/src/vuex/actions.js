@@ -367,15 +367,6 @@ export const showHint = ({ dispatch }) => dispatch('SHOW_HINT');
  */
 export const customHint = ({ dispatch }, info) => dispatch('CUSTOM_HINT', info);
 
-
-/**
- * 获取图片
- * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
- * @param  {String} id               文章id
- * @return {Promise}                  Promise
- */
-
-
 /**
  * 登陆
  * @param dispatch
@@ -527,6 +518,30 @@ export const fetchTopic = ({ dispatch }, objectId) => {
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_TOPIC_SUCCESS', json.data[0]);
+        return json.data[0];
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+
+/**
+ * 获取某一文章图片
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const fetchImg = ({ dispatch }, objectId) => {
+  const url = '/upload/query';
+  const params = { objectId };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_IMG_SUCCESS', json.data[0]);
         return json.data[0];
       }
       return Promise.reject(new Error('fetchTopic failure'));

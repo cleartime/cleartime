@@ -16,8 +16,21 @@
   import cSiderbar from '../components/siderbar';
   import cArticle from '../components/article';
   import cComment from '../components/comment';
-  import { fetchTopic, changeCollectStatus, initHint, showHint, fetchUser } from '../vuex/actions';
-  import { getToken, getCollection, getHint, getTopic } from '../vuex/getters';
+  import {
+    fetchTopic,
+    changeCollectStatus,
+    initHint,
+    showHint,
+    fetchUser,
+    fetchImg,
+  } from '../vuex/actions';
+  import {
+    getToken,
+    getCollection,
+    getHint,
+    getTopic,
+    getImg,
+  } from '../vuex/getters';
   export default {
     components: {
       cSiderbar,
@@ -32,8 +45,10 @@
         initHint,
         showHint,
         fetchUser,
+        fetchImg,
       },
       getters: {
+        img: getImg,
         topic: getTopic,
         hint: getHint,
         token: getToken,
@@ -41,7 +56,7 @@
       },
     },
     route: {
-      data({ to: { params: { id } } }) {
+      data({ to: { params: { id, fileId } } }) {
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -50,12 +65,10 @@
         this.fetchTopic(id)
           .then()
           .catch((e) => console.log(e));
-        // 如果文章id存在于收藏列表中，将收藏状态设置为true.从而显示取消收藏按钮。。不存在则显示收藏按钮
-        if (this.collection.has(id)) {
-          this.changeCollectStatus(true);
-        } else {
-          this.changeCollectStatus(false);
-        }
+        // 获取文章图片
+        this.fetchImg(fileId)
+          .then()
+          .catch((e) => console.log(e));
       },
     },
   };

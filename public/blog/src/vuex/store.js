@@ -8,7 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
-  images: [],
+  image: '',
   recommend: [],
   topicTabs: [],
   currentTab: '',
@@ -39,12 +39,11 @@ const mutations = {
     state.currentPage = page;
   },
   // 获取文章列表成功
-  FETCH_TOPIC_LISTS_SUCCESS(state, topicLists, topicTab, page, img) {
+  FETCH_TOPIC_LISTS_SUCCESS(state, topicLists, topicTab, page) {
     state.hint.show = false;
     state.topicLists = topicLists;
     state.currentTab = topicTab;
     state.currentPage = page;
-    state.images = img;
   },
   // 获取文章列表失败
   FETCH_TOPIC_LISTS_FAILURE(state, topicTab, page) {
@@ -60,6 +59,10 @@ const mutations = {
   FETCH_TOPIC_SUCCESS(state, topic) {
     state.hint.show = false;
     state.topic = topic;
+  },
+  // 获取图片成功
+  FETCH_IMG_SUCCESS(state, img) {
+    state.image = img;
   },
   // 获取文章失败
   FETCH_TOPIC_FAILURE(state) {
