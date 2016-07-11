@@ -517,8 +517,8 @@ export const fetchTopic = ({ dispatch }, objectId) => {
   return _post(url, params)
     .then((json) => {
       if (json.code === 200) {
-        dispatch('FETCH_TOPIC_SUCCESS', json.data[0]);
-        return json.data[0];
+        dispatch('FETCH_TOPIC_SUCCESS', json.data);
+        return json.data;
       }
       return Promise.reject(new Error('fetchTopic failure'));
     })

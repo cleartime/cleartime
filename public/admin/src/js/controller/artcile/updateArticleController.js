@@ -7,9 +7,10 @@ app.controller('updateArticleController', ['$scope', 'ajax', 'toast', '$state', 
         toast: "获取数据..."
     }).then(function (result) {
         toast.dismiss('获取成功!');
-        $scope.article = result[0];
+        $scope.article = result;
         $scope.article.category = $scope.article.category.toString();
-        var fileId = result[0].fileId;
+        $scope.article.content = decodeURIComponent($scope.article.content);
+        var fileId = result.fileId;
         if(fileId){
             ajax.post({
                 url: '/upload/query',

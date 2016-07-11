@@ -60,7 +60,6 @@ router.post('/query', function (req, res) {
         var results = data.results;
         json.data = results;
         json.msg = '获取成功!';
-        console.log(data);
         res.send(json);
     }, function (error) {
         console.log(error);

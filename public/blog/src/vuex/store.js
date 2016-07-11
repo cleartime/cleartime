@@ -59,6 +59,7 @@ const mutations = {
   FETCH_TOPIC_SUCCESS(state, topic) {
     state.hint.show = false;
     state.topic = topic;
+    state.topic.content = decodeURIComponent(state.topic.content);
   },
   // 获取图片成功
   FETCH_IMG_SUCCESS(state, img) {

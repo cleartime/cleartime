@@ -50,7 +50,7 @@ router.post('/query', function (req, res, next) {
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
-        json.data = results;
+        json.data = results[0];
         json.msg = '获取成功!';
         res.send(json);
     }, function (error) {
@@ -86,7 +86,7 @@ router.post('/', function (req, res, next) {
     var recommend = req.body.recommend;//文章推荐位
     var tag = req.body.tag;//文章标签
     var description = req.body.description;//文章描述
-    var content = req.body.content;//文章内容
+    var content = encodeURIComponent(req.body.content);//文章内容
     var fileId = req.body.fileId;//图片id
     AV.Query.doCloudQuery('insert into Article(title,tag,description,content,recommend,category,fileId) values("' + title + '","' + tag + '","' + description + '","' + content + '","' + recommend + '",' + category + ',"' + fileId + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
@@ -111,9 +111,8 @@ router.post('/update', function (req, res, next) {
     var recommend = req.body.recommend;//文章推荐位
     var tag = req.body.tag;//文章标签
     var description = req.body.description;//文章描述
-    var content = req.body.content;//文章内容
+    var content = encodeURIComponent(req.body.content);//文章内容
     var fileId = req.body.fileId;//图片id
-
     AV.Query.doCloudQuery('update Article set  title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category=' + category + ',fileId="' + fileId + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
