@@ -27,7 +27,8 @@ app.use(cookieParser());
 
 //设置跨域处理头部
 app.all('*', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3002");
+    //res.header("Access-Control-Allow-Origin", "http://localhost:3002");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     res.header("Access-Control-Allow-Credentials", true);
@@ -58,7 +59,7 @@ app.use(function (req, res, next) {
 });
 
 
-var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend','upload'];
+var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend','upload','linkfriend'];
 routerArr.forEach(function (item) {
     var route = require('./routes/' + item);
     app.use('/' + item, route);
@@ -67,8 +68,8 @@ routerArr.forEach(function (item) {
 //var login = require('./routes/login');
 //app.use('/login', login);
 
-app.get('/', function (req, res) {
-    res.render('index', {currentTime: new Date()});
+app.get('/reg', function (req, res) {
+    res.render('reg', {currentTime: new Date()});
 });
 
 app.use(function (req, res, next) {
