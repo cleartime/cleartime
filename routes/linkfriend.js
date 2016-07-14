@@ -10,7 +10,6 @@ var Todo = AV.Object.extend('Linkfriend');// 个人信息
 
 // 查询友情链接
 router.get('/', function (req, res, next) {
-    var currentUser = AV.User.current();
     var cql = 'select * from Linkfriend';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {

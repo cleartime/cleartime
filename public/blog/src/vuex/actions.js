@@ -574,3 +574,26 @@ export const fetchMe = ({ dispatch }) => {
       return Promise.reject(error);
     });
 };
+
+
+/**
+ * 获取友情链接
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const fetFriendLink = ({ dispatch }) => {
+  const url = '/linkfriend';
+  return _get({ url })
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_FRIEND_SUCCESS', json.data);
+        return json.data;
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_FAILURE');
+      return Promise.reject(error);
+    });
+};

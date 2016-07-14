@@ -8,6 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  friendLink: '',
   me: '',
   image: '',
   recommend: [],
@@ -184,6 +185,10 @@ const mutations = {
   // 获取我的信息
   FETCH_ME_SUCCESS(state, data) {
     state.me = data;
+  },
+  // 获取友情链接
+  FETCH_FRIEND_SUCCESS(state, data) {
+    state.friendLink = data;
   },
   // 删除token
   DEL_TOKEN(state) {

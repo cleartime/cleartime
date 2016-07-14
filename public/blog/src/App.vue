@@ -4,7 +4,7 @@
     <div class="main">
       <router-view></router-view>
     </div>
-    <!--<c-footer></c-footer>-->
+    <c-footer></c-footer>
     <c-back></c-back>
   </div>
   <welcome v-if="isShow" v-on:isShow="isShow"></welcome>
