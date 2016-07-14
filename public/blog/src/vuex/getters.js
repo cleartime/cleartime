@@ -30,3 +30,5 @@ export const getHint = (state) => state.hint;
 
 export const getImg = (state) => state.image;
 
+export const getMe = (state) => state.me;
+

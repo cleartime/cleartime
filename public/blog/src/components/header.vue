@@ -4,12 +4,8 @@
       <img src="../assets/head.jpeg" alt="logo">
     </a>
 		<ul class="navbar">
-			<li><a v-link="{name: 'index'}">首页</a></li>
+      <li><a v-link="{name: 'me'}">我的资料</a></li>
 			<!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
-      <template v-else>
-        <li><a v-link="{name: 'messages'}">未读消息<span class="h"  v-if="msgCount">{{ msgCount }}</span></a></li>
-        <li><a href="#" @click.prevent.stop="exit">退出</a></li>
-      </template>
 		</ul>
 	</header>
 </template>

@@ -551,3 +551,26 @@ export const fetchImg = ({ dispatch }, objectId) => {
       return Promise.reject(error);
     });
 };
+
+
+/**
+ * 获取我的资料
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const fetchMe = ({ dispatch }) => {
+  const url = '/information';
+  return _get({ url })
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_ME_SUCCESS', json.data[0]);
+        return json.data[0];
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_FAILURE');
+      return Promise.reject(error);
+    });
+};

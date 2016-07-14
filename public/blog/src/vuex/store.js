@@ -8,6 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  me: '',
   image: '',
   recommend: [],
   topicTabs: [],
@@ -178,6 +179,11 @@ const mutations = {
       info: '获取消息失败',
       colorRed: true,
     };
+  },
+
+  // 获取我的信息
+  FETCH_ME_SUCCESS(state, data) {
+    state.me = data;
   },
   // 删除token
   DEL_TOKEN(state) {
