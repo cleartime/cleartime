@@ -21,7 +21,7 @@ export default {
   ready() {
     // 会变的 title
     document.addEventListener('visibilitychange', () => {
-      document.title = document.hidden ? '出BUG了，快看！' : '我的博客';
+      document.title = document.hidden ? '出BUG了，快看！' : '我的博客1';
     });
     // 控制台
     try {
