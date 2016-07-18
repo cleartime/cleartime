@@ -7,8 +7,8 @@
 6 silly lifecycle node-js-getting-started@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle node-js-getting-started@1.0.0~start: node-js-getting-started@1.0.0
 8 verbose lifecycle node-js-getting-started@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle node-js-getting-started@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/gxx/Documents/workspace/cleartime/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle node-js-getting-started@1.0.0~start: CWD: /Users/gxx/Documents/workspace/cleartime
+9 verbose lifecycle node-js-getting-started@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/gxx/Desktop/cleartime/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle node-js-getting-started@1.0.0~start: CWD: /Users/gxx/Desktop/cleartime
 11 silly lifecycle node-js-getting-started@1.0.0~start: Args: [ '-c', 'node server.js' ]
 12 silly lifecycle node-js-getting-started@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle node-js-getting-started@1.0.0~start: Failed to exec start script
@@ -23,7 +23,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:827:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid node-js-getting-started@1.0.0
-16 verbose cwd /Users/gxx/Documents/workspace/cleartime
+16 verbose cwd /Users/gxx/Desktop/cleartime
 17 error Darwin 15.3.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v5.7.0
