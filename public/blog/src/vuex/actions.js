@@ -12,9 +12,9 @@ import 'whatwg-fetch';
 const _get = ({ url, query }) => {
   let _url;
   if (query) {
-    _url = `http://localhost:3000${url}?${query}`;
+    _url = `http://cleartime.leanapp.cn${url}?${query}`;
   } else {
-    _url = `http://localhost:3000${url}`;
+    _url = `http://cleartime.leanapp.cn${url}`;
   }
 
   return fetch(_url)
@@ -47,7 +47,7 @@ const transformRequest = (obj) => {
  * @return {Promise}        Promise
  */
 const _post = (url, params) => {
-  return fetch(`http://localhost:3000${url}`, {
+  return fetch(`http://cleartime.leanapp.cn${url}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

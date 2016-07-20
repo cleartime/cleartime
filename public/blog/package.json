@@ -1,8 +1,8 @@
 {
-  "name": "cnodejs-vue",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "beilunyang",
+  "description": "gxx blog",
+  "author": "gxx",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

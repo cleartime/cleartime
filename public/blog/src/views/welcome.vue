@@ -24,7 +24,7 @@
 
 <style lang="scss">
   .bg{
-    background: url("../assets/img/bj1.jpg") no-repeat;
+    background: url("../assets/bj1.jpg") no-repeat;
     position: fixed;
     width: 100%;
     height: 100%;
