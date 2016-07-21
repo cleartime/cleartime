@@ -336,12 +336,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00034" summary="唉,还是用vue吧,react感应有点重">
-      <created>1466584220450</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1466584220450</updated>
-    </task>
     <task id="LOCAL-00035" summary="唉,还是用vue吧,react感应有点重">
       <created>1466585303810</created>
       <option name="number" value="00035" />
@@ -630,7 +624,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469084564887</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="7.21">
+      <created>1469089801810</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1469089801811</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
