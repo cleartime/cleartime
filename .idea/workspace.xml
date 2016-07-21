@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/blog/src/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/welcome.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/welcome.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/vuex/actions.js" afterPath="$PROJECT_DIR$/public/blog/src/vuex/actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/article.js" afterPath="$PROJECT_DIR$/routes/article.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/config.js" afterPath="$PROJECT_DIR$/public/blog/src/config.js" />
     </list>
     <ignored path="cleartime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +67,8 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/blog/src/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17006803">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.06802721">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -524,12 +521,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00030" summary="唉,还是用vue吧,react感应有点重">
-      <created>1466577688975</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1466577688975</updated>
-    </task>
     <task id="LOCAL-00031" summary="唉,还是用vue吧,react感应有点重">
       <created>1466579866511</created>
       <option name="number" value="00031" />
@@ -818,7 +809,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468994859298</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="7.21">
+      <created>1469071497541</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1469071497541</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -869,7 +866,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完善友情链接删除" />
     <MESSAGE value="文章样式调节" />
     <MESSAGE value="准备写前端了" />
     <MESSAGE value="准备用react写" />
@@ -894,7 +890,8 @@
     <MESSAGE value="跨越问题终极解决,happy到不行" />
     <MESSAGE value="markedown问题解决但是另一个问题来了,日了够了,烦" />
     <MESSAGE value="7.20" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.20" />
+    <MESSAGE value="7.21" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.21" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1300,8 +1297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17006803">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.06802721">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>
