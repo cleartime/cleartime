@@ -1,8 +1,8 @@
 import 'whatwg-fetch';
+import config from '../config';
 /* eslint-disable camelcase */
 /* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
-
 /**
  * get请求
  * @param  {String} options.url   api地址
@@ -12,9 +12,9 @@ import 'whatwg-fetch';
 const _get = ({ url, query }) => {
   let _url;
   if (query) {
-    _url = `http://cleartime.leanapp.cn${url}?${query}`;
+    _url = config + url + query;
   } else {
-    _url = `http://cleartime.leanapp.cn${url}`;
+    _url = config + url;
   }
 
   return fetch(_url)
@@ -47,7 +47,7 @@ const transformRequest = (obj) => {
  * @return {Promise}        Promise
  */
 const _post = (url, params) => {
-  return fetch(`http://cleartime.leanapp.cn${url}`, {
+  return fetch(`${config}${url}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

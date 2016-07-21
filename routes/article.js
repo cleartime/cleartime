@@ -88,7 +88,7 @@ router.post('/', function (req, res, next) {
     var description = req.body.description;//文章描述
     var content = encodeURIComponent(req.body.content);//文章内容
     var fileId = req.body.fileId;//图片id
-    AV.Query.doCloudQuery('insert into Article(title,tag,description,content,recommend,category,fileId) values(?,?,?,?,?,?,?)').then(function (data) {
+    AV.Query.doCloudQuery('insert into Article(title,tag,description,content,recommend,category,fileId) values("' + title + '","' + tag + '","' + description + '","' + content + '","' + recommend + '",' + category + ',"' + fileId + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;

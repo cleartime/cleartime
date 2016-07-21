@@ -1,8 +1,11 @@
 <template>
   <div class="bg">
+    <img src="../assets/bj1.jpg" width="100%" height="100%">
   </div>
   <div class="menu">
-    <div class="pic" @click.prevent.stop="closeWelcomePage"></div>
+    <div class="pic" @click.prevent.stop="closeWelcomePage">
+      <img src="../assets/head.jpeg">
+    </div>
   </div>
 </template>
 
@@ -24,7 +27,6 @@
 
 <style lang="scss">
   .bg{
-    background: url("../assets/bj1.jpg") no-repeat;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -43,6 +45,9 @@
     margin-left: -100px;
     margin-top: -100px;
     .pic{
+      img{
+        border-radius: 50%;
+      }
       cursor: pointer;
       position: relative;
       left: 50%;
@@ -52,7 +57,6 @@
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      background: url("../assets/head.jpeg") no-repeat center center;
       background-size: 100%;
       transition: transform 2s;
       -webkit-transition: -webkit-transform 2s;
