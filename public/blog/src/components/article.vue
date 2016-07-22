@@ -49,8 +49,10 @@
 <style lang="scss">
   @import '../assets/lib/github-markdown';
   .panel img{
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%);
+    margin:20px 0;
   }
   .article-header {
     background-color: #FFF;

@@ -6,7 +6,7 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var json = require('./config');
 
-var Webinfo = AV.Object.extend('Webinfo');// 网站信息
+var Todo = AV.Object.extend('Information');// 个人信息
 
 // 查询网站信息
 router.get('/', function (req, res, next) {
@@ -29,14 +29,11 @@ router.get('/', function (req, res, next) {
 
 // 新增网站信息
 router.post('/', function (req, res, next) {
-    var introduction = req.body.introduction;//个人简介
-    var head = req.body.head;//头像
-    var sign = req.body.sign;//个性签名
-    var weibo = req.body.weibo;//微博地址
-    var github = req.body.github;//github地址
-    var email = req.body.email;//邮箱地址
-    // 执行 CQL 语句实现新增一个 Information 对象
-    AV.Query.doCloudQuery('insert into Webinfo(head, sign,introduction,weibo,github,email) values("' + head + '","' + sign + '","' + introduction + '","' + weibo + '","' + github + '","' + email + '")').then(function (data) {
+    var title = req.body.title;//网站标题
+    var describe = req.body.describe;//网站描述
+    var keyword = req.body.keyword;//关键词
+
+    AV.Query.doCloudQuery('insert into Webinfo(title, describe,keyword) values("' + title + '","' + describe + '","' + keyword + '")').then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results[0];
@@ -53,13 +50,10 @@ router.post('/', function (req, res, next) {
 
 //修改网站信息
 router.post('/updata', function (req, res, next) {
-    var introduction = req.body.introduction;//个人简介
-    var head = req.body.head;//头像
-    var sign = req.body.sign;//个性签名
-    var weibo = req.body.weibo;//微博地址
-    var github = req.body.github;//github地址
-    var email = req.body.email;//邮箱地址
-    AV.Query.doCloudQuery('update Webinfo set  head="' + head + '", sign="' + sign + '",weibo="' + weibo + '",github="' + github + '",email="' + email + '",introduction="' + introduction + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    var title = req.body.title;//网站标题
+    var describe = req.body.describe;//网站描述
+    var keyword = req.body.keyword;//关键词
+    AV.Query.doCloudQuery('update Webinfo set  title="' + title + '", describe="' + describe + '",keyword="' + keyword + '" where objectId="' + req.body.objectId + '"').then(function (data) {
         var results = data.results;
         json.data = results[0];
         json.msg = '设置成功!';

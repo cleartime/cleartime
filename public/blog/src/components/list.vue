@@ -2,15 +2,12 @@
   <div class="inner">
     <div class="topic-list">
 
-      <div class="cell" v-for="topicItem in items">
-        <a href="#" class="last-time">
-          <span>{{ topicItem.last_reply_at | timeToNow }}</span>
-        </a>
+      <div class="cell" v-for="topicItem in items" :transition="fade">
         <div class="topic-wrapper">
           <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
-            {{ topicItem.title }}
-            <br>
-            {{ topicItem.description }}
+            <p>{{ topicItem.title }}</p>
+            <p>{{ topicItem.createdAt | timeToNow }}</p>
+            <p>{{ topicItem.description }}</p>
           </a>
         </div>
       </div>
@@ -71,13 +68,35 @@
   }
 
   .cell {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: initial;
+    background: #fff;
     padding: 10px;
     overflow: hidden;
-
-    &:hover {
-      background-color:#22c4f5;
+    border-bottom: 1px solid #eee;
+    &:last-child{
+      border-bottom: none;
     }
-
+    &:hover {
+      background-color:#f7f7f7;
+    }
+    a p{
+      line-height:15px;
+    }
+    a p:nth-child(1){
+      font-size: 22px;
+      font-weight: 400;
+      color: #404040;
+    }
+    a p:nth-child(2){
+      font-size: 14px;
+      color: #8b8b8b;
+    }
+    a p:nth-child(3){
+      color: #919191;
+    }
   }
 
   .avatar {

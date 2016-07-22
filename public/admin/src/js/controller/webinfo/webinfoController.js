@@ -5,7 +5,7 @@ app.controller('webInfoController', ['$scope', 'ajax', 'cAlert','toast', functio
         url: '/webinfo',
         toast: "获取中..."
     }).then(function (result) {
-        if (result.length < 1) {
+        if (!result.length) {
             $scope.isUpdata = true;
         }
         $scope.info = result[0];
@@ -22,7 +22,6 @@ app.controller('webInfoController', ['$scope', 'ajax', 'cAlert','toast', functio
         } else {
             url = '/webinfo/updata';
         }
-        console.log(url);
         ajax.post({
             url: url,
             data: $scope.info,

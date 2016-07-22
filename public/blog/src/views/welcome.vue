@@ -10,16 +10,26 @@
 </template>
 
 <script>
-  import { setWelcome } from '../vuex/actions';
+  import { setWelcome, fetSEO } from '../vuex/actions';
+  import { getWebinfo } from '../vuex/getters';
   export default {
     vuex: {
       actions: {
+        fetSEO,
         setWelcome,
+      },
+      getters: {
+        getWebinfo,
       },
     },
     methods: {
       closeWelcomePage() {
         this.$dispatch('isShow', false);
+      },
+    },
+    route: {
+      data() {
+        this.fetSEO();
       },
     },
   };

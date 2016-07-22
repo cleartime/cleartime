@@ -21,7 +21,7 @@ export default {
   ready() {
     // 会变的 title
     document.addEventListener('visibilitychange', () => {
-      document.title = document.hidden ? '出BUG了，快看！' : '我的博客';
+      document.title = document.hidden ? '出BUG了，快看！' : 'GXX BLOG';
     });
     // 控制台
     try {
@@ -85,8 +85,11 @@ export default {
   .main {
     overflow: hidden;
     padding: 0 5%;
-    min-height: 100%;
   }
 
+  .item-move {
+    /* applied to the element when moving */
+    transition: transform .5s cubic-bezier(.55,0,.1,1);
+  }
 
 </style>

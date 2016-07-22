@@ -77,9 +77,11 @@
 <style lang="scss" scoped>
   header {
     overflow: hidden;
-    background-color: #3090e4;
+    text-shadow: 0 1px 3px rgba(0,0,0,.4),0 0 30px rgba(0,0,0,.075);
+    background: linear-gradient(45deg,#020031 0,#6d3353 100%);
     padding: 0 5%;
     margin-bottom: 20px;
+    border:1px solid #ccc
   }
 
   .brand {

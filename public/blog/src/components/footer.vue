@@ -1,13 +1,14 @@
 <template>
   <footer>
-    <div class="link">
-      <a href="https://github.com/cleartime/cleartime/tree/master/public/blog">源码在此</a>
-    </div>
-    友情链接:
-      <span  v-for="t in friendLink" class="friendLink">
-        <a href="{{ t.url }}">{{ t.title }}</a>
-      </span>
-    <p>此网站采用vuejs + vue-router + vuex 搭建</p>
+    <!--<div class="link">-->
+      <!--<a href="https://github.com/cleartime/cleartime/tree/master/public/blog">源码在此</a>-->
+    <!--</div>-->
+    <!--友情链接:-->
+      <!--<span  v-for="t in friendLink" class="friendLink">-->
+        <!--<a href="{{ t.url }}">{{ t.title }}</a>-->
+      <!--</span>-->
+    <!--<p>此网站采用vuejs + vue-router + vuex 搭建</p>-->
+    <a href='http://www.miitbeian.gov.cn/' target='_blank'>皖ICP备16014114号</a>
   </footer>
 </template>
 
@@ -32,6 +33,7 @@
 
 <style lang="scss">
   footer {
+    text-align: center;
     clear: both;
     background-color: #FFF;
     padding: 20px 5%;
