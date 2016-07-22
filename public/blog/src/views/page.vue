@@ -7,6 +7,8 @@
       <div class="panel-header recommend-header">
         <a v-link="{name: 'tabB', params: {recommend: tab.nickname}}"  v-for="tab in recommendList" :class="tab.nickname === currentTab ? 'active' : ''">{{ tab.name }}</a>
       </div>
+    </div>
+    <div class="content-list">
       <c-hint v-if="hint.show"></c-hint>
       <c-list :items='topicLists' v-else></c-list>
     </div>
@@ -82,7 +84,37 @@
   .content {
     float: left;
     width: 100%;
-    min-height: 1px
+    min-height: 1px;
+    .panel {
+      display: inline-block;
+      float: left;
+      width: 20%;
+      a {
+        display: block;
+        &.v-link-active {
+          color: #0000AA;
+        }
+      }
+    }
+    .content-list {
+      display: inline-block;
+      box-shadow: 0 0 5px #CCC;
+      border-radius: 5px;
+      width: 75%;
+      float: right;
+      .cell {
+        border-top: 1px solid #ccc;
+        transition: all 1s;
+        &:hover {
+          box-shadow: -5px -5px 5px #CCC;
+          transform: scale(1.2);
+        }
+      }
+      .cell:nth-child(1){
+        border-top: none;
+      }
+
+    }
   }
 
   .sider {

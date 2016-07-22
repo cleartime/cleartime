@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="post">
     <c-hint v-if="hint.show"></c-hint>
     <template v-if="topic && !hint.show">
       <c-article></c-article>
@@ -74,3 +74,49 @@
   };
 </script>
 
+
+<style lang="scss">
+  .post {
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    .panel {
+      display: inline-block;
+      float: left;
+      width: 100%;
+      a {
+        display: block;
+        &.v-link-active {
+          color: #0000AA;
+        }
+      }
+    }
+    .content-list {
+      display: inline-block;
+      box-shadow: 0 0 5px #CCC;
+      border-radius: 5px;
+      float: right;
+    }
+  }
+
+  .sider {
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    display: none;
+  }
+
+  @media (max-width: 512px) {
+    .content {
+      float: none;
+      width: 100%;
+    }
+    .sider {
+      float: none;
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+</style>

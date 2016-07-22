@@ -60,7 +60,7 @@ export default {
   body {
     height: 100%;
     font: 16px 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
-    background-color: #E1E1E1;
+    background-color: #fff;
   }
 
   ul {
