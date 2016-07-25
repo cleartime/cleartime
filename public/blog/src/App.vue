@@ -86,10 +86,4 @@ export default {
     overflow: hidden;
     padding: 0 5%;
   }
-
-  .item-move {
-    /* applied to the element when moving */
-    transition: transform .5s cubic-bezier(.55,0,.1,1);
-  }
-
 </style>

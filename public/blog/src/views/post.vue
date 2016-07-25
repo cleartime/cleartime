@@ -75,7 +75,7 @@
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
   .post {
     float: left;
     width: 100%;

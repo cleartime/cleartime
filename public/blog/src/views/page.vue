@@ -2,10 +2,10 @@
   <div class="content">
     <div class="panel">
       <div class="panel-header" v-if="topicLists">
-        <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tabA', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs"  :class="tab.categoryID === currentTab ? 'active' : ''" :transition="fade">{{ tab.name }}</a>
+        <a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tabA', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs"  :class="tab.categoryID === currentTab ? 'active' : ''" >{{ tab.name }}</a>
       </div>
       <c-hint v-if="hint.show"></c-hint>
-      <c-list :items='topicLists' v-else ></c-list>
+      <c-list :items='topicLists' v-else></c-list>
     </div>
   </div>
   <div class="sider">
@@ -75,7 +75,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .content {
     float: left;
     width: 100%;

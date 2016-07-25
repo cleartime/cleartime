@@ -24,6 +24,7 @@
     },
     methods: {
       closeWelcomePage() {
+//        this.transition = 'back';
         this.$dispatch('isShow', false);
       },
     },
@@ -35,7 +36,7 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .bg{
     position: fixed;
     width: 100%;
