@@ -1,13 +1,15 @@
 <template>
 	<header>
-		<a v-link="{name: 'index'}" class="brand">
+		<div><a v-link="{name: 'index'}" class="brand">
       <img src="../assets/head.jpeg" alt="logo">
-    </a>
-		<ul class="navbar">
-      <li><a v-link="{name: 'me'}">我的资料</a></li>
-			<!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
-		</ul>
-    <p class="header-title">{{ topic.title }}</p>
+    </a></div>
+		<div>
+      <ul class="navbar">
+        <li><a v-link="{name: 'me'}">我的资料</a></li>
+        <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
+      </ul>
+    </div>
+    <div><p class="header-title">{{ topic.title }}</p></div>
 	</header>
 </template>
 
@@ -109,56 +111,47 @@
     padding: 0 5%;
     margin-bottom: 20px;
     border:1px solid #ccc;
-    .header-title {
-      text-align: center;
-      margin-top: 120px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 24px;
-
-    }
-  }
-
-  .brand {
-    float: left;
-    width: 40px;
-    height: 40px;
-    padding: 5px 20px;
-      img{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    &>div:nth-child(1){
+      order: 1;
+      flex:1 0 100px;
+      .brand {
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 5px 20px;
+        img{
         border-radius: 50%;
+        }
       }
-  }
-
-  .navbar {
-    float: right;
-    overflow: hidden;
-    display: block;
-
-    li {
-      float: left;
     }
-
-    a {
-      color: #fff;
-      font-size: 16px;
-      display: block;
-      padding: 16px;
+    &>div:nth-child(3){
+      order: 2;
+      flex:auto;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 100%;
+      .header-title {
+        word-break: break-all;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+      }
     }
-  }
-
-  .h {
-    background-color: #80BD01;
-    height: 14px;
-    min-width: 14px;
-    padding: 0 2px;
-    padding-top: 1px;
-    margin-left: 1px;
-    display: inline-block;
-    font-size: 10px;
-    line-height: 14px;
-    text-align: center;
-    border-radius: 10px;
-    color: #FFF;
+    &>div:nth-child(2){
+      flex:1 0 100px;
+      order: 3;
+        .navbar{
+          text-align: right;
+          margin-top: 20px;
+          a{
+            color: #fff;
+          }
+        }
+     }
   }
 
   @media (max-width: 400px) {

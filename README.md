@@ -1,55 +1,59 @@
-# Node.js Getting started
+#  Vue.js+LeanCloud单页面博客
 
-一个简单的使用 Express 4 的 Node.js 应用。
-可以运行在 LeanEngine Node.js 运行时环境。
+## 简介
+一个前后端完全分离的单页应用  [线上地址点此查看](http://guixiaoxiao.cn)
 
-## 本地运行
 
-首先确认本机已经安装 [Node.js](http://nodejs.org/) 运行环境和 [LeanCloud 命令行工具](https://www.leancloud.cn/docs/leanengine_cli.html)，然后执行下列指令：
+### version 1.0
+- 响应式布局
+- 主页，关于，标签
+- 过渡动画
+- 文章显示markdown 和代码高亮
 
-```
-$ git clone https://github.com/cleartime/cleartime.git
-$ cd node-js-getting-started
-```
 
-安装依赖：
+## 技术栈
+### 前端
+- [Vue.js](https://github.com/vuejs/vue)
+- [vuex 状态管理](https://github.com/vuejs/vuex)
+- [vue-router 路由](https://github.com/vuejs/vue-router)
+- [marked 语法解析](https://github.com/chjj/marked)
+- [fastclick 解决移动端延迟问题](https://github.com/ftlabs/fastclick)
 
-```
-npm install
-```
 
-关联应用：
+### 后端
+- [node.js 服务端](https://github.com/nodejs/node)
+- [express 框架](https://github.com/expressjs/express)
+- [LeanCloud 数据存储](http://www.leancloud.com)
 
-```
-lean app add origin <appId>
-```
+## 开发
 
-这里的 appId 填上你在 LeanCloud 上创建的某一应用的 appId 即可。origin 则有点像 Git 里的 remote 名称。
+```bash
+git clone https://github.com/cleartime/cleartime.git
+$ cd cleartime
+$ npm install
 
-启动项目：
+// 启动服务器端, 默认地址 http://localhost:3000
+$ lean up
 
-```
-lean up
-```
-
-应用即可启动运行：[localhost:3000](http://localhost:3000)
-
-## 部署到 LeanEngine
-
-部署到预备环境（若无预备环境则直接部署到生产环境）：
-```
-lean deploy
-```
-
-将预备环境的代码发布到生产环境：
-```
-lean publish
+// 另开一个 terminal
+$ cd public/blog
+$ npm install
+// 启动前端项目，默认地址 http://localhost:7000
+$ npm run dev
 ```
 
-## 相关文档
+## 构建部署
 
-* [LeanEngine 指南](https://leancloud.cn/docs/leanengine_guide-node.html)
-* [JavaScript 指南](https://leancloud.cn/docs/js_guide.html)
-* [JavaScript SDK API](https://leancloud.cn/api-docs/javascript/index.html)
-* [命令行工具详解](https://leancloud.cn/docs/cloud_code_commandline.html)
-* [LeanEngine FAQ](https://leancloud.cn/docs/cloud_code_faq.html)
+```bash
+// 在bolg目录下  构建前端文件至 /build 文件夹
+$ npm run build
+
+// 根目录下 leancloud命令行部署 / 通过 github 部署
+$ lean deploy / lean deploy -g
+
+```
+
+具体部署可参考[LeanCloud云引擎 Node.js 部署](https://leancloud.cn/docs/leanengine_webhosting_guide-node.html#部署)
+
+## License
+MIT
