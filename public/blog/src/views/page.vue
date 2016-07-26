@@ -1,15 +1,20 @@
 <template>
-  <div class="content">
-    <div class="panel">
-      <!--<div class="panel-header" v-if="topicLists">-->
-        <!--<a v-link="{name: 'index'}">全部</a><a v-link="{name: 'tabA', params: {categoryId: tab.categoryID}}"  v-for="tab in topicTabs"  :class="tab.categoryID === currentTab ? 'active' : ''" >{{ tab.name }}</a>-->
-      <!--</div>-->
-      <c-hint v-if="hint.show"></c-hint>
-      <c-list :items='topicLists' v-else></c-list>
+  <div>
+    <div class="content">
+      <div class="panel">
+          <ul class="panel-header" v-if="topicLists">
+            <li v-for="tab in topicTabs">
+              <a @click.prevent.stop="update(tab.categoryID)"
+                 :class="{'link-active': $index === selected}" >{{ tab.name }}</a>
+            </li>
+          </ul>
+        <c-hint v-if="hint.show"></c-hint>
+        <c-list :items='topicLists' v-else ></c-list>
+      </div>
     </div>
-  </div>
-  <div class="sider">
-    <c-siderbar></c-siderbar>
+    <div class="sider">
+      <c-siderbar></c-siderbar>
+    </div>
   </div>
 </template>
 
@@ -71,6 +76,11 @@
         }
       },
     },
+    methods: {
+      update(categoryId) {
+        this.fetchCategoryicLists(Number(categoryId));
+      },
+    },
   };
 
 </script>
@@ -81,7 +91,9 @@
     width: 100%;
     min-height: 1px
   }
-
+  .ink-active{
+    background: #5bc0de;
+  }
   .sider {
     float: left;
     width: 30%;

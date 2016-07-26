@@ -2,7 +2,7 @@
   <div id="app" v-if="!isShow">
     <c-header></c-header>
     <div class="main">
-      <router-view transition="back" transition-mode="out-in" keep-alive ></router-view>
+      <router-view transition="back" transition-mode="out-in" class="main-wrapper" ></router-view>
     </div>
     <c-footer></c-footer>
     <c-back></c-back>
@@ -91,11 +91,13 @@ export default {
     transition: all .5s ease;
   }
   .back-enter{
-    opacity: 1;
+    opacity: 0;
     transform: translateY(-100%);
   }
   .back-leave {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
+
+
 </style>

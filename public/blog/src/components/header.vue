@@ -136,6 +136,7 @@
       height: 100%;
       .header-title {
         word-break: break-all;
+        line-height: 1.5;
         color: #fff;
         font-weight: bold;
         font-size: 24px;

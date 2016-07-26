@@ -42,7 +42,6 @@ export default (router) => router.map({
     component: require('./views/message'),
     auth: true,
   },
-
   '/me': {
     name: 'me',
     component: require('./views/me'),
