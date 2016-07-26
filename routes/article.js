@@ -115,7 +115,9 @@ router.post('/update', function (req, res, next) {
     var description = req.body.description;//文章描述
     var content = encodeURIComponent(req.body.content);//文章内容
     var fileId = req.body.fileId;//图片id
-    AV.Query.doCloudQuery('update Article set  title="' + title + '",tag="' + tag + '",description="' + description + '",content="' + content + '",recommend="' + recommend + '",category=' + category + ',fileId="' + fileId + '" where objectId="' + req.body.objectId + '"').then(function (data) {
+    var cql = 'update Article set  title=?,tag=?,description=?,content=?,recommend=?,category=?,fileId=? where objectId=?';
+    var pvalues = [title, tag, description, content, recommend, parseInt(category), fileId , req.body.objectId];
+    AV.Query.doCloudQuery(cql,pvalues).then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;
         json.data = results;

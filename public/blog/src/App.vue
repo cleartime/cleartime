@@ -2,12 +2,12 @@
   <div id="app" v-if="!isShow">
     <c-header></c-header>
     <div class="main">
-      <router-view></router-view>
+      <router-view transition="back" transition-mode="out-in" keep-alive ></router-view>
     </div>
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" v-on:isShow="isShow"></welcome>
+  <welcome v-if="isShow" @click:isShow="isShow"></welcome>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   ready() {
     // 会变的 title
     document.addEventListener('visibilitychange', () => {
-      document.title = document.hidden ? '出BUG了，快看！' : 'GXX BLOG';
+      document.title = document.hidden ? '出BUG了，快看！' : '桂孝孝的博客';
     });
     // 控制台
     try {
@@ -85,5 +85,17 @@ export default {
   .main {
     overflow: hidden;
     padding: 0 5%;
+  }
+
+  .back-transition {
+    transition: all .5s ease;
+  }
+  .back-enter{
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  .back-leave {
+    opacity: 0;
+    transform: translateY(100%);
   }
 </style>

@@ -6,13 +6,11 @@ import { timeToNow, transTab } from './filters';
 import { fetchMsgCount } from './vuex/actions';
 import { getToken } from './vuex/getters';
 import store from './vuex/store';
-import VueAnimatedList from 'vue-animated-list';
 
 Vue.filter('timeToNow', timeToNow);
 Vue.filter('transTab', transTab);
 
 Vue.use(VueRouter);
-Vue.use(VueAnimatedList);
 const router = new VueRouter();
 configRouter(router);
 router.beforeEach((transition) => {

@@ -24,7 +24,6 @@
     },
     methods: {
       closeWelcomePage() {
-//        this.transition = 'back';
         this.$dispatch('isShow', false);
       },
     },

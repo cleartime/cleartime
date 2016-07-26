@@ -20,7 +20,7 @@
     padding: 10px 0px;
     text-align: center;
     color: #468847;
-    background-color: #DFF0D8;
+    background-color: #f7f7f7;
   }
 
   .hint-failure {
