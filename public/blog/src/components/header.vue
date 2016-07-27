@@ -5,7 +5,7 @@
     </a></div>
 		<div>
       <ul class="navbar">
-        <li><a v-link="{name: 'me'}">我的资料</a></li>
+        <li><a v-link="{name: 'me'}">我</a></li>
         <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
       </ul>
     </div>
@@ -116,12 +116,12 @@
     align-items: flex-start;
     &>div:nth-child(1){
       order: 1;
-      flex:1 0 100px;
+      flex:1;
       .brand {
         display: block;
         width: 40px;
         height: 40px;
-        padding: 5px 20px;
+        padding: 5px 0;
         img{
         border-radius: 50%;
         }
@@ -143,7 +143,8 @@
       }
     }
     &>div:nth-child(2){
-      flex:1 0 100px;
+      flex:1 0 70px;
+      padding-right: 5px;
       order: 3;
         .navbar{
           text-align: right;

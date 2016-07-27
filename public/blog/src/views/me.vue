@@ -1,10 +1,10 @@
 <template>
   <div class="content">
     <p>电子邮箱:{{ me.email }}</p>
-    <p>github账号:{{ me.github }}</p>
+    <p>github账号:<a href="{{ me.github }}">{{ me.github }}</a></p>
     <p>个人介绍:{{ me.introduction }}</p>
     <p>个性签名:{{ me.sign }}</p>
-    <p>微博账号:{{ me.weibo }}</p>
+    <p>微博账号:<a href="{{ me.weibo }}">{{ me.weibo }}</a></p>
   </div>
 </template>
 
@@ -32,5 +32,8 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  .content a{
+    color: #5bc0de;
+  }
 </style>

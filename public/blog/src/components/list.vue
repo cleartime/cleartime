@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      <div class="cell" v-for="topicItem in items" transition="back" transition-mode="out-in">
+      <div class="cell" v-for="topicItem in items" transition="list" transition-mode="out-in">
         <div class="topic-wrapper">
           <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
             <p>{{ topicItem.title }}</p>
@@ -165,6 +165,17 @@
   .hello + a {
     margin-right: 20px;
   }
+
+  .list-transition {
+    transition: all .5s ease;
+  }
+  .list-enter{
+    opacity: 0;
+  }
+  .list-leave {
+    opacity: 0;
+  }
+
 
   @media (max-width: 512px) {
     body {
