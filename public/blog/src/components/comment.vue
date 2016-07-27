@@ -1,36 +1,38 @@
-v-if=""<template>
-  <div class="panel" v-if="topic.reply_count !== 0">
-    <div class="panel-header">
-      {{ topic.reply_count }}条评论
-    </div>
-    <div class="inner padding" v-for="reply in topic.replies">
-      <div class="author-content">
-        <a v-link="{name: 'user', params: {name: reply.author.loginname}}">
-          <img :src="reply.author.avatar_url" alt="avatar">
-        </a>
-        <div class="author-info">
-           <a v-link="{name: 'user', params: {name: reply.author.loginname}}">{{ reply.author.loginname }}</a>
-          <span>{{reply.create_at | timeToNow }}</span>
-          <div class="user-action">
-            <a href="#" @click.prevent.stop="toStar(reply)"><i class="fa fa-thumbs-o-up"></i> {{ reply.ups.length }}</a>
-            <a href="#" @click.prevent.stop="replyOne(reply)"><i class="fa fa-reply"></i></a>
+<template>
+  <div>
+    <div class="panel" v-if="topic.reply_count !== 0">
+      <div class="panel-header">
+        {{ topic.reply_count }}条评论
+      </div>
+      <div class="inner padding" v-for="reply in topic.replies">
+        <div class="author-content">
+          <a v-link="{name: 'user', params: {name: reply.author.loginname}}">
+            <img :src="reply.author.avatar_url" alt="avatar">
+          </a>
+          <div class="author-info">
+             <a v-link="{name: 'user', params: {name: reply.author.loginname}}">{{ reply.author.loginname }}</a>
+            <span>{{reply.create_at | timeToNow }}</span>
+            <div class="user-action">
+              <a href="#" @click.prevent.stop="toStar(reply)"><i class="fa fa-thumbs-o-up"></i> {{ reply.ups.length }}</a>
+              <a href="#" @click.prevent.stop="replyOne(reply)"><i class="fa fa-reply"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="comment-content markdown-body">
-        {{{reply.content}}}
+        <div class="comment-content markdown-body">
+          {{{reply.content}}}
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="panel" v-if="token">
-    <div class="panel-header">
-      添加回复
-    </div>
-    <c-hint v-if="hint.show"></c-hint>
-    <div class="inner padding">
-      <textarea></textarea>
-      <a href="#" class="btn btn-success" @click.prevent.stop="toReply">回复</a>
+    <div class="panel" v-if="token">
+      <div class="panel-header">
+        添加回复
+      </div>
+      <c-hint v-if="hint.show"></c-hint>
+      <div class="inner padding">
+        <textarea></textarea>
+        <a href="#" class="btn btn-success" @click.prevent.stop="toReply">回复</a>
+      </div>
     </div>
   </div>
 </template>

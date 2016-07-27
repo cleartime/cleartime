@@ -13,8 +13,6 @@
   import { getMe } from '../vuex/getters';
   import { fetchMe } from '../vuex/actions';
   export default {
-    data() {
-    },
     vuex: {
       getters: {
         me: getMe,

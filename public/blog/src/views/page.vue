@@ -4,7 +4,7 @@
       <div class="panel">
           <ul class="panel-header" v-if="topicLists">
             <li v-for="tab in topicTabs">
-              <a @click.prevent.stop="update(tab.categoryID)"
+              <a @click.prevent.stop="update($index,tab.categoryID)"
                  :class="{'link-active': $index === selected}" >{{ tab.name }}</a>
             </li>
           </ul>
@@ -77,7 +77,7 @@
       },
     },
     methods: {
-      update(categoryId) {
+      update(index, categoryId) {
         this.fetchCategoryicLists(Number(categoryId));
       },
     },
@@ -91,8 +91,26 @@
     width: 100%;
     min-height: 1px
   }
-  .ink-active{
+  .link-active{
     background: #5bc0de;
+  }
+  .panel-header{
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 20px;
+    li{
+      float: left;
+      padding: 5px 10px;
+      border: 1px solid #eee;
+      margin: 5px 10px;
+      border-radius: 10px;
+      &:hover{
+        background: #5bc0de;
+        a{
+          color: #fff;
+        }
+      }
+    }
   }
   .sider {
     float: left;

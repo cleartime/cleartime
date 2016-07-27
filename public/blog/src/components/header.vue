@@ -89,13 +89,16 @@
     attached() {
       console.log(777);
     },
-    watch: {
-    },
     methods: {
       // 退出
       exit() {
         this.delToken();
         this.$route.router.go({ name: 'index' });
+      },
+    },
+    watch: {
+      'topic': (val, oldVal) => {
+        console.log(val, oldVal);
       },
     },
   };

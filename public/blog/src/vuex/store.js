@@ -67,7 +67,11 @@ const mutations = {
   },
   // 获取图片成功
   FETCH_IMG_SUCCESS(state, img) {
-    state.image = img;
+    if (img === undefined) {
+      state.image = 'http://pic.qiantucdn.com/58pic/15/36/43/60d58PICgBI_1024.jpg';
+    } else {
+      state.image = img;
+    }
   },
   // 获取文章失败
   FETCH_TOPIC_FAILURE(state) {

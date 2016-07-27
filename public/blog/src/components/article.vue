@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="inner padding">
-      <img :src="setimg.url" alt="setimg" >
+      <img :src="setimg.url" alt="setimg">
       <div class="markdown-body">
         {{{ topic.content }}}
       </div>
