@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="content">
       <div class="panel">
           <ul class="panel-header" v-if="topicLists">
@@ -12,10 +11,6 @@
         <c-list :items='topicLists' v-else ></c-list>
       </div>
     </div>
-    <div class="sider">
-      <c-siderbar></c-siderbar>
-    </div>
-  </div>
 </template>
 
 <script>

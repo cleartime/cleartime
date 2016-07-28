@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="post">
       <c-hint v-if="hint.show"></c-hint>
       <template v-if="topic && !hint.show">
@@ -7,10 +6,6 @@
         <!--<c-comment></c-comment>-->
       </template>
     </div>
-    <div class="sider">
-      <c-siderbar></c-siderbar>
-    </div>
-  </div>
 </template>
 
 <script>

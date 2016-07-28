@@ -7,7 +7,7 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" @click:isShow="isShow"></welcome>
+  <welcome v-if="isShow" @click="isShow"></welcome>
 </template>
 
 <script>

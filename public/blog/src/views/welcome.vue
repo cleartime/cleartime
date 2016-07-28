@@ -1,22 +1,21 @@
 <template>
-  <div class="bg">
-    <img src="../assets/bj1.jpg" width="100%" height="100%">
-  </div>
-  <div class="menu">
-    <div class="pic" @click.prevent.stop="closeWelcomePage">
-      <img src="../assets/head.jpeg">
+    <div class="bg">
+      <img src="../assets/bj1.jpg" width="100%" height="100%">
     </div>
-  </div>
+    <div class="menu">
+      <div class="pic" @click="closeWelcomePage">
+        <img src="../assets/head.jpeg">
+      </div>
+    </div>
 </template>
 
 <script>
-  import { setWelcome, fetSEO } from '../vuex/actions';
+  import { fetSEO } from '../vuex/actions';
   import { getWebinfo } from '../vuex/getters';
   export default {
     vuex: {
       actions: {
         fetSEO,
-        setWelcome,
       },
       getters: {
         getWebinfo,

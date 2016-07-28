@@ -68,27 +68,27 @@
         }
       }
     },
-    beforeDestroy() {
-      console.log(111);
-    },
-    created() {
-      console.log(222);
-    },
-    beforeCompile() {
-      console.log(333);
-    },
-    compile() {
-      console.log(444);
-    },
-    destroyed() {
-      console.log(555);
-    },
-    init() {
-      console.log(666);
-    },
-    attached() {
-      console.log(777);
-    },
+//    beforeDestroy() {
+//      console.log(111);
+//    },
+//    created() {
+//      console.log(222);
+//    },
+//    beforeCompile() {
+//      console.log(333);
+//    },
+//    compile() {
+//      console.log(444);
+//    },
+//    destroyed() {
+//      console.log(555);
+//    },
+//    init() {
+//      console.log(666);
+//    },
+//    attached() {
+//      console.log(777);
+//    },
     methods: {
       // 退出
       exit() {

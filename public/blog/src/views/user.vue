@@ -37,10 +37,6 @@
       </div>
     </template>
   </div>
-
-  <div class="sider">
-    <c-siderbar></c-siderbar>
-  </div>
 </template>
 
 <script>
