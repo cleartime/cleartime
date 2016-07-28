@@ -2,9 +2,8 @@
     <div class="content">
       <div class="panel">
           <ul class="panel-header" v-if="topicLists">
-            <li v-for="tab in topicTabs">
-              <a @click.prevent.stop="update($index,tab.categoryID)"
-                 :class="{'link-active': $index === selected}" >{{ tab.name }}</a>
+            <li v-for="tab in topicTabs" :class="$index === selected ? 'link-active' : ''" >
+              <a @click.prevent.stop="update($index,tab.categoryID)">{{ tab.name }}</a>
             </li>
           </ul>
         <c-hint v-if="hint.show"></c-hint>
@@ -21,6 +20,11 @@
   import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne } from '../vuex/actions';
   import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser, getRecommendLists } from '../vuex/getters';
   export default {
+    data() {
+      return {
+        selected: 0,
+      };
+    },
     components: {
       cHint,
       cList,
@@ -73,6 +77,7 @@
     },
     methods: {
       update(index, categoryId) {
+        this.selected = index;
         this.fetchCategoryicLists(Number(categoryId));
       },
     },
@@ -86,9 +91,6 @@
     width: 100%;
     min-height: 1px
   }
-  .link-active{
-    background: #5bc0de;
-  }
   .panel-header{
     overflow: hidden;
     background: #fff;
@@ -99,7 +101,7 @@
       border: 1px solid #eee;
       margin: 5px 10px;
       border-radius: 10px;
-      &:hover{
+      &:hover, &.link-active{
         background: #5bc0de;
         a{
           color: #fff;
@@ -107,6 +109,7 @@
       }
     }
   }
+
   .sider {
     float: left;
     width: 30%;
