@@ -17,7 +17,7 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import { fetchTopicLists, showHint, initHint, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne, listName } from '../vuex/actions';
-  import { getTopicLists, getHint, getTopicTabs } from '../vuex/getters';
+  import { getTopicLists, getHint, getTopicTabs, getListname } from '../vuex/getters';
   export default {
     data() {
       return {
@@ -43,10 +43,11 @@
         topicTabs: getTopicTabs,
         topicLists: getTopicLists,
         hint: getHint,
+        getlistname: getListname,
       },
     },
     route: {
-      data({ to: { params: { categoryId, recommend } } }) {
+      data({ to: { params: { recommend } } }) {
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -56,8 +57,10 @@
         // 获取标签
         this.getRecommend();
         // 获取文章列表
-        if (categoryId) {
-          this.fetchCategoryicLists(Number(categoryId));
+        console.log(this.getlistname);
+        if (this.getlistname.id) {
+          this.selected = this.getlistname.index;
+          this.fetchCategoryicLists(Number(this.getlistname.id));
         } else if (recommend) {
           this.getRecommendOne(recommend);
         } else {
@@ -69,7 +72,7 @@
       update(index, categoryId) {
         this.selected = index;
         this.fetchCategoryicLists(Number(categoryId));
-        this.listName(this.topicTabs[index].name);
+        this.listName(this.topicTabs[index], index);
       },
     },
   };

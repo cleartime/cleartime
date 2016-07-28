@@ -102,7 +102,7 @@ export const showHint = ({ dispatch }) => dispatch('SHOW_HINT');
  * 设置点击列表名称
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  */
-export const listName = ({ dispatch }, name) => dispatch('LIST_NAME', name);
+export const listName = ({ dispatch }, name, index) => dispatch('LIST_NAME', name, index);
 
 
 /**

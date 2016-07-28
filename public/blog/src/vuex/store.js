@@ -8,7 +8,11 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
-  listname: '',
+  listname: {
+    name: 'javascript',
+    id: '',
+    index: 0,
+  },
   webinfo: '',
   friendLink: '',
   me: '',
@@ -112,9 +116,10 @@ const mutations = {
     state.hint.show = true;
   },
   // 显示hint
-  LIST_NAME(state, listname) {
-    console.log(listname);
-    state.listname = listname;
+  LIST_NAME(state, listname, index) {
+    state.listname.name = listname.name;
+    state.listname.id = listname.categoryID;
+    state.listname.index = index;
   },
 };
 
