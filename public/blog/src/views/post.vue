@@ -10,46 +10,32 @@
 
 <script>
   import cHint from '../components/hint';
-  import cSiderbar from '../components/siderbar';
   import cArticle from '../components/article';
-  import cComment from '../components/comment';
   import {
     fetchTopic,
-    changeCollectStatus,
     initHint,
     showHint,
-    fetchUser,
     fetchImg,
   } from '../vuex/actions';
   import {
-    getToken,
-    getCollection,
     getHint,
     getTopic,
-    getImg,
   } from '../vuex/getters';
   export default {
     components: {
-      cSiderbar,
       cArticle,
-      cComment,
       cHint,
     },
     vuex: {
       actions: {
         fetchTopic,
-        changeCollectStatus,
         initHint,
         showHint,
-        fetchUser,
         fetchImg,
       },
       getters: {
-        img: getImg,
         topic: getTopic,
         hint: getHint,
-        token: getToken,
-        collection: getCollection,
       },
     },
     route: {

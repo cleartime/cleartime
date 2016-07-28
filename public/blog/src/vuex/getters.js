@@ -1,30 +1,12 @@
-export const getTopicTabs = (state) => state.topicTabs;
-
 export const getTopicLists = (state) => state.topicLists;
+
+export const getTopicTabs = (state) => state.topicTabs;
 
 export const getTopic = (state) => state.topic;
 
-export const getCurrentTab = (state) => state.currentTab;
-
-export const getRecommendLists = (state) => state.recommend;
-
-export const getCurrentPage = (state) => Number(state.currentPage);
-
 export const getToken = (state) => state.token;
 
-export const getTokenAvail = (state) => state.tokenAvail;
-
-export const getUser = (state) => state.user;
-
 export const getLoginUser = (state) => state.loginUser;
-
-export const getCollection = (state) => state.collection;
-
-export const getCollectStatus = (state) => state.inCollection;
-
-export const getMsgCount = (state) => state.msgCount;
-
-export const getMessages = (state) => state.messages;
 
 export const getHint = (state) => state.hint;
 
@@ -35,4 +17,3 @@ export const getMe = (state) => state.me;
 export const getFriendLink = (state) => state.friendLink;
 
 export const getWebinfo = (state) => state.webinfo;
-

@@ -19,28 +19,12 @@
 </template>
 
 <script>
-  import { getTopic, getCollectStatus, getToken, getImg } from '../vuex/getters';
-  import {
-    addCollection,
-    changeCollectStatus,
-    deCollection,
-    fetchCollection,
-    fetchImg,
-  } from '../vuex/actions';
+  import { getTopic, getImg } from '../vuex/getters';
   export default {
     vuex: {
       getters: {
         setimg: getImg,
         topic: getTopic,
-        inCollection: getCollectStatus,
-        token: getToken,
-      },
-      actions: {
-        fetchImg,
-        addCollection,
-        changeCollectStatus,
-        deCollection,
-        fetchCollection,
       },
     },
   };

@@ -14,59 +14,12 @@
 </template>
 
 <script>
-  import {
-    changeToken,
-    checkToken,
-    fetchUser,
-    fetchCollection,
-    fetchMsgCount,
-    delToken,
-    changeLoginUser,
-  } from '../vuex/actions';
-  import { getMsgCount, getToken, getTopic } from '../vuex/getters';
+  import { getTopic } from '../vuex/getters';
   export default {
     vuex: {
-      actions: {
-        changeToken,
-        checkToken,
-        fetchUser,
-        fetchCollection,
-        fetchMsgCount,
-        delToken,
-        changeLoginUser,
-      },
       getters: {
         topic: getTopic,
-        token: getToken,
-        msgCount: getMsgCount,
       },
-    },
-    ready() {
-      // 从cookie中获取accesstoken
-      if (document.cookie.length > 0) {
-        const arr = document.cookie.split(';');
-        let t;
-        for (let v of arr) {
-          v = v.trim();
-          if (v.startsWith('token=')) {
-            t = v.split('=')[1];
-            break;
-          }
-        }
-        // 改变token的状态，检验token的正确性，从而进行一系列初始化工作
-        if (t) {
-          this.changeToken(t);
-          this.checkToken(t)
-              .then(this.fetchUser)
-              .then((info) => {
-                this.changeLoginUser(info);
-                return info.loginname;
-              })
-              .then((name) => this.fetchCollection(name))
-              .then(() => this.fetchMsgCount(this.token))
-              .catch((e) => console.log(e));
-        }
-      }
     },
 //    beforeDestroy() {
 //      console.log(111);
@@ -89,13 +42,6 @@
 //    attached() {
 //      console.log(777);
 //    },
-    methods: {
-      // 退出
-      exit() {
-        this.delToken();
-        this.$route.router.go({ name: 'index' });
-      },
-    },
     watch: {
       'topic': (val, oldVal) => {
         console.log(val, oldVal);

@@ -16,9 +16,8 @@
   /* eslint-disable max-len */
   import cHint from '../components/hint';
   import cList from '../components/list';
-  import cSiderbar from '../components/siderbar';
-  import { fetchTopicLists, changeUser, fetchUser, checkToken, fetchMsgCount, fetchCollection, showHint, initHint, changeLoginUser, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne } from '../vuex/actions';
-  import { getTopicTabs, getCurrentTab, getTopicLists, getHint, getLoginUser, getRecommendLists } from '../vuex/getters';
+  import { fetchTopicLists, showHint, initHint, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne } from '../vuex/actions';
+  import { getTopicLists, getHint, getTopicTabs } from '../vuex/getters';
   export default {
     data() {
       return {
@@ -28,31 +27,21 @@
     components: {
       cHint,
       cList,
-      cSiderbar,
     },
     vuex: {
       actions: {
-        getRecommendOne,
-        getRecommend,
         fetchCategoryicLists,
         loginSuccuess,
         fetchTopicLists,
-        fetchUser,
-        changeUser,
-        checkToken,
-        fetchCollection,
-        fetchMsgCount,
         showHint,
         initHint,
-        changeLoginUser,
+        getRecommend,
+        getRecommendOne,
       },
       getters: {
-        recommendList: getRecommendLists,
         topicTabs: getTopicTabs,
-        currentTab: getCurrentTab,
         topicLists: getTopicLists,
         hint: getHint,
-        loginUser: getLoginUser,
       },
     },
     route: {
