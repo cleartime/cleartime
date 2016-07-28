@@ -7,14 +7,6 @@ export default (router) => router.map({
     name: 'welcome',
     component: require('./views/welcome'),
   },
-  '/tab/:categoryId/:recommend': {
-    name: 'tabA',
-    component: require('./views/page'),
-  },
-  '/tab/:recommend': {
-    name: 'tabB',
-    component: require('./views/page'),
-  },
   '/post/:id/:fileId': {
     name: 'post',
     component: require('./views/post'),
@@ -23,6 +15,7 @@ export default (router) => router.map({
   '/me': {
     name: 'me',
     component: require('./views/me'),
+    isMe: true,
   },
   '*': {
     component: require('./views/404'),

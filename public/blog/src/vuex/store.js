@@ -9,7 +9,7 @@ Vue.use(Vuex);
 
 const state = {
   listname: {
-    name: 'javascript',
+    name: '欢迎来到我的博客',
     id: '',
     index: 0,
   },
@@ -115,9 +115,9 @@ const mutations = {
   SHOW_HINT(state) {
     state.hint.show = true;
   },
-  // 显示hint
+  // 显示标题
   LIST_NAME(state, listname, index) {
-    state.listname.name = listname.name;
+    state.listname.name = !index ? '欢迎来到我的博客' : listname.name;
     state.listname.id = listname.categoryID;
     state.listname.index = index;
   },

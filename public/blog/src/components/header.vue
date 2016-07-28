@@ -9,7 +9,7 @@
         <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
       </ul>
     </div>
-    <div><p class="header-title">{{ $route.isPost ? topic.title : listname.name}}</p></div>
+    <div><p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : listname.name}}</p></div>
 	</header>
 </template>
 

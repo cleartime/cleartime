@@ -57,7 +57,6 @@
         // 获取标签
         this.getRecommend();
         // 获取文章列表
-        console.log(this.getlistname);
         if (this.getlistname.id) {
           this.selected = this.getlistname.index;
           this.fetchCategoryicLists(Number(this.getlistname.id));
@@ -71,7 +70,11 @@
     methods: {
       update(index, categoryId) {
         this.selected = index;
-        this.fetchCategoryicLists(Number(categoryId));
+        if (!categoryId) {
+          this.fetchTopicLists();
+        } else {
+          this.fetchCategoryicLists(Number(categoryId));
+        }
         this.listName(this.topicTabs[index], index);
       },
     },

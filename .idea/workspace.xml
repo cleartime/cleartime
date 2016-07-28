@@ -7,6 +7,7 @@
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/header.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/header.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/routers.js" afterPath="$PROJECT_DIR$/public/blog/src/routers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/page.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/page.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/vuex/actions.js" afterPath="$PROJECT_DIR$/public/blog/src/vuex/actions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/vuex/store.js" afterPath="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
@@ -34,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+              <caret line="11" column="102" selection-start-line="11" selection-start-column="102" selection-end-line="11" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -54,17 +55,37 @@
         <entry file="file://$PROJECT_DIR$/public/blog/src/views/page.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getters.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/getters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46597633">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/blog/src/routers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17751479">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -74,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/actions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
+              <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -151,11 +172,11 @@
         <option value="$PROJECT_DIR$/public/blog/src/config.js" />
         <option value="$PROJECT_DIR$/public/blog/src/vuex/getters.js" />
         <option value="$PROJECT_DIR$/public/blog/src/components/list.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/routers.js" />
         <option value="$PROJECT_DIR$/public/blog/src/components/header.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
         <option value="$PROJECT_DIR$/public/blog/src/vuex/actions.js" />
         <option value="$PROJECT_DIR$/public/blog/src/views/page.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
+        <option value="$PROJECT_DIR$/public/blog/src/routers.js" />
       </list>
     </option>
   </component>
@@ -491,12 +512,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00050" summary="登陆成功,哦耶">
-      <created>1467361550055</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1467361550059</updated>
-    </task>
     <task id="LOCAL-00051" summary="栏目读取已完成">
       <created>1467620473067</created>
       <option name="number" value="00051" />
@@ -785,7 +800,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469693142318</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="文章后退问题解决">
+      <created>1469695258390</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1469695258391</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -836,7 +857,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="开始写登陆" />
     <MESSAGE value="es6卡住了 = =" />
     <MESSAGE value="妈的终于解决了,牙哟" />
     <MESSAGE value="登陆成功,哦耶" />
@@ -861,7 +881,8 @@
     <MESSAGE value="改的有点像样了" />
     <MESSAGE value="点击样式弄好了" />
     <MESSAGE value="整理了下整个文件,该删的删,该改的改" />
-    <option name="LAST_COMMIT_MESSAGE" value="整理了下整个文件,该删的删,该改的改" />
+    <MESSAGE value="文章后退问题解决" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章后退问题解决" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1188,14 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/getters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44378698">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/list.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1204,26 +1217,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/routers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17751479">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/page.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <caret line="11" column="102" selection-start-line="11" selection-start-column="102" selection-end-line="11" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/getters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1231,15 +1236,31 @@
     <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="87" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
+          <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/page.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46597633">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/routers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17751479">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding />
         </state>
       </provider>

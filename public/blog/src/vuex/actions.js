@@ -63,29 +63,6 @@ const _post = (url, params) => {
   });
 };
 
-
-/**
- * 获取用户信息
- * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
- * @param  {String} loginName        用户名
- * @return {Promise}                  Promise
- */
-export const fetchUser = ({ dispatch }, loginName) => {
-  const url = `/user/${loginName}`;
-  return _get({ url })
-  .then((json) => {
-    if (json.success) {
-      dispatch('FETCH_USER_SUCCESS', json.data);
-      return json.data;
-    }
-    return Promise.reject(new Error('fetchUser failure'));
-  })
-  .catch((error) => {
-    dispatch('FETCH_USER_FAILURE');
-    return Promise.reject(error);
-  });
-};
-
 /**
  * 初始化提示
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
@@ -163,6 +140,10 @@ export const loginSuccuess = ({ dispatch }) => {
   return _get({ url })
     .then((json) => {
       if (json.code === 200) {
+        const all = {
+          name: '全部',
+        };
+        json.data.unshift(all);
         return dispatch('INIT_HINT', json.data);
       }
       return Promise.reject(json.msg);
