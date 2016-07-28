@@ -16,7 +16,7 @@
   /* eslint-disable max-len */
   import cHint from '../components/hint';
   import cList from '../components/list';
-  import { fetchTopicLists, showHint, initHint, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne } from '../vuex/actions';
+  import { fetchTopicLists, showHint, initHint, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne, listName } from '../vuex/actions';
   import { getTopicLists, getHint, getTopicTabs } from '../vuex/getters';
   export default {
     data() {
@@ -37,6 +37,7 @@
         initHint,
         getRecommend,
         getRecommendOne,
+        listName,
       },
       getters: {
         topicTabs: getTopicTabs,
@@ -68,6 +69,7 @@
       update(index, categoryId) {
         this.selected = index;
         this.fetchCategoryicLists(Number(categoryId));
+        this.listName(this.topicTabs[index].name);
       },
     },
   };

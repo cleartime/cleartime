@@ -18,6 +18,7 @@ export default (router) => router.map({
   '/post/:id/:fileId': {
     name: 'post',
     component: require('./views/post'),
+    isPost: true,
   },
   '/me': {
     name: 'me',

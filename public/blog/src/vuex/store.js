@@ -8,6 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  listname: '',
   webinfo: '',
   friendLink: '',
   me: '',
@@ -109,6 +110,11 @@ const mutations = {
   // 显示hint
   SHOW_HINT(state) {
     state.hint.show = true;
+  },
+  // 显示hint
+  LIST_NAME(state, listname) {
+    console.log(listname);
+    state.listname = listname;
   },
 };
 

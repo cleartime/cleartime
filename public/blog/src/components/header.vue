@@ -9,16 +9,17 @@
         <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
       </ul>
     </div>
-    <div><p class="header-title">{{ topic.title }}</p></div>
+    <div><p class="header-title">{{ $route.isPost ? topic.title : listname}}</p></div>
 	</header>
 </template>
 
 <script>
-  import { getTopic } from '../vuex/getters';
+  import { getTopic, getListname } from '../vuex/getters';
   export default {
     vuex: {
       getters: {
         topic: getTopic,
+        listname: getListname,
       },
     },
 //    beforeDestroy() {

@@ -15,7 +15,13 @@
 </template>
 
 <script>
+  import { getTopicLists } from '../vuex/getters';
   export default {
+    vuex: {
+      getters: {
+        topicLists: getTopicLists,
+      },
+    },
     props: ['items'],
     components: {
     },

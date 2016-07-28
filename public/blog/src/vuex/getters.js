@@ -17,3 +17,5 @@ export const getMe = (state) => state.me;
 export const getFriendLink = (state) => state.friendLink;
 
 export const getWebinfo = (state) => state.webinfo;
+
+export const getListname = (state) => state.listname;
