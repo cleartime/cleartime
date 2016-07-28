@@ -55,12 +55,17 @@ export default {
   html,
   #app {
     height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-
   body {
     height: 100%;
     font: 16px 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
     background-color: #fff;
+  }
+  img[src^="http"]:empty::before {
+    content: attr(src,'http://pic.qiantucdn.com/58pic/15/36/43/60d58PICgBI_1024.jpg');
   }
 
   ul {

@@ -422,7 +422,7 @@
 
 .markdown-body blockquote {
   padding: 0 15px;
-  color: #777;
+  color: #a97777;
   border-left: 4px solid #ddd;
 }
 
@@ -517,6 +517,7 @@
 }
 
 .markdown-body pre code {
+  color: cadetblue;
   display: inline;
   max-width: initial;
   padding: 0;
@@ -692,4 +693,9 @@
 
 .markdown-body hr {
   border-bottom-color: #eee;
+}
+
+
+.markdown-body ul li,.markdown-body ol li {
+  list-style: inherit;
 }
