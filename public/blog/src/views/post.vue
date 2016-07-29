@@ -20,6 +20,7 @@
   import {
     getHint,
     getTopic,
+    getSearch,
   } from '../vuex/getters';
   export default {
     components: {
@@ -36,6 +37,7 @@
       getters: {
         topic: getTopic,
         hint: getHint,
+        searchType: getSearch,
       },
     },
     route: {
@@ -52,6 +54,8 @@
         this.fetchImg(fileId)
           .then()
           .catch((e) => console.log(e));
+      },
+      activate: () => {
       },
     },
   };

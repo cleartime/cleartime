@@ -173,16 +173,6 @@
     margin-right: 20px;
   }
 
-  .list-transition {
-    transition: all .5s ease;
-  }
-  .list-enter{
-    opacity: 0;
-  }
-  .list-leave {
-    opacity: 0;
-  }
-
 
   @media (max-width: 512px) {
     body {

@@ -7,8 +7,8 @@
       <ul class="navbar">
         <li><a v-link="{name: 'me'}">我</a></li>
         <li>
-          <input type="text" v-model="title"/>
-          <a @click="search(title)">点击</a>
+          <input type="text" v-model="title" v-if='isShowTitle' transition="title" transition-mode="out-in"/>
+          <a @click="searchtitle(title)">搜索</a>
         </li>
         <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
       </ul>
@@ -25,7 +25,8 @@
   export default {
     data() {
       return {
-        title: '博客',
+        title: '',
+        isShowTitle: false,
       };
     },
     vuex: {
@@ -39,7 +40,11 @@
       },
     },
     methods: {
-      search(title) {
+      searchtitle(title) {
+        if (!title.length) {
+          this.isShowTitle = !this.isShowTitle;
+          return false;
+        }
         this.search(title);
       },
     },
@@ -73,6 +78,17 @@
 </script>
 
 <style lang="scss" scoped>
+  .title-transition {
+    transition: all .5s ease;
+  }
+  .title-enter{
+    opacity: 0;
+    width: 0;
+  }
+  .title-leave {
+    opacity: 0;
+    width: 0;
+  }
   header {
     background: url("../assets/banner.jpg") no-repeat top center;
     background-size: cover;

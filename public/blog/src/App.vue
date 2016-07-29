@@ -103,6 +103,14 @@ export default {
     opacity: 0;
     transform: translateY(-100%);
   }
-
+  .list-transition {
+    transition: all .5s ease;
+  }
+  .list-enter{
+    opacity: 0;
+  }
+  .list-leave {
+    opacity: 0;
+  }
 
 </style>
