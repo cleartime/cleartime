@@ -315,3 +315,27 @@ export const fetSEO = ({ dispatch }) => {
       return Promise.reject(error);
     });
 };
+
+/**
+ * 获取sel
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const search = ({ dispatch }, title) => {
+  const url = '/article/search';
+  const params = { title };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data[0]);
+        return json.data[0];
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_TOPIC_FAILURE');
+      return Promise.reject(error);
+    });
+};
+

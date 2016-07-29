@@ -151,5 +151,24 @@ router.post('/del', function (req, res, next) {
 });
 
 
+// 搜索文章
+router.post('/search', function (req, res, next) {
+    var sql = 'select * from Article where title like '+req.body.title+'';
+    AV.Query.doCloudQuery(sql).then(function (data) {
+        // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
+        var results = data.results;
+        json.data = results;
+        json.msg = '搜索成功!';
+        res.send(json);
+    }, function (error) {
+        //查询失败，查看 error
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
+
+
 module.exports = router;
 

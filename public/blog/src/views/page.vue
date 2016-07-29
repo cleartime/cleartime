@@ -2,8 +2,8 @@
     <div class="content">
       <div class="panel">
           <ul class="panel-header" v-if="topicLists">
-            <li v-for="tab in topicTabs" :class="$index === selected ? 'link-active' : ''" >
-              <a @click.prevent.stop="update($index,tab.categoryID)">{{ tab.name }}</a>
+            <li v-for="tab in topicTabs" :class="$index === selected ? 'link-active' : ''"  @click="update($index,tab.categoryID)">
+              {{ tab.name }}
             </li>
           </ul>
         <c-hint v-if="hint.show"></c-hint>
@@ -94,15 +94,14 @@
     margin-bottom: 20px;
     li{
       float: left;
-      padding: 5px 10px;
+      padding: 8px 15px;
       border: 1px solid #eee;
       margin: 5px 10px;
       border-radius: 10px;
       &:hover, &.link-active{
+        cursor: pointer;
         background: #5bc0de;
-        a{
-          color: #fff;
-        }
+        color: #fff;
       }
     }
   }

@@ -46,6 +46,7 @@
     border-radius: 3px 3px 0 0;
 
     a {
+      cursor: pointer;
       color: #80BD01;
       padding: 3px 4px;
       margin: 0 10px;

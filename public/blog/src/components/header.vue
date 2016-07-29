@@ -6,20 +6,35 @@
 		<div>
       <ul class="navbar">
         <li><a v-link="{name: 'me'}">我</a></li>
+        <li>
+          <input type="text" v-model="title"/>
+          <a @click="search(title)">点击</a>
+        </li>
         <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
       </ul>
     </div>
-    <div><p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : listname.name}}</p></div>
+    <div>
+      <p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : listname.name}}</p>
+    </div>
 	</header>
 </template>
 
 <script>
   import { getTopic, getListname } from '../vuex/getters';
+  import { search } from '../vuex/actions';
   export default {
     vuex: {
+      action: {
+        search,
+      },
       getters: {
         topic: getTopic,
         listname: getListname,
+      },
+    },
+    methods: {
+      search(title) {
+        this.search(title);
       },
     },
 //    beforeDestroy() {
@@ -43,11 +58,11 @@
 //    attached() {
 //      console.log(777);
 //    },
-    watch: {
-      'topic': (val, oldVal) => {
-        console.log(val, oldVal);
-      },
-    },
+//    watch: {
+//      'topic': (val, oldVal) => {
+//        console.log(val, oldVal);
+//      },
+//    },
   };
 </script>
 
