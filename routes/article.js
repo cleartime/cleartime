@@ -153,7 +153,7 @@ router.post('/del', function (req, res, next) {
 
 // 搜索文章
 router.post('/search', function (req, res, next) {
-    var sql = 'select * from Article where title like '+req.body.title+'';
+    var sql = 'select * from Article where title like "%'+req.body.title+'%"';
     AV.Query.doCloudQuery(sql).then(function (data) {
         // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
         var results = data.results;

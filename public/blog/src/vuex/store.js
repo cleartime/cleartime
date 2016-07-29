@@ -23,6 +23,7 @@ const state = {
   currentTab: '',
   currentPage: '',
   topic: '',
+  isSearch: false,
   hint: {
     show: false,
     colorRed: false,
@@ -39,11 +40,12 @@ const mutations = {
     state.currentPage = page;
   },
   // 获取文章列表成功
-  FETCH_TOPIC_LISTS_SUCCESS(state, topicLists, topicTab, page) {
+  FETCH_TOPIC_LISTS_SUCCESS(state, topicLists, topicTab, page, isSearch) {
     state.hint.show = false;
     state.topicLists = topicLists;
     state.currentTab = topicTab;
     state.currentPage = page;
+    state.isSearch = isSearch || false;
   },
   // 获取文章列表失败
   FETCH_TOPIC_LISTS_FAILURE(state, topicTab, page) {

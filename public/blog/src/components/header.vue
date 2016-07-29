@@ -14,20 +14,26 @@
       </ul>
     </div>
     <div>
-      <p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : listname.name}}</p>
+      <p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : isSearch ? '搜索结果如下' : listname.name}}</p>
     </div>
 	</header>
 </template>
 
 <script>
-  import { getTopic, getListname } from '../vuex/getters';
+  import { getTopic, getListname, getSearch } from '../vuex/getters';
   import { search } from '../vuex/actions';
   export default {
+    data() {
+      return {
+        title: '博客',
+      };
+    },
     vuex: {
-      action: {
+      actions: {
         search,
       },
       getters: {
+        isSearch: getSearch,
         topic: getTopic,
         listname: getListname,
       },

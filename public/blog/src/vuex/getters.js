@@ -18,4 +18,6 @@ export const getFriendLink = (state) => state.friendLink;
 
 export const getWebinfo = (state) => state.webinfo;
 
+export const getSearch = (state) => state.isSearch;
+
 export const getListname = (state) => state.listname;

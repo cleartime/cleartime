@@ -1,7 +1,7 @@
 <template>
     <div class="content">
       <div class="panel">
-          <ul class="panel-header" v-if="topicLists">
+          <ul class="panel-header" v-if="topicLists && !isSearch">
             <li v-for="tab in topicTabs" :class="$index === selected ? 'link-active' : ''"  @click="update($index,tab.categoryID)">
               {{ tab.name }}
             </li>
@@ -17,7 +17,7 @@
   import cHint from '../components/hint';
   import cList from '../components/list';
   import { fetchTopicLists, showHint, initHint, loginSuccuess, fetchCategoryicLists, getRecommend, getRecommendOne, listName } from '../vuex/actions';
-  import { getTopicLists, getHint, getTopicTabs, getListname } from '../vuex/getters';
+  import { getTopicLists, getHint, getTopicTabs, getListname, getSearch } from '../vuex/getters';
   export default {
     data() {
       return {
@@ -40,6 +40,7 @@
         listName,
       },
       getters: {
+        isSearch: getSearch,
         topicTabs: getTopicTabs,
         topicLists: getTopicLists,
         hint: getHint,
