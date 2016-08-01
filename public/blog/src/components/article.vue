@@ -10,17 +10,22 @@
       </div>
     </div>
     <div class="inner padding">
-      <img :src="setimg.url" alt="setimg">
+      <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}">
       <div class="markdown-body">
         {{{ topic.content }}}
       </div>
     </div>
+    <!--<comment></comment>-->
   </article>
 </template>
 
 <script>
+  import comment from '../components/comment';
   import { getTopic, getImg } from '../vuex/getters';
   export default {
+    components: {
+      comment,
+    },
     vuex: {
       getters: {
         setimg: getImg,

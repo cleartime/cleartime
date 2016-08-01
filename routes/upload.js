@@ -54,7 +54,7 @@ router.post('/', function (req, res) {
 
 // 查询单个图片
 router.post('/query', function (req, res) {
-    var cql = 'select url from _File where objectId="' + req.body.objectId + '"';
+    var cql = 'select * from _File where objectId="' + req.body.objectId + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
