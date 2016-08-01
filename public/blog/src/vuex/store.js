@@ -66,7 +66,6 @@ const mutations = {
   },
   // 获取图片成功
   FETCH_IMG_SUCCESS(state, img) {
-    console.log(img === undefined);
     if (img === undefined) {
       state.image.url = 'http://pic.qiantucdn.com/58pic/15/36/43/60d58PICgBI_1024.jpg';
       state.image.name = '只有正直的人才能读取到';

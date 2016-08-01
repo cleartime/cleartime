@@ -15,17 +15,12 @@
         {{{ topic.content }}}
       </div>
     </div>
-    <!--<comment></comment>-->
   </article>
 </template>
 
 <script>
-  import comment from '../components/comment';
   import { getTopic, getImg } from '../vuex/getters';
   export default {
-    components: {
-      comment,
-    },
     vuex: {
       getters: {
         setimg: getImg,

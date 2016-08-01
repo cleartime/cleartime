@@ -3,12 +3,13 @@
       <c-hint v-if="hint.show"></c-hint>
       <template v-if="topic && !hint.show">
         <c-article></c-article>
-        <!--<c-comment></c-comment>-->
+        <c-comment :topic = 'topic'></c-comment>
       </template>
     </div>
 </template>
 
 <script>
+  import cComment from '../components/comment';
   import cHint from '../components/hint';
   import cArticle from '../components/article';
   import {
@@ -26,6 +27,7 @@
     components: {
       cArticle,
       cHint,
+      cComment,
     },
     vuex: {
       actions: {
