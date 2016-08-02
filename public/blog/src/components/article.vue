@@ -51,7 +51,9 @@
         content: '•';
       }
     }
-
+    p{
+      font-size: 15px;
+    }
     a {
       color: #FFF;
       margin: 5px 0;

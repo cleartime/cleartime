@@ -102,6 +102,13 @@
     }
     a p:nth-child(3){
       color: #919191;
+      font-size: 13px;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
   }
 

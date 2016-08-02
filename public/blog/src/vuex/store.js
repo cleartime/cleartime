@@ -73,6 +73,11 @@ const mutations = {
       state.image = img;
     }
   },
+  // 获取图片失败
+  FETCH_IMG_FAILURE(state) {
+    state.image.url = 'http://pic.qiantucdn.com/58pic/15/36/43/60d58PICgBI_1024.jpg';
+    state.image.name = '只有正直的人才能读取到';
+  },
   // 获取文章失败
   FETCH_TOPIC_FAILURE(state) {
     state.hint = {

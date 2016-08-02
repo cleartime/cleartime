@@ -54,6 +54,7 @@ export default {
 <style lang="scss">
   html,
   #app {
+    line-height: 1.5;
     height: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

@@ -243,7 +243,7 @@ export const fetchImg = ({ dispatch }, objectId) => {
       return Promise.reject(new Error('fetchTopic failure'));
     })
     .catch((error) => {
-      dispatch('FETCH_TOPIC_FAILURE');
+      dispatch('FETCH_IMG_FAILURE');
       return Promise.reject(error);
     });
 };

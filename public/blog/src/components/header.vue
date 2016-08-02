@@ -5,12 +5,11 @@
     </a></div>
 		<div>
       <ul class="navbar">
-        <li><a v-link="{name: 'me'}">我</a></li>
         <li>
           <input type="text" v-model="title" v-if='isShowTitle' transition="title" transition-mode="out-in"/>
-          <a @click="searchtitle(title)">搜索</a>
+          <a @click="searchtitle(title)" class="search">搜索</a>
         </li>
-        <!--<li v-if="!token"><a v-link="{name: 'login'}">登入</a></li>-->
+        <li><a v-link="{name: 'me'}">我</a></li>
       </ul>
     </div>
     <div>
@@ -83,11 +82,11 @@
   }
   .title-enter{
     opacity: 0;
-    width: 0;
+    transform: translateX(100%);
   }
   .title-leave {
     opacity: 0;
-    width: 0;
+    transform: translateX(100%);
   }
   header {
     background: url("../assets/banner.jpg") no-repeat top center;
@@ -134,6 +133,14 @@
       padding-right: 5px;
       order: 3;
         .navbar{
+          input[type='text']{
+            width: 120px;
+            border-radius: 10px;
+            float: right;
+          }
+          .search{
+            float: right;
+          }
           text-align: right;
           margin-top: 20px;
           a{
