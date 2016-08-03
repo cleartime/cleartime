@@ -96,7 +96,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             controller: "commentsController"
         })
         .state('layout.addComments',{
-            url: '/addComments',
+            url: '/addComments/:id',
             templateUrl: "www/html/comments/add.html",
             controller: "addCommentsController"
         })
