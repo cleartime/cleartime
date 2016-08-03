@@ -6,9 +6,10 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var json = require('./config');
 
-// 查询留言板
+// 查询单一文章评论
 router.get('/', function (req, res, next) {
-    var cql = 'select * from Comments';
+    var articleId = req.body.content;//文章Id
+    var cql = 'select * from Comments where  objectId="' + req.body.objectId + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -23,12 +24,36 @@ router.get('/', function (req, res, next) {
     });
 });
 
+// 修改单一文章评论
+router.post('/updata', function (req, res, next) {
+    var nickname = req.body.nickname;//昵称
+    var email = req.body.email;//邮箱
+    var content = req.body.content;//评论内容
+    var cql = 'update Comments set  nickname=?,email=?,content=? where objectId=?';
+    var pvalues = [nickname, email, content, req.body.objectId];
+    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
+        var results = data.results;
+        json.data = results;
+        json.msg = '修改成功!';
+        res.send(json);
+    }, function (error) {
+        console.log(error);
+        json.code = error.code;
+        json.msg = error.message;
+        res.send(json);
+    });
+});
 
-// 新增留言板
+
+// 新增单一文章评论
 router.post('/', function (req, res, next) {
-    var content = req.body.content;//头像
-    AV.Query.doCloudQuery('insert into Comments(content) values("' + content + '"")').then(function (data) {
-        // data 中的 results 是本次查询返回的结果，AV.Object 实例列表
+    var nickname = req.body.nickname;//昵称
+    var email = req.body.email;//邮箱
+    var content = req.body.content;//评论内容
+    var articleId = req.body.content;//文章Id
+    var cql = 'insert into Comments(nickname,email,content,articleId) values(?,?,?,?)';
+    var pvalues = [nickname, email, content, articleId];
+    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
         json.data = results[0];
         json.msg = '设置成功!';
@@ -43,7 +68,7 @@ router.post('/', function (req, res, next) {
 });
 
 
-// 删除留言板
+// 删除单一文章评论
 router.post('/del', function (req, res, next) {
     var objectId = req.body.objectId;
     AV.Query.doCloudQuery('delete from Comments where objectId="' + objectId + '"').then(function (data) {

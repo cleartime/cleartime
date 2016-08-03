@@ -12,7 +12,7 @@ app.use(busboy());
 
 
 // 设置模板引擎
-app.set('dist', path.join(__dirname, 'dist'));
+//app.set('dist', path.join(__dirname, 'dist'));
 //app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -58,7 +58,7 @@ app.use(function (req, res, next) {
 });
 
 
-var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend','upload','linkfriend'];
+var routerArr = ['login', 'user', 'information', 'webinfo', 'article', 'category', 'recommend','upload','linkfriend','comments'];
 routerArr.forEach(function (item) {
     var route = require('./routes/' + item);
     app.use('/' + item, route);

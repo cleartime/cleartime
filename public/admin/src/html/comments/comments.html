@@ -1,0 +1,22 @@
+<a ui-sref="layout.addComments" class="btn btn-info">
+    添加评论
+</a>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>昵称</th>
+        <th>邮箱</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in list">
+        <td>{{$index}}</td>
+        <td>{{item.nickname}}</td>
+        <td>{{item.email}}</td>
+        <td><span ng-click="del(item.objectId,$index)">删除</span>&nbsp;|&nbsp;<span
+                ui-sref="layout.adduser({objectId:item.objectId})">修改</span></td>
+    </tr>
+    </tbody>
+</table>

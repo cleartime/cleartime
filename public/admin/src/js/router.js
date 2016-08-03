@@ -89,4 +89,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "www/html/friend/add.html",
             controller: "addFriendController"
         })
+        //评论管理
+        .state('layout.comments',{
+            url: '/comments',
+            templateUrl: "www/html/comments/comments.html",
+            controller: "commentsController"
+        })
+        .state('layout.addComments',{
+            url: '/addComments',
+            templateUrl: "www/html/comments/add.html",
+            controller: "addCommentsController"
+        })
 }]);

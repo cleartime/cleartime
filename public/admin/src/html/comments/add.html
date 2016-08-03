@@ -1,0 +1,18 @@
+<div class="addCategory">
+    <div class="form-group">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="nickname" ng-model="comments.nickname">
+        </div>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="email" ng-model="comments.email">
+        </div>
+        <div class="col-sm-2">
+             <textarea class="form-control" placeholder="评论内容" ng-model="comments.content"
+                       style="display: block; width: 100%; height: 200px;"></textarea>
+        </div>
+        <div class="col-sm-1">
+            <button type="submit" class="btn btn-default" ng-click="submit()">提交</button>
+        </div>
+    </div>
+</div>
+
