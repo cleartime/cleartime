@@ -56,6 +56,7 @@
         this.fetchImg(fileId)
           .then()
           .catch((e) => console.log(e));
+
       },
       activate: () => {
       },
