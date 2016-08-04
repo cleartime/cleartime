@@ -11,7 +11,7 @@ var Article = AV.Object.extend('Article');// 网站信息
 
 // 根据栏目查询单个文章
 router.post('/queryCategory', function (req, res, next) {
-    var cql = 'select * from Article where category=' + req.body.categoryId + '';
+    var cql = 'select * from Article where category=' + req.body.categoryId + ' order by -updatedAt ';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -29,7 +29,7 @@ router.post('/queryCategory', function (req, res, next) {
 
 // 根据推荐位查询单个文章
 router.post('/queryRecommend', function (req, res, next) {
-    var cql = 'select * from Article where recommend="' + req.body.recommend + '"';
+    var cql = 'select * from Article where recommend="' + req.body.recommend + '" order by -updatedAt ';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -64,7 +64,7 @@ router.post('/query', function (req, res, next) {
 
 // 查询所有文章
 router.get('/', function (req, res, next) {
-    var cql = 'select * from Article';
+    var cql = 'select * from Article order by -updatedAt';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;

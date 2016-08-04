@@ -3,7 +3,7 @@
       <c-hint v-if="hint.show"></c-hint>
       <template v-if="topic && !hint.show">
         <c-article></c-article>
-        <c-comment :topic = 'topic'></c-comment>
+        <c-comment :comment = 'comment' :topic = 'topic.objectId' ></c-comment>
       </template>
     </div>
 </template>
@@ -17,11 +17,13 @@
     initHint,
     showHint,
     fetchImg,
+    fetchComments,
   } from '../vuex/actions';
   import {
     getHint,
     getTopic,
     getSearch,
+    getComments,
   } from '../vuex/getters';
   export default {
     components: {
@@ -35,11 +37,13 @@
         initHint,
         showHint,
         fetchImg,
+        fetchComments,
       },
       getters: {
         topic: getTopic,
         hint: getHint,
         searchType: getSearch,
+        comment: getComments,
       },
     },
     route: {
@@ -56,9 +60,10 @@
         this.fetchImg(fileId)
           .then()
           .catch((e) => console.log(e));
-
-      },
-      activate: () => {
+        // 获取文章评论
+        this.fetchComments(id)
+          .then()
+          .catch((e) => console.log(e));
       },
     },
   };

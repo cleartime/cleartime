@@ -250,6 +250,54 @@ export const fetchImg = ({ dispatch }, objectId) => {
 
 
 /**
+ * 获取某一文章评论
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const fetchComments = ({ dispatch }, objectId) => {
+  const url = '/comments/query';
+  const params = { objectId };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('FETCH_COMMENTS_SUCCESS', json.data);
+        return json.data[0];
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('FETCH_COMMENTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+
+/**
+ * 评论某一文章
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const setComments = ({ dispatch }, nickname, email, content, articleId) => {
+  const url = '/comments';
+  const params = { nickname, email, content, articleId };
+  return _post(url, params)
+    .then((json) => {
+      if (json.code === 200) {
+        dispatch('SET_COMMENTS_SUCCESS', json.data, nickname, email, content, articleId);
+        return json.data;
+      }
+      return Promise.reject(new Error('fetchTopic failure'));
+    })
+    .catch((error) => {
+      dispatch('SET_COMMENTS_FAILURE');
+      return Promise.reject(error);
+    });
+};
+
+
+/**
  * 获取我的资料
  * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
  * @param  {String} id               文章id

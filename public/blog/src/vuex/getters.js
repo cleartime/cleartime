@@ -21,3 +21,5 @@ export const getWebinfo = (state) => state.webinfo;
 export const getSearch = (state) => state.isSearch;
 
 export const getListname = (state) => state.listname;
+
+export const getComments = (state) => state.comments;

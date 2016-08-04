@@ -25,10 +25,10 @@ router.get('/', function (req, res, next) {
 
 // 查询单一文章评论
 router.post('/query', function (req, res, next) {
-    var cql = 'select * from Comments where  objectId="' + req.body.objectId + '"';
+    var cql = 'select * from Comments where  articleId="' + req.body.objectId + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
-        var results = data.results[0];
+        var results = data.results;
         json.data = results;
         json.msg = '获取成功!';
         res.send(json);
@@ -66,7 +66,7 @@ router.post('/', function (req, res, next) {
     var nickname = req.body.nickname;//昵称
     var email = req.body.email;//邮箱
     var content = req.body.content;//评论内容
-    var articleId = "578d9dee2e958a00544086fd";//文章Id
+    var articleId = req.body.articleId;//文章Id
     var cql = 'insert into Comments(nickname,email,content,articleId) values(?,?,?,?)';
     var pvalues = [nickname, email, content, articleId];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {

@@ -8,6 +8,8 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  commentsInfo: '',
+  comments: [],
   listname: {
     name: '欢迎来到我的博客',
     id: '',
@@ -85,6 +87,31 @@ const mutations = {
       info: '获取文章内容失败',
       colorRed: true,
     };
+  },
+  // 获取文章评论成功
+  FETCH_COMMENTS_SUCCESS(state, comments) {
+    state.comments = comments;
+  },
+  // 获取文章评论失败
+  FETCH_COMMENTS_FAILURE(state) {
+    state.comments = [];
+  },
+  // 设置文章评论成功
+  SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId) {
+    const newComments = {
+      objectId: data.objectId,
+      updatedAt: data.updatedAt,
+      nickname,
+      email,
+      content,
+      articleId,
+    };
+    state.comments.push(newComments);
+    state.commentsInfo = '评论成功';
+  },
+  // 设置文章评论失败
+  SET_COMMENTS_FAILURE(state) {
+    state.commentsInfo = '评论失败';
   },
   // 获取用户信息成功
   FETCH_USER_SUCCESS(state, info) {
