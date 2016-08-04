@@ -279,13 +279,13 @@ export const fetchComments = ({ dispatch }, objectId) => {
  * @param  {String} id               文章id
  * @return {Promise}                  Promise
  */
-export const setComments = ({ dispatch }, nickname, email, content, articleId, commentsId) => {
+export const setComments = ({ dispatch }, nickname, email, content, articleId, fid) => {
   const url = '/comments';
-  const params = { nickname, email, content, articleId, commentsId };
+  const params = { nickname, email, content, articleId, fid };
   return _post(url, params)
     .then((json) => {
       if (json.code === 200) {
-        dispatch('SET_COMMENTS_SUCCESS', json.data, nickname, email, content, articleId, commentsId);
+        dispatch('SET_COMMENTS_SUCCESS', json.data, nickname, email, content, articleId, fid);
         return json.data;
       }
       return Promise.reject(new Error('fetchTopic failure'));

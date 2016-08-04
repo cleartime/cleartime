@@ -97,7 +97,7 @@ const mutations = {
     state.comments = [];
   },
   // 设置文章评论成功
-  SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId, commentsId) {
+  SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId, fid) {
     const newComments = {
       objectId: data.objectId,
       updatedAt: data.updatedAt,
@@ -105,7 +105,7 @@ const mutations = {
       email,
       content,
       articleId,
-      commentsId,
+      fid,
     };
     /* eslint-disable brace-style */
     if (typeof(Storage) !== 'undefined')

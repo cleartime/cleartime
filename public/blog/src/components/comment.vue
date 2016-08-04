@@ -1,14 +1,25 @@
 <template>
     <div>
       <h2>讨论区</h2>
-      <div class="comment" v-for="i in comment" transition="list" transition-mode="out-in" >
-        <p class="comment-head">
-        <span class="comment-nickname">{{ i.nickname }}</span>
-        <span class="comment-email">{{ i.email }}</span>
-        <span class="comment-time">{{ i.updatedAt | timeToNow }}</span>
-        </p>
-        <p class="comment-content">{{ i.content }}</p>
-        <a @click='isShowCommet(i.nickname, i.objectId)'>回复他</a>
+      <div v-for="i in comment" transition="list" transition-mode="out-in" >
+        <div class="comment"  v-if = '!i.fid'  >
+          <p class="comment-head">
+            <span class="comment-nickname">{{ i.nickname }}</span>
+            <span class="comment-email">{{ i.email }}</span>
+            <span class="comment-time">{{ i.updatedAt }}</span>
+          </p>
+          <p class="comment-content">{{ i.content}}</p>
+          <a @click='isShowCommet(i.nickname, i.objectId)'>回复他</a>
+        </div>
+        <div class="fcomment"  v-for="j in comment" v-if = 'j.fid === i.objectId'>
+          <p class="comment-head">
+            <span class="comment-nickname">{{ j.nickname }}</span>
+            <span class="comment-email">{{ j.email }}</span>
+            <span class="comment-time">{{ j.updatedAt }}</span>
+          </p>
+          <p class="comment-content">{{ j.fid ? j.content : '@'+j.content }}</p>
+          <a @click='isShowCommet(j.nickname, j.objectId)'>回复他</a>
+        </div>
       </div>
       <div class="comment-body">
         <div v-if='isShow'>
@@ -27,6 +38,9 @@
 <style lang="scss" scoped>
   .comment{
     border:1px solid #ccc;
+  }
+  .fcomment{
+    margin-left: 20px;
   }
   .comment-body{
     .comment-pep{
@@ -51,7 +65,7 @@
         articleId: this.topic,
         isShow: false,
         user: '点击评论',
-        commentsId: '',
+        fid: '',
       };
     },
     props: ['comment', 'topic'],
@@ -71,14 +85,12 @@
     },
     methods: {
       setcomment() {
-        this.setComments(this.nickname, this.email, this.content, this.articleId, this.commentsId);
+        this.setComments(this.nickname, this.email, this.content, this.articleId, this.fid);
         this.isShow = false;
       },
-      isShowCommet(name, id) {
+      isShowCommet(name, fid) {
         this.user = `回复${name}`;
-        if (id) {
-          this.commentsId = id;
-        }
+        this.fid = fid;
       },
     },
   };

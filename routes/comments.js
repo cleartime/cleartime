@@ -67,9 +67,9 @@ router.post('/', function (req, res, next) {
     var email = req.body.email;//邮箱
     var content = req.body.content;//评论内容
     var articleId = req.body.articleId;//文章Id
-    var commentsId = req.body.commentsId;//评论谁的ID
-    var cql = 'insert into Comments(nickname,email,content,articleId,commentsId) values(?,?,?,?,?)';
-    var pvalues = [nickname, email, content, articleId, commentsId];
+    var fid = req.body.fid;//父Id
+    var cql = 'insert into Comments(nickname,email,content,articleId,fid) values(?,?,?,?,?)';
+    var pvalues = [nickname, email, content, articleId, fid];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
         json.data = results[0];

@@ -19,6 +19,29 @@ export const timeToNow = (time) => {
   return str;
 };
 
+
+    // export const HostoryTime = (time) => {
+    //  const t = new Date(time.toTimeString());
+    //  /* eslint-disable one-var */
+    //  let y,
+    //    M,
+    //    d,
+    //    h,
+    //    m,
+    //    s;
+    //  /* eslint-enable one-var */
+    //  if (t) {
+    //    y = t.getYear();
+    //    M = t.getMonth() + 1;
+    //    d = t.getDate();
+    //    h = t.getHours();
+    //    m = t.getMinutes();
+    //    s = t.getSeconds();
+    //  }
+    //  return y + M + d + h + m + s;
+    // };
+
+
 export const transTab = (tab) => {
   let str;
   switch (tab) {
