@@ -97,7 +97,7 @@ const mutations = {
     state.comments = [];
   },
   // 设置文章评论成功
-  SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId) {
+  SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId, commentsId) {
     const newComments = {
       objectId: data.objectId,
       updatedAt: data.updatedAt,
@@ -105,7 +105,15 @@ const mutations = {
       email,
       content,
       articleId,
+      commentsId,
     };
+    /* eslint-disable brace-style */
+    if (typeof(Storage) !== 'undefined')
+    {
+      localStorage.nickname = newComments.nickname;
+      localStorage.email = newComments.email;
+    }
+    /* eslint-enable brace-style */
     state.comments.push(newComments);
     state.commentsInfo = '评论成功';
   },
