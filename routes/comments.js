@@ -68,20 +68,27 @@ router.post('/', function (req, res, next) {
     var content = req.body.content;//评论内容
     var articleId = req.body.articleId;//文章Id
     var fid = req.body.fid;//父Id
-    var cql = 'insert into Comments(nickname,email,content,articleId,fid) values(?,?,?,?,?)';
-    var pvalues = [nickname, email, content, articleId, fid];
-    AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
-        var results = data.results;
-        json.data = results[0];
-        json.msg = '设置成功!';
+    if(!!nickname.length && !!email.length && !!content.length){
+        var cql = 'insert into Comments(nickname,email,content,articleId,fid) values(?,?,?,?,?)';
+        var pvalues = [nickname, email, content, articleId, fid];
+        AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
+            var results = data.results;
+            json.data = results[0];
+            json.msg = '设置成功!';
+            res.send(json);
+        }, function (error) {
+            //查询失败，查看 error
+            console.log(error);
+            json.code = error.code;
+            json.msg = error.message;
+            res.send(json);
+        });
+    }else{
+        json.code = 100;
+        json.msg = '参数错误';
         res.send(json);
-    }, function (error) {
-        //查询失败，查看 error
-        console.log(error);
-        json.code = error.code;
-        json.msg = error.message;
-        res.send(json);
-    });
+    }
+
 });
 
 

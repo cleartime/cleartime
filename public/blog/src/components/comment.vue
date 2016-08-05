@@ -2,7 +2,7 @@
     <div>
       <h2>讨论区</h2>
       <div v-for="i in comment" transition="list" transition-mode="out-in" >
-        <div class="comment"  v-if = '!i.fid'  >
+        <div class="comment"  v-if = '!i.fid' >
           <p class="comment-head">
             <span class="comment-nickname">{{ i.nickname }}</span>
             <span class="comment-email">{{ i.email }}</span>
@@ -17,7 +17,7 @@
             <span class="comment-email">{{ j.email }}</span>
             <span class="comment-time">{{ j.updatedAt }}</span>
           </p>
-          <p class="comment-content">{{ j.fid ? j.content : '@'+j.content }}</p>
+          <p class="comment-content">{{ '@'+i.nickname+'&nbsp;&nbsp;'+j.content }}</p>
           <a @click='isShowCommet(j.nickname, j.objectId)'>回复他</a>
         </div>
       </div>
@@ -85,8 +85,15 @@
     },
     methods: {
       setcomment() {
-        this.setComments(this.nickname, this.email, this.content, this.articleId, this.fid);
-        this.isShow = false;
+        /* eslint-disable brace-style */
+        if (!!this.nickname.length && !!this.email.length && !!this.content.length) {
+          this.setComments(this.nickname, this.email, this.content, this.articleId, this.fid);
+          this.isShow = false;
+        }
+        else {
+          alert('昵称,邮箱,评论内容不能为空!');
+        }
+        /* eslint-enable brace-style */
       },
       isShowCommet(name, fid) {
         this.user = `回复${name}`;
