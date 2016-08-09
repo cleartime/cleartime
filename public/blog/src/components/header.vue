@@ -150,7 +150,7 @@
      }
   }
 
-  @media (max-width: 400px) {
+  @media screen and (max-width: 768px){
     .brand {
       float: none;
       margin: 0 auto;

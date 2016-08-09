@@ -18,7 +18,9 @@ router.beforeEach((transition) => {
   const token = getToken(store.state);
   if (token) {
     fetchMsgCount(store, token)
+    /* eslint-disable no-console */
       .catch((e) => console.log(e));
+    /* eslint-enable no-console */
   }
   if (transition.to.auth) {
     if (token) {

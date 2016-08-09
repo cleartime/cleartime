@@ -1,5 +1,6 @@
 <template>
   <div id="app" v-if="!isShow">
+    <c-Bar></c-Bar>
     <c-header></c-header>
     <div class="main">
       <router-view transition="back" transition-mode="out-in" class="main-wrapper" ></router-view>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import cBar from './components/progressBar';
 import cHeader from './components/header';
 import cFooter from './components/footer';
 import cBack from './components/backTop';
@@ -25,9 +27,11 @@ export default {
     });
     // 控制台
     try {
+      /* eslint-disable no-console */
       console.log('一个人到底多无聊\r\n 才会把 console 当成玩具\r\n一个人究竟多堕落\r\n 才会把大好青春荒废在博客上\r\n\r\n\r\n%cfollow me %c https://github.com/cleartime', 'color:red', 'color:green');
     } catch (e) {
       console.log(e);
+      /* eslint-enable  no-console */
     }
   },
   data() {
@@ -40,6 +44,7 @@ export default {
     cFooter,
     cBack,
     welcome,
+    cBar,
   },
   store,
   events: {
@@ -113,5 +118,10 @@ export default {
   .list-leave {
     opacity: 0;
   }
-
+  @media screen and (max-width: 768px){
+   .main{
+     padding:0;
+     font-weight: bold;
+   }
+  }
 </style>

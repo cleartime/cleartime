@@ -53,6 +53,7 @@
         // 显示hint
         this.showHint();
         // 获取文章具体内容
+        /* eslint-disable no-console */
         this.fetchTopic(id)
           .then()
           .catch((e) => console.log(e));
@@ -64,6 +65,7 @@
         this.fetchComments(id)
           .then()
           .catch((e) => console.log(e));
+        /* eslint-enable no-console */
       },
     },
   };

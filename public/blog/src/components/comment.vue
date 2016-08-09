@@ -85,7 +85,7 @@
     },
     methods: {
       setcomment() {
-        /* eslint-disable brace-style */
+        /* eslint-disable brace-style,no-alert */
         if (!!this.nickname.length && !!this.email.length && !!this.content.length) {
           this.setComments(this.nickname, this.email, this.content, this.articleId, this.fid);
           this.isShow = false;
@@ -93,7 +93,7 @@
         else {
           alert('昵称,邮箱,评论内容不能为空!');
         }
-        /* eslint-enable brace-style */
+        /* eslint-enable brace-style,no-alert */
       },
       isShowCommet(name, fid) {
         this.user = `回复${name}`;

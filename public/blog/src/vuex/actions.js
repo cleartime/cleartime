@@ -16,7 +16,6 @@ const _get = ({ url, query }) => {
   } else {
     _url = config + url;
   }
-
   return fetch(_url)
     .then((res) => {
       if (res.status >= 200 && res.status < 300) {

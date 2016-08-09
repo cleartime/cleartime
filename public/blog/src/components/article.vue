@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="inner padding">
-      <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}">
+      <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
       <div class="markdown-body">
         {{{ topic.content }}}
       </div>
@@ -32,7 +32,10 @@
 
 <style lang="scss">
   @import '../assets/lib/github-markdown';
-  .panel img{
+  .head-img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
     width: 50%;
     height: 50%;
     transform: translate(50%);
@@ -77,7 +80,37 @@
       max-width: 100%;
       width: auto;
       height: auto;
+      width: 50%;
+      height: 50%;
+      transform: translate(50%);
+      margin:20px 0;
     }
   }
 
+  @media screen and (max-width: 768px){
+    .article-header h2{
+      border-bottom: 1px solid #d2d2d2;
+    }
+    .article-header{
+      padding:0 10px;
+      box-sizing: border-box;
+      box-shadow: none;
+      background: #fff;
+    }
+    .markdown-body {
+      padding:0 10px;
+      img {
+        transform: none;
+        width: 100%;
+        height: auto;
+        margin:20px 0;
+      }
+    }
+    .markdown-body h2{
+      font-size: 21px;
+    }
+    .markdown-body h4{
+      border-bottom: 1px solid #d2d2d2;
+    }
+  }
 </style>

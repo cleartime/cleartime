@@ -31,12 +31,6 @@
 <style lang="scss">
   .panel {
     margin-bottom: 15px;
-    img {
-      width: 30px;
-      height: 30px;
-      border-radius: 3px;
-    }
-
     box-shadow: 0 0 5px #CCC;
   }
   .panel-header {
@@ -74,6 +68,7 @@
   }
 
   .cell {
+    word-break: break-all;
     transition-property: all;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
@@ -180,19 +175,21 @@
     margin-right: 20px;
   }
 
-
-  @media (max-width: 512px) {
+  @media screen and (max-width: 768px){
     body {
       font-size: 14px;
     }
-
+    .panel-header{
+      padding: 0;
+    }
     .topic-wrapper {
       a {
         display: inline-block;
         width: 90%;
       }
     }
+    .panel-header li{
+      margin: 5px!important;
+    }
   }
-
-
 </style>
