@@ -31,7 +31,10 @@
 </script>
 
 <style lang="scss" scoped>
-  .content a{
-    color: #5bc0de;
+  .content {
+    padding: 10px;
+    a{
+      color: #5bc0de;
+    }
   }
 </style>

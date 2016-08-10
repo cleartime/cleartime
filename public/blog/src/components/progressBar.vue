@@ -10,7 +10,7 @@
     border-radius: 5px;
   }
   .vader {
-    height: 6px;
+    height: 7px;
     border-radius: 2px;
     display: block;
     width: 0%;

@@ -20,26 +20,10 @@ export const timeToNow = (time) => {
 };
 
 
-    // export const HostoryTime = (time) => {
-    //  const t = new Date(time.toTimeString());
-    //  /* eslint-disable one-var */
-    //  let y,
-    //    M,
-    //    d,
-    //    h,
-    //    m,
-    //    s;
-    //  /* eslint-enable one-var */
-    //  if (t) {
-    //    y = t.getYear();
-    //    M = t.getMonth() + 1;
-    //    d = t.getDate();
-    //    h = t.getHours();
-    //    m = t.getMinutes();
-    //    s = t.getSeconds();
-    //  }
-    //  return y + M + d + h + m + s;
-    // };
+export const timeToUpdata = (time) => {
+  const t = time.split('T');
+  return `${t[0]}  ${t[1].slice(0, 8)}`;
+};
 
 
 export const transTab = (tab) => {

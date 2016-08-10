@@ -1,6 +1,6 @@
 <template>
   <div id="app" v-if="!isShow">
-    <c-Bar></c-Bar>
+    <!--<c-Bar></c-Bar>-->
     <c-header></c-header>
     <div class="main">
       <router-view transition="back" transition-mode="out-in" class="main-wrapper" ></router-view>

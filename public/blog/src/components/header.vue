@@ -40,8 +40,8 @@
     },
     methods: {
       searchtitle(title) {
+        this.isShowTitle = !this.isShowTitle;
         if (!title.length) {
-          this.isShowTitle = !this.isShowTitle;
           return false;
         }
         this.search(title);

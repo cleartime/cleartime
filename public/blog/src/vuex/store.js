@@ -100,7 +100,7 @@ const mutations = {
   SET_COMMENTS_SUCCESS(state, data, nickname, email, content, articleId, fid) {
     const newComments = {
       objectId: data.objectId,
-      updatedAt: data.updatedAt,
+      updatedAt: data.createdAt,
       nickname,
       email,
       content,

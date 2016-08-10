@@ -81,6 +81,7 @@
       display: inline-block;
       float: left;
       width: 100%;
+      padding-bottom: 30px;
       a {
         display: block;
         &.v-link-active {
@@ -104,7 +105,7 @@
     display: none;
   }
 
-  @media (max-width: 512px) {
+  @media screen and (max-width: 768px){
     .content {
       float: none;
       width: 100%;
