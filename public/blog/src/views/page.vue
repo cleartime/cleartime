@@ -93,16 +93,29 @@
     overflow: hidden;
     background: #fff;
     margin-bottom: 20px;
+    padding: 10px;
     li{
+      position: relative;
+      top:0;
       float: left;
       padding: 8px 15px;
-      border: 1px solid #eee;
       margin: 5px 10px;
       border-radius: 10px;
-      &:hover, &.link-active{
+      box-shadow: 0 5px 0 #bbbbbb, 0 5px 3px rgba(0, 0, 0, 0.2);
+      transition-property: all;
+      transition-duration: .15s;
+      &:hover{
+        background: #eee;
         cursor: pointer;
-        background: #5bc0de;
+      }
+      &.link-active{
+        top:5px;
+        cursor: pointer;
+        background: #676262;
         color: #fff;
+        box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+        transition-property: all;
+        transition-duration: .15s;
       }
     }
   }
