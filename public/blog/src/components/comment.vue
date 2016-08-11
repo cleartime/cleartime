@@ -4,7 +4,8 @@
       <div v-for="i in comment" transition="list" transition-mode="out-in" >
         <div class="comment"  v-if = '!i.fid' >
           <div class="comment-pep">
-            <img src="../assets/pep.png">
+            <i class="iconfont icon-myline"></i>
+            <!--<img src="../assets/pep.png">-->
             <p>{{ i.nickname }}</p>
           </div>
           <p class="comment-text">
@@ -16,7 +17,8 @@
         </div>
         <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
           <div class="comment-pep">
-            <img src="../assets/pep.png">
+            <i class="iconfont icon-myline"></i>
+            <!--<img src="../assets/pep.png">-->
             <p>{{ j.nickname }}</p>
           </div>
           <p class="comment-text">
@@ -29,7 +31,8 @@
       </div>
       <div class="comment-body">
         <div class="comment-pep">
-          <img src="../assets/pep.png">
+          <i class="iconfont icon-myline"></i>
+          <!--<img src="../assets/pep.png">-->
           <p>{{ nickname }}</p>
         </div>
         <div v-if='isShow' class='comment-text'>
@@ -38,12 +41,13 @@
         </div>
         <div class="comment-footer" >
           <textarea placeholder="评论的内容" v-model="content" ></textarea>
-          <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="cancel"></span></a>
+          <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close"></span></a>
         </div>
       </div>
     </div>
 </template>
 <style lang="scss" scoped>
+  @import '../assets/font/iconfont';
   .comment-main{
     width: 100%;
     padding: 10px;

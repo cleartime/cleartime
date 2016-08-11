@@ -1,6 +1,6 @@
 <template>
   <div class="back-top" v-show="show">
-    <a href="#" @click.prevent.stop="toTop">回到顶部</a>
+    <a href="#" @click.prevent.stop="toTop"><i class="iconfont icon-back2top"></i></a>
   </div>
 </template>
 
@@ -32,6 +32,7 @@
 </script>
 
 <style lang="scss">
+  @import '../assets/font/iconfont';
   .back-top {
     padding: 8px 5px 8px 8px;
     border-radius: 8px 0 0 8px;

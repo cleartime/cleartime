@@ -7,9 +7,9 @@
       <ul class="navbar">
         <li>
           <input type="text" v-model="title" v-if='isShowTitle' transition="title" transition-mode="out-in"/>
-          <a @click="searchtitle(title)" class="search">搜索</a>
+          <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
         </li>
-        <li><a v-link="{name: 'me'}">我</a></li>
+        <li><a v-link="{name: 'me'}"><i class="iconfont icon-myline"></i></a></li>
       </ul>
     </div>
     <div>
@@ -77,6 +77,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/font/iconfont';
   .title-transition {
     transition: all .5s ease;
   }
