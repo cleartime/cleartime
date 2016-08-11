@@ -41,7 +41,7 @@
         </div>
         <div class="comment-footer" >
           <textarea placeholder="评论的内容" v-model="content" ></textarea>
-          <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close"></span></a>
+          <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close" title="取消"></span></a>
         </div>
       </div>
     </div>
@@ -54,27 +54,53 @@
     box-sizing: border-box;
   }
   .comment{
+    margin: 20px 0;
     padding: 10px;
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
+    box-shadow: 0 2px 0 #bbbbbb, 0 0px 3px rgba(0, 0, 0, 0.2);
   }
   .fcomment{
+    margin: 20px 0;
     padding: 10px;
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
+    box-shadow: 0 2px 0 #bbbbbb, 0 0px 3px rgba(0, 0, 0, 0.2);
     margin-left: 10%;
     width: 80%;
   }
   .comment-pep{
+    margin: 16px 0;
+    text-align: center;
     width: 20%;
     float: left;
     img{
       width: 50px;
       border-radius: 50%;
     }
+    p{
+      margin: 5px 0 0;
+    }
   }
   .comment-text{
+    span:nth-child(2){
+      float: right;
+    }
+    input{
+      display: block;
+      margin:10px 0px;
+      outline: #00AA00;
+    }
+    input:nth-child(1){
+    }
     float: left;
     width: 80%;
-
+  }
+  .comment-footer{
+    margin-left: 20%;
+    float: left;
+    .comment-click{
+      display: block;
+      clear: both;
+    }
   }
   .comment-body{
     margin-top: 10px;
@@ -172,7 +198,7 @@
       isShowCommet(name, fid) {
         window.location.hash = '';
         window.location.hash = 'content';
-        this.user = `回复${name}`;
+        this.user = `@${name}`;
         this.isCancel = true;
         this.fid = fid;
         document.getElementsByTagName('textarea')[0].focus();
