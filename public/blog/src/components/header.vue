@@ -5,7 +5,7 @@
     </a></div>
 		<div>
       <ul class="navbar">
-        <li>
+        <li v-if='$route.isindex'>
           <input type="text" v-model="title" v-if='isShowTitle' transition="title" transition-mode="out-in"/>
           <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
         </li>
@@ -47,32 +47,6 @@
         this.search(title);
       },
     },
-//    beforeDestroy() {
-//      console.log(111);
-//    },
-//    created() {
-//      console.log(222);
-//    },
-//    beforeCompile() {
-//      console.log(333);
-//    },
-//    compile() {
-//      console.log(444);
-//    },
-//    destroyed() {
-//      console.log(555);
-//    },
-//    init() {
-//      console.log(666);
-//    },
-//    attached() {
-//      console.log(777);
-//    },
-//    watch: {
-//      'topic': (val, oldVal) => {
-//        console.log(val, oldVal);
-//      },
-//    },
   };
 </script>
 
