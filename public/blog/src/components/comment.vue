@@ -62,7 +62,7 @@
   }
   .fcomment{
     margin: 20px 0;
-    padding: 10px;
+    padding: 15px 0;
     border-bottom: 1px dashed #ccc;
     .comment-content span{
       padding-right: 15px;

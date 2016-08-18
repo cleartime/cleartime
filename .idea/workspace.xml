@@ -30,8 +30,8 @@
       <file leaf-file-name="comment.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67741936">
-              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.516129">
+              <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -419,12 +419,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00077" summary="markedown问题解决但是另一个问题来了,日了够了,烦">
-      <created>1468912280409</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1468912280410</updated>
-    </task>
     <task id="LOCAL-00078" summary="7.20">
       <created>1468994859298</created>
       <option name="number" value="00078" />
@@ -713,7 +707,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471511812450</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="@符号颜色">
+      <created>1471512568914</created>
+      <option name="number" value="00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1471512568914</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -788,7 +788,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7.20" />
     <MESSAGE value="7.21" />
     <MESSAGE value="开始改样式" />
     <MESSAGE value="重新改页面" />
@@ -813,7 +812,8 @@
     <MESSAGE value="头部弄了下" />
     <MESSAGE value="评论样式从新弄了下" />
     <MESSAGE value="描点样式颜色" />
-    <option name="LAST_COMMIT_MESSAGE" value="描点样式颜色" />
+    <MESSAGE value="@符号颜色" />
+    <option name="LAST_COMMIT_MESSAGE" value="@符号颜色" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1196,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67741936">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.516129">
+          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
           <folding />
         </state>
       </provider>
