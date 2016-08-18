@@ -36,11 +36,13 @@
           <p>{{ nickname }}</p>
         </div>
         <div v-if='isShow' class='comment-text'>
-          <input type="text" placeholder="您的昵称" v-model="nickname">
-          <input type="email" placeholder="您的邮箱" v-model="email">
+          <from>
+          <input type="text" placeholder="您的昵称" v-model="nickname" required pattern="[A-Za-z]{3}" title="Three letter country code">
+          <input type="email" placeholder="您的邮箱" v-model="email" required pattern="[A-Za-z]{3}" title="Three letter country code">
+          </from>
         </div>
         <div class="comment-footer" >
-          <textarea placeholder="评论的内容" v-model="content" ></textarea>
+          <textarea placeholder="评论的内容" v-model="content" required pattern="[A-Za-z]{3}" title="Three letter country code"></textarea>
           <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close" title="取消"></span></a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      <div class="cell" v-for="topicItem in items" transition="list" transition-mode="out-in">
+      <div class="cell" v-for="topicItem in items" transition="staggered" stagger="10" >
         <div class="topic-wrapper">
           <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
             <p>{{ topicItem.title }}</p>
@@ -29,6 +29,7 @@
 </script>
 
 <style lang="scss">
+
   .panel {
     margin-bottom: 15px;
     box-shadow: 0 0 5px #CCC;
@@ -174,7 +175,6 @@
   .hello + a {
     margin-right: 20px;
   }
-
   @media screen and (max-width: 768px){
     body {
       font-size: 14px;

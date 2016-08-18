@@ -1,18 +1,18 @@
 <template>
 	<header>
-		<div><a v-link="{name: 'index'}" class="brand">
-      <img src="../assets/head.jpeg" alt="logo">
-    </a></div>
-		<div>
+    <div class="hearder-fixed" :class=" isShowFixed ? 'hearder-fixed-active' : 'hearder-absoleteve'" >
+      <a v-link="{name: 'index'}" class="hearder-icon">
+        <img src="../assets/head.jpeg" alt="logo">
+      </a>
       <ul class="navbar">
-        <li v-if='$route.isindex'>
-          <input type="text" v-model="title" v-if='isShowTitle' transition="title" transition-mode="out-in"/>
+        <li><a v-link="{name: 'me'}">我的资料</a></li>
+        <li v-if='$route.isindex' >
           <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
+          <input type="text" v-model="title" v-if='isShowTitle' />
         </li>
-        <li><a v-link="{name: 'me'}"><i class="iconfont icon-myline"></i></a></li>
       </ul>
     </div>
-    <div>
+    <div class="hearder-content">
       <p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : isSearch ? '搜索结果如下' : listname.name}}</p>
     </div>
 	</header>
@@ -26,6 +26,9 @@
       return {
         title: '',
         isShowTitle: false,
+        isShowFixed: false,
+        isTop: 0,
+        positionobj: '30px',
       };
     },
     vuex: {
@@ -38,6 +41,9 @@
         listname: getListname,
       },
     },
+    ready() {
+      this.scroll(1);
+    },
     methods: {
       searchtitle(title) {
         this.isShowTitle = !this.isShowTitle;
@@ -46,6 +52,32 @@
         }
         this.search(title);
       },
+      scroll() {
+        let beforeScrollTop = document.body.scrollTop;
+        window.onscroll = () => {
+          const afterScrollTop = document.body.scrollTop;
+          const delta = afterScrollTop - beforeScrollTop;
+          if (afterScrollTop <= 70 || afterScrollTop === 0) {
+            this.isShowFixed = !1;
+            return false;
+          }
+          else if (delta > 0) {// eslint-disable-line brace-style
+            this.isShowFixed = !1;
+          } else {
+            if (afterScrollTop > 70 && afterScrollTop < 80) {
+              this.isShowFixed = !1;
+            } else {
+              this.isShowFixed = !0;
+            }
+          }
+//          this.isTop = afterScrollTop === 0;
+//          if (delta === 0) return false;
+          beforeScrollTop = afterScrollTop;
+//          this.isShowFixed = delta <= 0;
+        };
+      },
+    },
+    watch: {
     },
   };
 </script>
@@ -73,73 +105,78 @@
     margin-bottom: 20px;
     border:1px solid #ccc;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    &>div:nth-child(1){
-      order: 1;
-      flex:1;
-      .brand {
-        display: block;
-        width: 40px;
-        height: 40px;
-        padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+
+    .hearder-fixed{
+      padding: 10px;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      background: transparent;
+      width: 100%;
+      .hearder-icon{
+        display: inline-block;
+        float: left;
         img{
-        border-radius: 50%;
+          width: 50px;
+          border-radius: 50%;
         }
       }
-    }
-    &>div:nth-child(3){
-      order: 2;
-      flex:auto;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      height: 100%;
-      .header-title {
-        word-break: break-all;
-        line-height: 1.5;
-        color: #fff;
-        font-weight: bold;
-        font-size: 24px;
-      }
-    }
-    &>div:nth-child(2){
-      flex:1 0 70px;
-      padding-right: 5px;
-      order: 3;
-        .navbar{
-          input[type='text']{
-            width: 120px;
-            border-radius: 10px;
-            float: right;
-          }
-          .search{
-            float: right;
-          }
-          text-align: right;
-          margin-top: 20px;
+      .navbar{
+        display: inline-block;
+        float: right;
+        padding-top: 12px;
+        font-size: 18px;
+        li{
+          margin-left: 20px;
+          float: left;
           a{
             color: #fff;
+            font-weight: bold;
+          }
+          input{
+            border-radius: 15px;
+            width: 50px;
+            padding-left: 10px;
           }
         }
+      }
+    }
+    @keyframes titleEnter
+    {
+      from {opacity: 0;transform: translateY(-70px)}
+      to {opacity: 1;transform: translateY(0px)}
+    }
+    @keyframes titleLever
+    {
+      from {opacity: 1;transform: translateY(70px)}
+      to {opacity: 0;transform: translateY(-70px)}
+    }
+    .hearder-absoleteve{
+      padding: 20px;
+      position: absolute;
+    }
+    .hearder-fixed-active{
+      animation: titleEnter .4s;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      a{
+        color: rgba(000,000,000,.5)!important;
+      }
+    }
+    .hearder-content{
+      p{
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 1px 0 #fff;
+      }
      }
   }
 
   @media screen and (max-width: 768px){
-    .brand {
-      float: none;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .navbar {
-      float: none;
-      text-align: center;
-
-      li {
-        float: none;
-        display: inline-block;
-      }
-    }
   }
 </style>

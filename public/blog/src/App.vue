@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-if="!isShow">
+  <div id="app" v-show="!isShow">
     <!--<c-Bar></c-Bar>-->
     <c-header></c-header>
     <div class="main">
@@ -8,7 +8,7 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" @click="isShow"></welcome>
+  <welcome v-if="isShow" @click="isShow" ></welcome>
 </template>
 
 <script>
@@ -98,6 +98,13 @@ export default {
     padding: 0 5%;
   }
 
+  .staggered-transition {
+    transition: all .5s ease;
+  }
+  .staggered-enter, .staggered-leave{
+    opacity: 0;
+    transform: translateX(-100%)
+  }
   .back-transition {
     transition: all .5s ease;
   }

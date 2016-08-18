@@ -98,10 +98,10 @@ router.post('/', function (req, res, next) {
         res.send(json);
     }, function (error) {
         //查询失败，查看 error
-        console.log(error);
-        json.code = error.code;
-        json.msg = error.message;
-        res.send(json);
+        json.data = [];
+        json.code = 0;
+        json.msg = '设置失败!';
+        res.send(json)
     });
 });
 
