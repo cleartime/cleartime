@@ -40,6 +40,6 @@
     right: 0;
     bottom: 98px;
     width: 16px;
-    background-color: #FFF;
+    background-color: #f7f6f6;
   }
 </style>
