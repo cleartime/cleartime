@@ -25,7 +25,7 @@
             <span class="comment-email">{{ j.email }}</span>
             <span class="comment-time">{{ j.updatedAt | timeToUpdata}}</span>
           </p>
-          <p class="comment-content">{{ '@'+i.nickname+'&nbsp;&nbsp;'+j.content }}</p>
+          <p class="comment-content"><span>{{ '@'+i.nickname }}</span>{{ j.content }}</p>
           <a @click='isShowCommet(j.nickname, j.objectId)'>回复他</a>
         </div>
       </div>
@@ -64,6 +64,11 @@
     margin: 20px 0;
     padding: 10px;
     border-bottom: 1px dashed #ccc;
+    .comment-content span{
+      padding-right: 15px;
+      font-weight: bold;
+      color: #9c0033;
+    }
   }
   .comment-pep{
     .iconfont{
