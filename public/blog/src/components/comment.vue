@@ -96,6 +96,14 @@
       outline: #00AA00;
     }
     input:nth-child(1){
+      padding-left: 15px;
+      float: left;
+    }
+    input:nth-child(2){
+      padding-left: 15px;
+      margin-left: 20px;
+      margin-bottom: -6px;
+      float: left;
     }
     float: left;
     width: 80%;
@@ -147,7 +155,17 @@
       .comment-time{
         float: right;
       }
-
+      input{
+        box-sizing: border-box;
+        width: 100%;
+        border:1px solid #ccc;
+        float: none;
+        height: 35px;
+        line-height: 35px;
+      }
+      input:nth-child(2){
+        margin:6px auto 0;
+      }
     }
     .comment-footer{
       width: 100%;
