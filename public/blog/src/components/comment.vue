@@ -58,18 +58,17 @@
   .comment{
     margin: 20px 0;
     padding: 10px;
-    /*border:1px solid #ccc;*/
-    box-shadow: 0 2px 0 #bbbbbb, 0 0px 3px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px dashed #ccc;
   }
   .fcomment{
     margin: 20px 0;
     padding: 10px;
-    /*border:1px solid #ccc;*/
-    box-shadow: 0 2px 0 #bbbbbb, 0 0px 3px rgba(0, 0, 0, 0.2);
-    margin-left: 10%;
-    width: 80%;
+    border-bottom: 1px dashed #ccc;
   }
   .comment-pep{
+    .iconfont{
+      font-size: 40px;
+    }
     margin: 16px 0;
     text-align: center;
     width: 20%;
@@ -97,11 +96,19 @@
     width: 80%;
   }
   .comment-footer{
-    margin-left: 20%;
+    width: 80%;
+    margin-top:16px ;
     float: left;
     .comment-click{
       display: block;
       clear: both;
+    }
+    textarea{
+      box-sizing: border-box;
+      border:1px solid #ccc;
+      padding: 15px;
+      width: 100%;
+      outline: none;
     }
   }
   .comment-body{
@@ -109,7 +116,8 @@
     .comment-click{
       clear: both;
       color: #181818;
-      margin-left: 20%;
+      font-size: 18px;
+      padding-left: 15px;
     }
     .cancel{
       &:after{
@@ -137,9 +145,11 @@
 
     }
     .comment-footer{
+      width: 100%;
       clear: both;
       text-align: center;
       textarea{
+        width: 100%;
         border:1px solid #5bc0de;
         width: 100%;
       }
