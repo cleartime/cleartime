@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-show="!isShow">
+  <div id="app" v-show="!isShow" transition="fade">
     <!--<c-Bar></c-Bar>-->
     <c-header></c-header>
     <div class="main">
@@ -8,7 +8,7 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" @click="isShow" ></welcome>
+  <welcome v-if="isShow" @click="isShow"></welcome>
 </template>
 
 <script>
@@ -33,6 +33,9 @@ export default {
       console.log(e);
       /* eslint-enable  no-console */
     }
+    setTimeout(() => {
+      this.isShow = false;
+    }, 5000);
   },
   data() {
     return {
@@ -98,12 +101,12 @@ export default {
     padding: 0 5%;
   }
 
-  .staggered-transition {
+  .fade-transition {
     transition: all .5s ease;
   }
-  .staggered-enter, .staggered-leave{
+  .fade-enter, .fade-leave{
     opacity: 0;
-    transform: translateX(-100%)
+    transform: scale(0);
   }
   .back-transition {
     transition: all .5s ease;

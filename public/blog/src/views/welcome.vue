@@ -1,8 +1,9 @@
 <template>
     <div class="bg">
+      <span class="text">倒计时{{ timenum }}</span>
       <img src="../assets/bj1.jpg" width="100%" height="100%">
     </div>
-    <div class="menu">
+  <div class="menu">
       <div class="pic" @click="closeWelcomePage">
         <img src="../assets/head.jpeg">
       </div>
@@ -13,6 +14,19 @@
   import { fetSEO } from '../vuex/actions';
   import { getWebinfo } from '../vuex/getters';
   export default {
+    data() {
+      return {
+        timenum: 5,
+      };
+    },
+    ready() {
+      setInterval(() => {
+        if (this.timenum <= 0) {
+          return false;
+        }
+        this.timenum --;
+      }, 1000);
+    },
     vuex: {
       actions: {
         fetSEO,
@@ -43,6 +57,14 @@
     top: 0;
     left: 0;
     opacity: .5;
+    .text{
+      font-size: 20px;
+      position: absolute;
+      background: transparent;
+      color: #fff;
+      right: 15px;
+      top: 15px;
+    }
   }
   .menu{
     border-radius: 50%;
