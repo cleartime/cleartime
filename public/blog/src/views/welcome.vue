@@ -1,6 +1,6 @@
 <template>
     <div class="bg">
-      <span class="text">倒计时{{ timenum }}</span>
+      <span class="text">倒计时进入{{ timenum | myblog}}</span>
       <img src="../assets/bj1.jpg" width="100%" height="100%">
     </div>
   <div class="menu">
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        timenum: 5,
+        timenum: 4,
       };
     },
     ready() {

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
 import configRouter from './routers';
-import { timeToNow, transTab, timeToUpdata } from './filters';
+import { timeToNow, transTab, timeToUpdata, myblog } from './filters';
 import { fetchMsgCount } from './vuex/actions';
 import { getToken } from './vuex/getters';
 import store from './vuex/store';
@@ -10,6 +10,7 @@ import store from './vuex/store';
 Vue.filter('timeToNow', timeToNow);
 Vue.filter('transTab', transTab);
 Vue.filter('timeToUpdata', timeToUpdata);
+Vue.filter('myblog', myblog);
 
 Vue.use(VueRouter);
 const router = new VueRouter({

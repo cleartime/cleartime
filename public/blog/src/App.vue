@@ -35,7 +35,7 @@ export default {
     }
     setTimeout(() => {
       this.isShow = false;
-    }, 5000);
+    }, 4000);
   },
   data() {
     return {
