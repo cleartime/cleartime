@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div id="app" v-show="!isShow" transition="fade">
     <!--<c-Bar></c-Bar>-->
     <c-header></c-header>
@@ -9,6 +10,7 @@
     <c-back></c-back>
   </div>
   <welcome v-if="isShow" @click="isShow"></welcome>
+  </div>
 </template>
 
 <script>
@@ -62,6 +64,7 @@ export default {
 <style lang="scss">
   html,
   #app {
+    -webkit-overflow-scrolling: touch;
     line-height: 1.5;
     height: 100%;
     -moz-osx-font-smoothing: grayscale;

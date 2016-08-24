@@ -42,7 +42,15 @@
       },
     },
     ready() {
-      this.scroll(1);
+      this.scroll();
+    },
+    route: {
+      ready() {
+        this.scroll();
+      },
+      data() {
+        this.scroll();
+      },
     },
     methods: {
       searchtitle(title) {
@@ -53,28 +61,30 @@
         this.search(title);
       },
       scroll() {
-        let beforeScrollTop = document.body.scrollTop;
-        window.onscroll = () => {
-          const afterScrollTop = document.body.scrollTop;
-          const delta = afterScrollTop - beforeScrollTop;
-          if (afterScrollTop <= 70 || afterScrollTop === 0) {
-            this.isShowFixed = !1;
-            return false;
-          }
-          else if (delta > 0) {// eslint-disable-line brace-style
-            this.isShowFixed = !1;
-          } else {
-            if (afterScrollTop > 70 && afterScrollTop < 80) {
+        let beforeScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//        window.onscroll = () => {
+          document.addEventListener('scroll', () => { // eslint-disable-line indent
+            const afterScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const delta = afterScrollTop - beforeScrollTop;
+            if (afterScrollTop <= 70 || afterScrollTop === 0) {
+              this.isShowFixed = !1;
+              return false;
+            }
+            else if (delta > 0) {// eslint-disable-line brace-style
               this.isShowFixed = !1;
             } else {
-              this.isShowFixed = !0;
+              if (afterScrollTop > 70 && afterScrollTop < 80) {
+                this.isShowFixed = !1;
+              } else {
+                this.isShowFixed = !0;
+              }
             }
-          }
 //          this.isTop = afterScrollTop === 0;
 //          if (delta === 0) return false;
-          beforeScrollTop = afterScrollTop;
+            beforeScrollTop = afterScrollTop;
 //          this.isShowFixed = delta <= 0;
-        };
+          }, false);
+//        };
       },
     },
     watch: {
