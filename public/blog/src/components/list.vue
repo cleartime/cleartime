@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      <div class="cell" v-for="topicItem in items" transition="staggered" stagger="10" >
+      <div class="cell" v-for="topicItem in items" transition="list"  >
         <div class="topic-wrapper">
           <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
             <p>{{ topicItem.title }}</p>
