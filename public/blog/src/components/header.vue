@@ -119,6 +119,7 @@
     align-items: center;
 
     .hearder-fixed{
+      transition: all .4s;
       padding: 10px;
       position: fixed;
       z-index: 10;
@@ -126,7 +127,8 @@
       left: 0;
       box-sizing: border-box;
       background: transparent;
-      width: 100%;
+      width: 0;
+      opacity: 0;
       .hearder-icon{
         display: inline-block;
         float: left;
@@ -155,22 +157,11 @@
         }
       }
     }
-    @keyframes titleEnter
-    {
-      from {opacity: 0;transform: translateY(-70px)}
-      to {opacity: 1;transform: translateY(0px)}
-    }
-    @keyframes titleLever
-    {
-      from {opacity: 1;transform: translateY(70px)}
-      to {opacity: 0;transform: translateY(-70px)}
-    }
     .hearder-absoleteve{
       padding: 20px;
       position: absolute;
     }
     .hearder-fixed-active{
-      animation: titleEnter .4s;
       background: #fff;
       border-bottom: 1px solid #ccc;
       a{

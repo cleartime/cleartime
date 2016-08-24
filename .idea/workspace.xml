@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/App.vue" afterPath="$PROJECT_DIR$/public/blog/src/App.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/header.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/header.vue" />
     </list>
     <ignored path="cleartime.iws" />
@@ -101,8 +100,8 @@
       <file leaf-file-name="header.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3548387">
+              <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -558,12 +557,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00085" summary="开始改样式">
-      <created>1469156450403</created>
-      <option name="number" value="00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1469156450403</updated>
-    </task>
     <task id="LOCAL-00086" summary="开始改样式">
       <created>1469179323633</created>
       <option name="number" value="00086" />
@@ -852,7 +845,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472006643152</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="解决了菜单栏问题">
+      <created>1472023402583</created>
+      <option name="number" value="00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1472023402584</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -927,7 +926,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="改的有点像样了" />
     <MESSAGE value="点击样式弄好了" />
     <MESSAGE value="整理了下整个文件,该删的删,该改的改" />
     <MESSAGE value="文章后退问题解决" />
@@ -952,7 +950,8 @@
     <MESSAGE value="移动端样式" />
     <MESSAGE value="欢迎页加个倒计时" />
     <MESSAGE value="样式调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="样式调整" />
+    <MESSAGE value="解决了菜单栏问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决了菜单栏问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1349,8 +1348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3548387">
+          <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
           <folding />
         </state>
       </provider>
