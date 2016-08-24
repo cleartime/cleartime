@@ -119,7 +119,7 @@
     align-items: center;
 
     .hearder-fixed{
-      transition: all .4s;
+      transition: all 1s;
       padding: 10px;
       position: fixed;
       z-index: 10;
@@ -127,7 +127,8 @@
       left: 0;
       box-sizing: border-box;
       background: transparent;
-      width: 0;
+      width: 200%;
+      transform: translateY(-71px);
       opacity: 0;
       .hearder-icon{
         display: inline-block;
@@ -158,10 +159,16 @@
       }
     }
     .hearder-absoleteve{
+      transform: translateY(0);
+      opacity: 1;
+      width: 100%;
       padding: 20px;
       position: absolute;
     }
     .hearder-fixed-active{
+      transform: translateY(0px);
+      opacity: 1;
+      width: 100%;
       background: #fff;
       border-bottom: 1px solid #ccc;
       a{
