@@ -63,7 +63,7 @@ export const myblog = (num) => {
       str = '我的博客';
       break;
     case 1:
-      str = '我的博客!';
+      str = '我的博客';
       break;
     case 0:
       str = '我的博客啊!';
