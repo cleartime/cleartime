@@ -65,6 +65,9 @@ export const myblog = (num) => {
     case 1:
       str = '我的博客!';
       break;
+    case 0:
+      str = '我的博客啊!';
+      break;
     default:
   }
   return str;
