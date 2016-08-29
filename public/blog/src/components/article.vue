@@ -11,8 +11,8 @@
     </div>
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="markdown-body" id="preview">
-
+      <div class="">
+        {{{ topic.content }}}
       </div>
     </div>
   </article>
@@ -48,7 +48,7 @@
 //      function Editor(input, preview) {
 //        this.update = function () {
           // marked(input.value); 解析Markdown为HTML
-      document.getElementById('preview').innerHTML = marked(this.topic.content);
+      this.content = marked(this.topic.content);
 //        };
 //        this.update();
 //      }
