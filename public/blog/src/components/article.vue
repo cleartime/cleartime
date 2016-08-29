@@ -12,8 +12,24 @@
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
       <div class="">
-        {{{ topic.content }}}
+        <pre><code>
+      window.onload=function(){
+      self = mui.getExtras;
+      claimRegistration.init();
+      claimRegistration.validation();
+      };
+    </code></pre>
       </div>
+      <!--<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>-->
+      <!--<script>hljs.initHighlightingOnLoad()</script>-->
+      <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+      <!--<script type="text/javascript">-->
+        <!--$(document).ready(function() {-->
+          <!--$('pre code').each(function(i, block) {-->
+            <!--hljs.highlightBlock(block);-->
+          <!--});-->
+        <!--});-->
+      <!--</script>-->
     </div>
   </article>
 </template>
@@ -21,6 +37,7 @@
 <script>
   import { getTopic, getImg } from '../vuex/getters';
   import marked from 'marked';
+//  import highlight from 'highlight';
 
   export default {
     data() {
@@ -45,6 +62,7 @@
         smartLists: true,
         smartypants: false,
       });
+//      console.log(highlight);
 //      function Editor(input, preview) {
 //        this.update = function () {
           // marked(input.value); 解析Markdown为HTML
