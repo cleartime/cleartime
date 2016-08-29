@@ -11,8 +11,8 @@
     </div>
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="markdown-body">
-        {{{ topic.content }}}
+      <div class="markdown-body" id="preview">
+
       </div>
     </div>
   </article>
@@ -20,12 +20,39 @@
 
 <script>
   import { getTopic, getImg } from '../vuex/getters';
+  import marked from 'marked';
+
   export default {
+    data() {
+      return {
+        content: '111',
+      };
+    },
     vuex: {
       getters: {
         setimg: getImg,
         topic: getTopic,
       },
+    },
+    ready() {
+      marked.setOptions({
+        renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: true,
+        smartLists: true,
+        smartypants: false,
+      });
+//      function Editor(input, preview) {
+//        this.update = function () {
+          // marked(input.value); 解析Markdown为HTML
+      document.getElementById('preview').innerHTML = marked(this.topic.content);
+//        };
+//        this.update();
+//      }
+//      new Editor('','');
     },
   };
 </script>
