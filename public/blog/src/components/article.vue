@@ -38,22 +38,8 @@
       },
     },
     ready() {
-      /* eslint-disable prefer-template, no-var, space-before-function-paren */
-//      var renderer = new marked.Renderer();
-//      renderer.code = function(code, lang) {
-//        var language = lang && (' language-' + lang) || '';
-//        return '<pre class="prettyprint' + language + '">'
-//          + '<code>' + code.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</code>'
-//          + '</pre>';
-//      };
-      /* eslint-enable prefer-template, no-var, space-before-function-paren */
-      const markdownString = '```\n window.onload=function(){self = mui.getExtras;' +
-        'claimRegistration.init();claimRegistration.validation();```\n';
-      console.log(this.topic.content);
-      console.log(markdownString);
-      console.log(Prism);
-//      marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
-//      });
+      marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
+      });
       marked(this.topic.content, (err, content) => {
         if (!err) {
           this.content = content;

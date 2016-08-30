@@ -61,10 +61,9 @@ const mutations = {
   },
   // 获取某一文章成功
   FETCH_TOPIC_SUCCESS(state, topic) {
-    const markdown = require('markdown').markdown;
     state.hint.show = false;
     state.topic = topic;
-    state.topic.content = markdown.toHTML(decodeURIComponent(state.topic.content));
+    state.topic.content = decodeURIComponent(state.topic.content);
   },
   // 获取图片成功
   FETCH_IMG_SUCCESS(state, img) {
