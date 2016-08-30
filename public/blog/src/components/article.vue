@@ -11,7 +11,8 @@
     </div>
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="" v-html="content">
+      <div class="">
+        {{{ content }}}
       </div>
     </div>
   </article>
@@ -24,14 +25,10 @@
   import Prism from 'prismjs';
   import 'prismjs/themes/prism.css';
 
-
-  marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
-  });
-
   export default {
     data() {
       return {
-        content: '111',
+        content: '',
       };
     },
     vuex: {
@@ -41,17 +38,27 @@
       },
     },
     ready() {
-    },
-    computed: {
-      content: () => {
-        let _content = this.topic.content;
-        marked(_content, (err, content) => {
-          if (!err) {
-            _content = content;
-          }
-        });
-        return _content;
-      },
+      /* eslint-disable prefer-template, no-var, space-before-function-paren */
+//      var renderer = new marked.Renderer();
+//      renderer.code = function(code, lang) {
+//        var language = lang && (' language-' + lang) || '';
+//        return '<pre class="prettyprint' + language + '">'
+//          + '<code>' + code.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</code>'
+//          + '</pre>';
+//      };
+      /* eslint-enable prefer-template, no-var, space-before-function-paren */
+      const markdownString = '```\n window.onload=function(){self = mui.getExtras;' +
+        'claimRegistration.init();claimRegistration.validation();```\n';
+      console.log(this.topic.content);
+      console.log(markdownString);
+      console.log(Prism);
+//      marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
+//      });
+      marked(this.topic.content, (err, content) => {
+        if (!err) {
+          this.content = content;
+        }
+      });
     },
   };
 </script>
