@@ -47,14 +47,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="article.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6822034">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
                 <marker date="1472552270000" expanded="true" signature="1173:1282" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getters.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/getters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38135594">
+              <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,7 +190,6 @@
         <option value="$PROJECT_DIR$/public/blog/build/webpack.base.conf.js" />
         <option value="$PROJECT_DIR$/public/blog/node_modules/extract-text-webpack-plugin/index.js" />
         <option value="$PROJECT_DIR$/public/blog/src/views/me.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
         <option value="$PROJECT_DIR$/public/blog/src/views/post.vue" />
         <option value="$PROJECT_DIR$/public/blog/node_modules/html-webpack-plugin/index.js" />
         <option value="$PROJECT_DIR$/public/blog/build/utils.js" />
@@ -195,6 +214,7 @@
         <option value="$PROJECT_DIR$/public/blog/node_modules/prismjs/prism.js" />
         <option value="$PROJECT_DIR$/public/admin/www/lib/js/marked.js" />
         <option value="$PROJECT_DIR$/public/blog/src/components/article.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
       </list>
     </option>
   </component>
@@ -543,12 +563,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00102" summary="搜索功能">
-      <created>1469762628466</created>
-      <option name="number" value="00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1469762628466</updated>
-    </task>
     <task id="LOCAL-00103" summary="搜索功能">
       <created>1469785253537</created>
       <option name="number" value="00103" />
@@ -837,7 +851,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472539243245</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="语法高亮重写">
+      <created>1472552403404</created>
+      <option name="number" value="00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1472552403406</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -965,20 +985,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/blog/node_modules/extract-text-webpack-plugin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33978495">
-          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/src/js/controller/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12903225">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/assets/font/iconfont.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5442177">
@@ -1364,11 +1370,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6822034">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
             <marker date="1472552270000" expanded="true" signature="1173:1282" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/getters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/vuex/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38135594">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
