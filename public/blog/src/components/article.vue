@@ -11,25 +11,8 @@
     </div>
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="">
-        <pre><code>
-      window.onload=function(){
-      self = mui.getExtras;
-      claimRegistration.init();
-      claimRegistration.validation();
-      };
-    </code></pre>
+      <div class="" v-html="content">
       </div>
-      <!--<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>-->
-      <!--<script>hljs.initHighlightingOnLoad()</script>-->
-      <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
-      <!--<script type="text/javascript">-->
-        <!--$(document).ready(function() {-->
-          <!--$('pre code').each(function(i, block) {-->
-            <!--hljs.highlightBlock(block);-->
-          <!--});-->
-        <!--});-->
-      <!--</script>-->
     </div>
   </article>
 </template>
@@ -38,6 +21,12 @@
   import { getTopic, getImg } from '../vuex/getters';
   import marked from 'marked';
 //  import highlight from 'highlight';
+  import Prism from 'prismjs';
+  import 'prismjs/themes/prism.css';
+
+
+  marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
+  });
 
   export default {
     data() {
@@ -52,25 +41,17 @@
       },
     },
     ready() {
-      marked.setOptions({
-        renderer: new marked.Renderer(),
-        gfm: true,
-        tables: true,
-        breaks: false,
-        pedantic: false,
-        sanitize: true,
-        smartLists: true,
-        smartypants: false,
-      });
-//      console.log(highlight);
-//      function Editor(input, preview) {
-//        this.update = function () {
-          // marked(input.value); 解析Markdown为HTML
-      this.content = marked(this.topic.content);
-//        };
-//        this.update();
-//      }
-//      new Editor('','');
+    },
+    computed: {
+      content: () => {
+        let _content = this.topic.content;
+        marked(_content, (err, content) => {
+          if (!err) {
+            _content = content;
+          }
+        });
+        return _content;
+      },
     },
   };
 </script>
