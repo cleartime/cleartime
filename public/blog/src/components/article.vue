@@ -104,7 +104,10 @@
       color: #00b0e8;
     }
     img{
-
+      padding: 20px 0;
+      clear: both;
+      display: block;
+      margin:auto;
     }
   }
 
