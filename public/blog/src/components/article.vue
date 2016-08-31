@@ -11,7 +11,7 @@
     </div>
     <div class="inner padding">
       <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="">
+      <div class="article">
         {{{ content }}}
       </div>
     </div>
@@ -45,6 +45,7 @@
           this.content = content;
         }
       });
+      console.log(this.content);
     },
   };
 </script>
@@ -93,20 +94,15 @@
     color: #000;
   }
 
-  .markdown-body {
-    padding: 0 15px;
-    img {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      width: 50%;
-      height: 50%;
-      transform: translate(50%);
-      margin:20px 0;
+  .article {
+    pre{
+      background: rgb(39,40,34);
+      color: #fff;
     }
   }
 
-  @media screen and (max-width: 768px){
+
+  @media screen and (max-width: 768px) {
     .article-header h2{
       border-bottom: 1px solid #d2d2d2;
     }
@@ -116,20 +112,6 @@
       box-shadow: none;
       background: #fff;
     }
-    .markdown-body {
-      padding:0 10px;
-      img {
-        transform: none;
-        width: 100%;
-        height: auto;
-        margin:20px 0;
-      }
-    }
-    .markdown-body h2{
-      font-size: 21px;
-    }
-    .markdown-body h4{
-      border-bottom: 1px solid #d2d2d2;
-    }
+
   }
 </style>
