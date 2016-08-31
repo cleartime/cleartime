@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/article.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/article.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/index.html" afterPath="$PROJECT_DIR$/public/blog/index.html" />
     </list>
     <ignored path="cleartime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="article.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33262712">
+            <state vertical-scroll-proportion="0.0">
               <caret line="109" column="18" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/blog/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3013393">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -118,11 +128,11 @@
         <option value="$PROJECT_DIR$/public/admin/www/lib/js/marked.js" />
         <option value="$PROJECT_DIR$/public/blog/src/vuex/store.js" />
         <option value="$PROJECT_DIR$/public/blog/src/assets/lib/shCore.js" />
-        <option value="$PROJECT_DIR$/public/blog/index.html" />
         <option value="$PROJECT_DIR$/public/blog/node_modules/prismjs/themes/prism.css" />
         <option value="$PROJECT_DIR$/public/blog/package.json" />
         <option value="$PROJECT_DIR$/public/admin/src/sass/layout.sass" />
         <option value="$PROJECT_DIR$/public/blog/src/components/article.vue" />
+        <option value="$PROJECT_DIR$/public/blog/index.html" />
       </list>
     </option>
   </component>
@@ -497,12 +507,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00110" summary="评论后台写好了">
-      <created>1470206048113</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1470206048113</updated>
-    </task>
     <task id="LOCAL-00111" summary="现在写前台评论">
       <created>1470207527381</created>
       <option name="number" value="00111" />
@@ -791,7 +795,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472630613959</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="语法高亮重写差不多了">
+      <created>1472631359493</created>
+      <option name="number" value="00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1472631359493</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1209,14 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50223213">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/node_modules/prismjs/themes/prism.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.544643">
@@ -1327,8 +1329,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33262712">
+        <state vertical-scroll-proportion="0.0">
           <caret line="109" column="18" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3013393">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
