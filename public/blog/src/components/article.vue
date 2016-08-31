@@ -95,9 +95,23 @@
   }
 
   .article {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
     pre{
+      padding: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
       background: rgb(39,40,34);
       color: #fff;
+    }
+    a{
+      color: #00b0e8;
+    }
+    img{
+      display: flex;
+      justify-content:center;
     }
   }
 
