@@ -53,13 +53,10 @@
 <style lang="scss">
   @import '../assets/lib/github-markdown';
   .head-img{
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    width: 50%;
-    height: 50%;
-    transform: translate(50%);
-    margin:20px 0;
+    padding: 20px 0;
+    clear: both;
+    display: block;
+    margin:auto;
   }
   .article-header {
     background-color: #FFF;
@@ -93,7 +90,6 @@
     background-color: #909090;
     color: #000;
   }
-
   .article {
     display: flex;
     padding: 15px;
@@ -110,8 +106,7 @@
       color: #00b0e8;
     }
     img{
-      display: flex;
-      justify-content:center;
+
     }
   }
 
