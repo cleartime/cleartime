@@ -21,7 +21,6 @@
 <script>
   import { getTopic, getImg } from '../vuex/getters';
   import marked from 'marked';
-//  import highlight from 'highlight';
   import Prism from 'prismjs';
   import 'prismjs/themes/prism.css';
 
@@ -45,7 +44,6 @@
           this.content = content;
         }
       });
-      console.log(this.content);
     },
   };
 </script>
