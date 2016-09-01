@@ -95,13 +95,21 @@
     pre{
       padding: 15px;
       border-radius: 5px;
-      white-space: pre-wrap;
+      white-space: pre;
+      overflow-x:scroll;
       word-wrap: break-word;
       background: rgb(39,40,34);
       color: #fff;
     }
     a{
       color: #00b0e8;
+    }
+    ul li{
+      list-style: disc;
+      list-style-position: inside;
+    }
+    ol li{
+      list-style: decimal;
     }
     img{
       padding: 20px 0;
