@@ -45,30 +45,3 @@ export const transTab = (tab) => {
   }
   return str;
 };
-
-
-export const myblog = (num) => {
-  let str;
-  switch (num) {
-    case 5:
-      str = '我';
-      break;
-    case 4:
-      str = '我的';
-      break;
-    case 3:
-      str = '我的博';
-      break;
-    case 2:
-      str = '我的博客';
-      break;
-    case 1:
-      str = '我的博客';
-      break;
-    case 0:
-      str = '我的博客啊!';
-      break;
-    default:
-  }
-  return str;
-};

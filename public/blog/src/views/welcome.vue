@@ -1,6 +1,6 @@
 <template>
     <div class="bg">
-      <span class="text">倒计时进入{{ timenum | myblog}}</span>
+      <span class="text">欢迎进入我的博客...</span>
       <div>{{ getTopicTab }}</div>
       <img src="../assets/bj1.jpg" width="100%" height="100%">
     </div>
@@ -15,19 +15,6 @@
   import { fetSEO } from '../vuex/actions';
   import { getWebinfo, getTopicLists } from '../vuex/getters';
   export default {
-    data() {
-      return {
-        timenum: 4,
-      };
-    },
-    ready() {
-      setInterval(() => {
-        if (this.timenum <= 0) {
-          return false;
-        }
-        this.timenum --;
-      }, 1000);
-    },
     vuex: {
       actions: {
         fetSEO,
