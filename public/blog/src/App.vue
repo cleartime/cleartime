@@ -122,9 +122,6 @@ export default {
   .fade-leave {
     opacity: 0;
   }
-  .bounce-transition {
-    display: inline-block; /* 否则 scale 动画不起作用 */
-  }
   .bounce-enter {
     animation: bounce-in 2s;
   }
