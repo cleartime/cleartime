@@ -9,7 +9,7 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" @click="isShow"></welcome>
+  <welcome v-if="isShow" @click="isShow"  v-on:isShow="isShow"></welcome>
   </div>
 </template>
 
@@ -35,9 +35,6 @@ export default {
       console.log(e);
       /* eslint-enable  no-console */
     }
-    setTimeout(() => {
-      this.isShow = false;
-    }, 4000);
   },
   data() {
     return {

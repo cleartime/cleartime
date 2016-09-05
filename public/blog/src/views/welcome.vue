@@ -1,6 +1,7 @@
 <template>
     <div class="bg">
       <span class="text">倒计时进入{{ timenum | myblog}}</span>
+      <div>{{ getTopicTab }}</div>
       <img src="../assets/bj1.jpg" width="100%" height="100%">
     </div>
   <div class="menu">
@@ -12,7 +13,7 @@
 
 <script>
   import { fetSEO } from '../vuex/actions';
-  import { getWebinfo } from '../vuex/getters';
+  import { getWebinfo, getTopicLists } from '../vuex/getters';
   export default {
     data() {
       return {
@@ -33,6 +34,7 @@
       },
       getters: {
         getWebinfo,
+        getTopicLists,
       },
     },
     methods: {
@@ -43,6 +45,13 @@
     route: {
       data() {
         this.fetSEO();
+      },
+    },
+    watch: {
+      'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
+        if (newVal.length > oldVal.length) {
+          this.$dispatch('isShow', false);
+        }
       },
     },
   };

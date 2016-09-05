@@ -21,7 +21,7 @@ const state = {
   image: '',
   recommend: [],
   topicTabs: [],
-  topicLists: [],
+  topicLists: ['1', '2'],
   currentTab: '',
   currentPage: '',
   topic: '',
@@ -51,6 +51,7 @@ const mutations = {
   },
   // 获取文章列表失败
   FETCH_TOPIC_LISTS_FAILURE(state, topicTab, page) {
+    state.showWelcome = true;
     state.hint = {
       show: true,
       info: '获取文章列表失败',

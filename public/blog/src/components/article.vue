@@ -49,7 +49,6 @@
 </script>
 
 <style lang="scss">
-  @import '../assets/lib/github-markdown';
   .head-img{
     padding: 20px 0;
     clear: both;
