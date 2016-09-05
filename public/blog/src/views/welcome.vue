@@ -1,7 +1,5 @@
 <template>
     <div class="bg"  transition="bounce">
-      <span class="text">欢迎进入我的博客</span>
-      <div>{{ getTopicTab }}</div>
       <!--<img src="../assets/bj1.jpg" width="100%" height="100%">-->
     </div>
   <div class="menu" transition="bounce">
