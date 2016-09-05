@@ -12,15 +12,10 @@
 </template>
 
 <script>
-  import { fetSEO } from '../vuex/actions';
-  import { getWebinfo, getTopicLists } from '../vuex/getters';
+  import { getTopicLists } from '../vuex/getters';
   export default {
     vuex: {
-      actions: {
-        fetSEO,
-      },
       getters: {
-        getWebinfo,
         getTopicLists,
       },
     },
@@ -29,15 +24,13 @@
         this.$dispatch('isShow', false);
       },
     },
-    route: {
-      data() {
-        this.fetSEO();
-      },
-    },
     watch: {
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
         if (newVal.length > oldVal.length) {
-          this.$dispatch('isShow', false);
+          const self = this;
+          setTimeout(() => {
+            self.$dispatch('isShow', false);
+          }, 2000);
         }
       },
     },
