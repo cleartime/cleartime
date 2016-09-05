@@ -114,13 +114,16 @@ export default {
     transform: translateY(-100%);
   }
   .fade-transition {
-    transition: all .5s ease-in-out;
+    transition: all 4s ease-in-out;
   }
   .fade-enter{
     opacity: 0;
   }
   .fade-leave {
     opacity: 0;
+  }
+  .bounce-transition {
+    display: inline-block; /* 否则 scale 动画不起作用 */
   }
   .bounce-enter {
     animation: bounce-in 2s;
