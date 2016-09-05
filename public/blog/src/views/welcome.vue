@@ -1,8 +1,8 @@
 <template>
-    <div class="bg">
+    <div class="bg"  transition="bounce">
       <span class="text">欢迎进入我的博客...</span>
       <div>{{ getTopicTab }}</div>
-      <img src="../assets/bj1.jpg" width="100%" height="100%">
+      <!--<img src="../assets/bj1.jpg" width="100%" height="100%">-->
     </div>
   <div class="menu">
       <div class="pic" @click="closeWelcomePage">
@@ -34,6 +34,9 @@
         }
       },
     },
+    destroyed() {
+      this.opacityStyle = 0;
+    },
   };
 </script>
 
@@ -42,10 +45,10 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-size: 100% 100%;
+    background: url("../assets/bj1.jpg") no-repeat;
+    background-size: cover;
     top: 0;
     left: 0;
-    opacity: .5;
     .text{
       font-size: 20px;
       position: absolute;
@@ -91,6 +94,21 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .bounce-transition {
+    display: inline-block; /* 否则 scale 动画不起作用 */
+  }
+  .bounce-leave {
+    animation: bounce-out 2s;
+  }
+  @keyframes bounce-out {
+    0% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 0;
     }
   }
 </style>

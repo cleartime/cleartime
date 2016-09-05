@@ -9,7 +9,7 @@
     <c-footer></c-footer>
     <c-back></c-back>
   </div>
-  <welcome v-if="isShow" @click="isShow"  v-on:isShow="isShow"></welcome>
+  <welcome v-if="isShow" @click="isShow"></welcome>
   </div>
 </template>
 
@@ -120,7 +120,7 @@ export default {
     transform: translateY(-100%);
   }
   .list-transition {
-    transition: all .5s ease;
+    transition: all 4s ease-in-out;
   }
   .list-enter{
     opacity: 0;
