@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div id="app" v-show="!isShow" transition="fade">
+  <div id="app" v-show="!isShow" transition="bounce">
     <!--<c-Bar></c-Bar>-->
     <c-header></c-header>
     <div class="main">
@@ -64,6 +64,7 @@ export default {
     -webkit-overflow-scrolling: touch;
     line-height: 1.5;
     height: 100%;
+    width: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -101,13 +102,6 @@ export default {
     padding: 0 5%;
   }
 
-  .fade-transition {
-    transition: all .5s ease;
-  }
-  .fade-enter, .fade-leave{
-    opacity: 0;
-    transform: scale(0);
-  }
   .back-transition {
     transition: all .5s ease;
   }
@@ -119,14 +113,39 @@ export default {
     opacity: 0;
     transform: translateY(-100%);
   }
-  .list-transition {
-    transition: all 4s ease-in-out;
+  .fade-transition {
+    transition: all .5s ease-in-out;
   }
-  .list-enter{
+  .fade-enter{
     opacity: 0;
   }
-  .list-leave {
+  .fade-leave {
     opacity: 0;
+  }
+  .bounce-transition {
+    display: inline-block; /* 否则 scale 动画不起作用 */
+  }
+  .bounce-enter {
+    animation: bounce-in 2s;
+  }
+  .bounce-leave {
+    animation: bounce-out 2s;
+  }
+  @keyframes bounce-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   @media screen and (max-width: 768px){
    .main{
