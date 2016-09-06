@@ -1,4 +1,4 @@
-app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SERVER_URL', function ($scope, ajax, toast, $state, SERVER_URL) {
+app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SERVER_URL', '$http', function ($scope, ajax, toast, $state, SERVER_URL, $http) {
     $scope.article = {};
 
     $scope.uploadImg = function (file) {
@@ -20,10 +20,28 @@ app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SE
         }).then(
             function (result) {
                 toast.dismiss('添加成功!');
+                //$scope.link(result.data[0].objectId, result.data[0].objectId);
                 $state.go('layout.article')
             }
         )
     };
 
+
+    //百度链接提交
+    $scope.link = function(a,b){
+        var req = {
+            method: 'POST',
+            url: 'http://data.zz.baidu.com/urls?site=www.guixiaoxiao.cn&token=v142gv4JbzFKnfgx',
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            data: { 'http': '//guixiaoxiao.cn/post/'+a+'/'+b}
+        }
+        $http(req).then(function(){
+            toast.dismiss('百度链接提交成功!');
+        }, function(){
+            toast.dismiss('百度链接提交失败!');
+        });
+    }
 
 }]);
