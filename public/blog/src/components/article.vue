@@ -92,13 +92,15 @@
     padding: 15px;
     flex-direction: column;
     pre{
+      line-height: 1.2;
       padding: 15px;
       border-radius: 5px;
       white-space: pre;
-      overflow-x:scroll;
+      overflow-x:auto;
       word-wrap: break-word;
-      background: rgb(39,40,34);
-      color: #fff;
+      background: #f7f7f7;
+      color: #000;
+      font-weight: normal;
     }
     a{
       color: #00b0e8;
@@ -115,6 +117,27 @@
       clear: both;
       display: block;
       margin:auto;
+    }
+    h2{
+      border-bottom: 1px solid #d2d2d2;
+    }
+    blockquote {
+      background:#f9f9f9;
+      border-left:10px solid #ccc;
+      margin:1.5em 10px;
+      padding:.5em 10px;
+      quotes:"\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+      color:#ccc;
+      content:open-quote;
+      font-size:4em;
+      line-height:.1em;
+      margin-right:.25em;
+      vertical-align:-.4em;
+    }
+    blockquote p {
+      display:inline;
     }
   }
 

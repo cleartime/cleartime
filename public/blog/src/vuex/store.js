@@ -21,7 +21,7 @@ const state = {
   image: '',
   recommend: [],
   topicTabs: [],
-  topicLists: ['1', '2'],
+  topicLists: [],
   currentTab: '',
   currentPage: '',
   topic: '',
