@@ -15,8 +15,8 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   history: true,
   hashbang: false,
-  transitionOnLoad: true,
 });
+
 configRouter(router);
 router.beforeEach((transition) => {
   document.body.scrollTop = 0;

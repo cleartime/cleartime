@@ -48,6 +48,9 @@
         fileId: getFileId,
       },
     },
+    ready() {
+
+    },
     route: {
       data({ to: { params: { id } } }) {
         // 初始化hint

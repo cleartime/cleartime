@@ -1,5 +1,5 @@
 <template>
-    <div class="bg"  transition="bounce">
+    <div class="bg"  transition={{ transitionObj }}>
       <!--<img src="../assets/bj1.jpg" width="100%" height="100%">-->
     </div>
   <div class="menu" transition="bounce">
@@ -12,6 +12,11 @@
 <script>
   import { getTopicLists } from '../vuex/getters';
   export default {
+    data() {
+      return {
+        transitionObj: 'bounce',
+      };
+    },
     vuex: {
       getters: {
         getTopicLists,
@@ -21,6 +26,12 @@
       closeWelcomePage() {
         this.$dispatch('isShow', false);
       },
+    },
+    ready() {
+      if (!this.$route.isindex) {
+        this.isShow = false;
+        this.transitionObj = 'fade';
+      }
     },
     watch: {
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
