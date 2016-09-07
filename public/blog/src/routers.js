@@ -8,7 +8,7 @@ export default (router) => router.map({
     name: 'welcome',
     component: require('./views/welcome'),
   },
-  '/post/:id/:fileId': {
+  '/post/:id': {
     name: 'post',
     component: require('./views/post'),
     isPost: true,

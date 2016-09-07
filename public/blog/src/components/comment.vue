@@ -13,7 +13,7 @@
             <span class="comment-time">{{ i.updatedAt | timeToUpdata }}</span>
           </p>
           <p class="comment-content">{{ i.content}}</p>
-          <a @click='isShowCommet(i.nickname, i.objectId)'>回复他</a>
+          <a @click='isShowCommet(i.nickname, i.email, i.objectId)'>回复他</a>
         </div>
         <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
           <div class="comment-pep">
@@ -26,7 +26,7 @@
             <span class="comment-time">{{ j.updatedAt | timeToUpdata}}</span>
           </p>
           <p class="comment-content"><span>{{ '@'+i.nickname }}</span>{{ j.content }}</p>
-          <a @click='isShowCommet(j.nickname, j.objectId)'>回复他</a>
+          <a @click='isShowCommet(j.nickname, i.email, j.objectId)'>回复他</a>
         </div>
       </div>
       <div class="comment-body">
@@ -200,6 +200,8 @@
         user: '点击评论',
         fid: '',
         isCancel: false,
+        femail: '',
+        fnickname: '',
       };
     },
     props: ['comment', 'topic'],
@@ -221,7 +223,8 @@
       setcomment() {
         /* eslint-disable brace-style,no-alert */
         if (!!this.nickname.length && !!this.email.length && !!this.content.length) {
-          this.setComments(this.nickname, this.email, this.content, this.articleId, this.fid);
+          this.setComments(this.nickname, this.email, this.content, this.articleId,
+            this.fid, this.fnickname, this.femail);
           this.isShow = false;
           this.content = '';
         }
@@ -230,18 +233,21 @@
         }
         /* eslint-enable brace-style,no-alert */
       },
-      isShowCommet(name, fid) {
+      isShowCommet(name, email, fid) {
         window.location.hash = '';
         window.location.hash = 'content';
         this.user = `@${name}`;
         this.isCancel = true;
         this.fid = fid;
+        this.femail = email;
+        this.fnickname = name;
         document.getElementsByTagName('textarea')[0].focus();
       },
       cancel() {
         this.isCancel = false;
         this.user = '点击评论';
         this.fid = '';
+        this.fnickname = '';
       },
     },
   };

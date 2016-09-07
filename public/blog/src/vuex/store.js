@@ -31,6 +31,7 @@ const state = {
     colorRed: false,
     info: '正在加载中...',
   },
+  fileId: '',
 };
 
 const mutations = {
@@ -62,6 +63,7 @@ const mutations = {
   },
   // 获取某一文章成功
   FETCH_TOPIC_SUCCESS(state, topic) {
+    state.fileId = topic.fileId;
     state.hint.show = false;
     state.topic = topic;
     state.topic.content = decodeURIComponent(state.topic.content);

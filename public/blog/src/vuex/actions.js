@@ -278,9 +278,9 @@ export const fetchComments = ({ dispatch }, objectId) => {
  * @param  {String} id               文章id
  * @return {Promise}                  Promise
  */
-export const setComments = ({ dispatch }, nickname, email, content, articleId, fid) => {
+export const setComments = ({ dispatch }, nickname, email, content, articleId, fid, fnickname, femail) => {
   const url = '/comments';
-  const params = { nickname, email, content, articleId, fid };
+  const params = { nickname, email, content, articleId, fid, fnickname, femail };
   return _post(url, params)
     .then((json) => {
       if (json.code === 200) {

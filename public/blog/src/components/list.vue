@@ -3,7 +3,7 @@
     <div class="topic-list">
       <div class="cell" v-for="topicItem in items" transition="fade"  >
         <div class="topic-wrapper">
-          <a v-link="{name: 'post', params: {id: topicItem.objectId , fileId: topicItem.fileId}}" title=" {{ topicItem.title }}">
+          <a v-link="{name: 'post', params: {id: topicItem.objectId}}" title=" {{ topicItem.title }}">
             <p>{{ topicItem.title }}</p>
             <p>{{ topicItem.createdAt | timeToNow }}</p>
             <p>{{ topicItem.description }}</p>

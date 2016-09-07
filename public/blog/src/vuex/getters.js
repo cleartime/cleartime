@@ -1,5 +1,7 @@
 export const getTopicLists = (state) => state.topicLists;
 
+export const getFileId = (state) => state.fileId;
+
 export const getTopicTabs = (state) => state.topicTabs;
 
 export const getTopic = (state) => state.topic;

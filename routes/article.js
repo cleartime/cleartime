@@ -8,7 +8,6 @@ var json = require('./config');
 
 var Article = AV.Object.extend('Article');// 网站信息
 
-
 // 根据栏目查询单个文章
 router.post('/queryCategory', function (req, res, next) {
     var cql = 'select * from Article where category=' + req.body.categoryId + ' order by -updatedAt ';

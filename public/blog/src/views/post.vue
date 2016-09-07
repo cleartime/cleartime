@@ -24,6 +24,7 @@
     getTopic,
     getSearch,
     getComments,
+    getFileId,
   } from '../vuex/getters';
   export default {
     components: {
@@ -44,28 +45,35 @@
         hint: getHint,
         searchType: getSearch,
         comment: getComments,
+        fileId: getFileId,
       },
     },
     route: {
-      data({ to: { params: { id, fileId } } }) {
+      data({ to: { params: { id } } }) {
         // 初始化hint
         this.initHint();
         // 显示hint
         this.showHint();
         // 获取文章具体内容
-        /* eslint-disable no-console */
+        /* eslint-disable no-console, prefer-arrow-callback,
+        space-before-function-paren, space-before-blocks */
+        const self = this;
         this.fetchTopic(id)
-          .then()
-          .catch((e) => console.log(e));
-        // 获取文章图片
-        this.fetchImg(fileId)
-          .then()
+          .then(function(){
+            // 获取文章图片
+            if (self.fileId) {
+              self.fetchImg(self.fileId)
+              .then()
+              .catch((e) => console.log(e));
+            }
+          })
           .catch((e) => console.log(e));
         // 获取文章评论
         this.fetchComments(id)
           .then()
           .catch((e) => console.log(e));
-        /* eslint-enable no-console */
+        /* eslint-enable no-console, prefer-arrow-callback,
+        space-before-function-paren, space-before-blocks */
       },
     },
   };
