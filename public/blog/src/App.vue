@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="app" v-show="!isShow" transition={{ transitionObj }}>
+    <div id="app" v-show="!isShow" :transition="transitionObj">
       <!--<c-Bar></c-Bar>-->
       <c-header></c-header>
       <div class="main">
@@ -22,11 +22,17 @@
   import store from './vuex/store';
 
   export default {
+    data() {
+      return {
+        isShow: true,
+        transitionObj: 'index',
+      };
+    },
     ready() {
       if (!this.$route.isindex) {
         this.isShow = false;
-        this.transitionObj = 'fade';
       }
+      this.transitionObj = 'bounce';
       // 会变的 title
       document.addEventListener('visibilitychange', () => {
         document.title = document.hidden ? '出BUG了，快看！' : 'cleartime的博客_桂孝孝的博客';
@@ -39,12 +45,6 @@
         console.log(e);
         /* eslint-enable  no-console */
       }
-    },
-    data() {
-      return {
-        isShow: true,
-        transitionObj: 'bounce',
-      };
     },
     components: {
       cHeader,
@@ -135,10 +135,6 @@
     opacity: 0;
   }
 
-  .bounce-transition {
-    display: inline-block; /* 否则 scale 动画不起作用 */
-  }
-
   .bounce-enter {
     animation: bounce-in 2s;
   }
@@ -168,6 +164,20 @@
       opacity: 1;
     }
   }
+
+  .index-enter, .index-leave {
+    animation: index 2s;
+  }
+
+  @keyframes index {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 
   @media screen and (max-width: 768px) {
     .main {

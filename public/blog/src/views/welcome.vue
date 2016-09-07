@@ -1,8 +1,8 @@
 <template>
-    <div class="bg"  transition={{ transitionObj }}>
+    <div class="bg" :transition="transitionObj">
       <!--<img src="../assets/bj1.jpg" width="100%" height="100%">-->
     </div>
-  <div class="menu" transition="bounce">
+  <div class="menu" :transition="transitionObj">
       <div class="pic" @click="closeWelcomePage">
         <img src="../assets/head.jpeg">
       </div>
@@ -30,7 +30,7 @@
     ready() {
       if (!this.$route.isindex) {
         this.isShow = false;
-        this.transitionObj = 'fade';
+        this.transitionObj = '';
       }
     },
     watch: {
