@@ -21,11 +21,9 @@
         fetchMe,
       },
     },
-    route: {
-      data() {
-        // 初始化hint
-        this.fetchMe();
-      },
+    created() {
+      // 初始化hint
+      this.fetchMe();
     },
   };
 </script>
