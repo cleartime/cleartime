@@ -13,7 +13,7 @@ Vue.filter('timeToUpdata', timeToUpdata);
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-  history: false,
+  history: true,
   hashbang: false,
   transitionOnLoad: true,
 });

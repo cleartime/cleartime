@@ -20,7 +20,7 @@
     "ejs": "2.3.1",
     "express": "4.12.3",
     "leanengine": "^1.0.0-beta",
-    "nodemailer": "^2.6.0"
+    "nodemailer": "^0.7.1"
   },
   "engines": {
     "node": "4.x"

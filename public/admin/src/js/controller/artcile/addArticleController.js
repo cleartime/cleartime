@@ -20,7 +20,7 @@ app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SE
         }).then(
             function (result) {
                 toast.dismiss('添加成功!');
-                //$scope.link(result.data[0].objectId, result.data[0].objectId);
+                //$scope.link(result[0].objectId);
                 $state.go('layout.article')
             }
         )
@@ -28,14 +28,14 @@ app.controller('addArticleController', ['$scope', 'ajax', 'toast', '$state', 'SE
 
 
     //百度链接提交
-    $scope.link = function(a,b){
+    $scope.link = function(a){
         var req = {
             method: 'POST',
             url: 'http://data.zz.baidu.com/urls?site=www.guixiaoxiao.cn&token=v142gv4JbzFKnfgx',
             headers: {
                 'Content-Type': 'text/plain'
             },
-            data: { 'http': '//guixiaoxiao.cn/post/'+a+'/'+b}
+            data: { 'http': '//guixiaoxiao.cn/post/'+a}
         }
         $http(req).then(function(){
             toast.dismiss('百度链接提交成功!');

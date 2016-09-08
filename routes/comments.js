@@ -7,38 +7,30 @@ var AV = require('leanengine');
 var json = require('./config');
 var nodemailer = require("nodemailer");
 
-
-function sendEmail(nickname, email, content, articleId, fid, femail, fnickname) {
+//发送邮件
+function sendEmail(nickname, email, content, articleId, fid, femail, fnickname){
     var toEmail = !!femail ? femail : '562606139@qq.com';
     var title = !!fnickname ? '尊敬的' + fnickname + '您好,您在Cleartime Blog中的评论有回复啦!赶紧过来看看吧!' : '您有新的评论!';
     var content = '<p>' + (!!fnickname ? fnickname : nickname) + '回复了您的评论</p><p>' + content + '</p><p><a href="http://www.guixiaoxiao.cn/post/' + articleId + '">点击立即回复</a></p>';
-// 开启一个 SMTP 连接池
+    var user = '562606139@qq.com'
+        , pass = 'ouztuqalihmzbbea'
+        ;
     var smtpTransport = nodemailer.createTransport("SMTP", {
-        host: "smtp.qq.com", // 主机
-        secureConnection: true, // 使用 SSL
-        port: 465, // SMTP 端口
-        auth: {
-            user: "562606139@qq.com", // 账号
-            pass: "ouztuqalihmzbbea" // 密码
+        service: "QQ"
+        , auth: {
+            user: user,
+            pass: pass
         }
-    });
-// 设置邮件内容
-    var mailOptions = {
-        from: 'Cleartime Blog <562606139@qq.com>', // 发件地址
-        to: toEmail, // 收件列表
-        subject: title, // 标题
-        html: content// html 内容
-    }
-// 发送邮件
-    smtpTransport.sendMail(mailOptions, function (error, response) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log("Message sent: " + response.message);
-        }
-        smtpTransport.close(); // 如果没用，关闭连接池
     });
 
+    smtpTransport.sendMail({
+        from    : 'Cleartime Blog <562606139@qq.com>'
+        , to      : toEmail
+        , subject : title
+        , html    : content
+    }, function(err, res) {
+        console.log(err, res);
+    });
 }
 
 
