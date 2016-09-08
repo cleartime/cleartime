@@ -14,7 +14,7 @@ app.use(busboy());
 // 设置模板引擎
 //app.set('dist', path.join(__dirname, 'dist'));
 //app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static('blog'));
 
 // 加载云函数定义
 require('./cloud');
