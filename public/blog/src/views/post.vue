@@ -49,10 +49,9 @@
       },
     },
     ready() {
-
     },
     route: {
-      data({ to: { params: { id } } }) {
+      data() {
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -61,7 +60,7 @@
         /* eslint-disable no-console, prefer-arrow-callback,
         space-before-function-paren, space-before-blocks */
         const self = this;
-        this.fetchTopic(id)
+        this.fetchTopic(this.$route.params.id)
           .then(function(){
             // 获取文章图片
             if (self.fileId) {
@@ -72,7 +71,7 @@
           })
           .catch((e) => console.log(e));
         // 获取文章评论
-        this.fetchComments(id)
+        this.fetchComments(this.$route.params.id)
           .then()
           .catch((e) => console.log(e));
         /* eslint-enable no-console, prefer-arrow-callback,

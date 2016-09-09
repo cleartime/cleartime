@@ -48,7 +48,7 @@
       },
     },
     route: {
-      data({ to: { params: { recommend } } }) {
+      data() {
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -61,8 +61,8 @@
         if (this.getlistname.id) {
           this.selected = this.getlistname.index;
           this.fetchCategoryicLists(Number(this.getlistname.id));
-        } else if (recommend) {
-          this.getRecommendOne(recommend);
+        } else if (this.$route.params.recommend) {
+          this.getRecommendOne(this.$route.params.recommend);
         } else {
           this.fetchTopicLists();
         }

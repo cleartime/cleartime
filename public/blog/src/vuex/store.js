@@ -32,6 +32,7 @@ const state = {
     info: '正在加载中...',
   },
   fileId: '',
+  artId: '',
 };
 
 const mutations = {

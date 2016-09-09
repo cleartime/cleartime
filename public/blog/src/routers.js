@@ -19,8 +19,5 @@ export default (router) => router.map({
     component: require('./views/me'),
     isMe: true,
   },
-  '*': {
-    component: require('./views/404'),
-  },
 });
 

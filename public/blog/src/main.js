@@ -18,6 +18,10 @@ const router = new VueRouter({
   transitionOnLoad: true,
 });
 
+router.redirect({
+  '*': '/',
+});
+
 configRouter(router);
 router.beforeEach((transition) => {
   document.body.scrollTop = 0;
