@@ -14,7 +14,7 @@ app.use(busboy());
 // 设置模板引擎
 //app.set('views', path.join(__dirname, 'web'));
 //app.set('view engine', 'jade');
-app.use(express.static('web'));
+//app.use(express.static('web'));
 
 // 加载云函数定义
 require('./cloud');
@@ -74,12 +74,12 @@ app.get('/reg', function (req, res) {
 
 app.use(function (req, res, next) {
     // 如果任何一个路由都没有返回响应，则抛出一个 404 异常给后续的异常处理器
-    res.sendFile(path.dirname(require.main.filename) + '/web/index.html');
-    //if (!res.headersSent) {
-    //    var err = new Error('Not Found');
-    //    err.status = 404;
-    //    next(err);
-    //}
+    //res.sendFile(path.dirname(require.main.filename) + '/web/index.html');
+    if (!res.headersSent) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    }
 });
 
 // error handlers
