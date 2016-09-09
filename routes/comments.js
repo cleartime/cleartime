@@ -11,7 +11,7 @@ var nodemailer = require("nodemailer");
 function sendEmail(nickname, email, content, articleId, fid, femail, fnickname){
     var toEmail = !!femail ? femail : '562606139@qq.com';
     var title = !!fnickname ? '尊敬的' + fnickname + '您好,您在Cleartime Blog中的评论有回复啦!赶紧过来看看吧!' : '您有新的评论!';
-    var content = '<p>' + (!!fnickname ? fnickname : nickname) + '回复了您的评论</p><p>' + content + '</p><p><a href="http://www.guixiaoxiao.cn/post/' + articleId + '">点击立即回复</a></p>';
+    var content = '<p>' + (!!fnickname ? fnickname : nickname) + '回复了您的评论</p><p>' + content + '</p><p><a href="http://cleartime.leanapp.cn/post/' + articleId + '">点击立即回复</a></p>';
     var user = '562606139@qq.com'
         , pass = 'ouztuqalihmzbbea'
         ;

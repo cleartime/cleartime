@@ -1,7 +1,7 @@
 #  Vue.js+LeanCloud单页面博客
 
 ## 简介
-一个前后端完全分离的单页应用  [线上地址点此查看](http://guixiaoxiao.cn)
+一个前后端完全分离的单页应用  [线上地址点此查看](http://cleartime.leanapp.cn)
 
 
 ### version 1.0
@@ -17,8 +17,6 @@
 - [vuex 状态管理](https://github.com/vuejs/vuex)
 - [vue-router 路由](https://github.com/vuejs/vue-router)
 - [marked 语法解析](https://github.com/chjj/marked)
-- [fastclick 解决移动端延迟问题](https://github.com/ftlabs/fastclick)
-
 
 ### 后端
 - [node.js 服务端](https://github.com/nodejs/node)
