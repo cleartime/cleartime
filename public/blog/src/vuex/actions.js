@@ -3,28 +3,6 @@ import config from '../config';
 /* eslint-disable camelcase */
 /* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
-/**
- * get请求
- * @param  {String} options.url   api地址
- * @param  {String} options.query query参数
- * @return {Promise}               Promise
- */
-const _get = ({ url, query }) => {
-  let _url;
-  if (query) {
-    _url = config + url + query;
-  } else {
-    _url = config + url;
-  }
-  return fetch(_url)
-    .then((res) => {
-      if (res.status >= 200 && res.status < 300) {
-        return res.json();
-      }
-      return Promise.reject(new Error(res.status));
-    });
-};
-
 
 /**
  * 字符串序列化
@@ -38,6 +16,30 @@ const transformRequest = (obj) => {
   }
   return str.join('&');
 };
+
+
+/**
+ * get请求
+ * @param  {String} options.url   api地址
+ * @param  {String} options.query query参数
+ * @return {Promise}               Promise
+ */
+const _get = (url, query) => {
+  let _url;
+  if (query) {
+    _url = `${config}${url}?${transformRequest(query)}`;
+  } else {
+    _url = `${config}${url}`;
+  }
+  return fetch(_url)
+    .then((res) => {
+      if (res.status >= 200 && res.status < 300) {
+        return res.json();
+      }
+      return Promise.reject(new Error(res.status));
+    });
+};
+
 
 /**
  * post请求
@@ -90,7 +92,7 @@ export const listName = ({ dispatch }, name, index) => dispatch('LIST_NAME', nam
  */
 export const getRecommend = ({ dispatch }) => {
   const url = '/recommend';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         return dispatch('FETCH_RECOMMEND_SUCCESS', json.data);
@@ -113,7 +115,7 @@ export const getRecommend = ({ dispatch }) => {
 export const getRecommendOne = ({ dispatch }, recommend) => {
   const url = '/article/queryRecommend';
   const params = { recommend };
-  return _post(url, params)
+  return _get(url, params)
     .then((json) => {
       if (json.code === 200) {
         return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
@@ -136,7 +138,7 @@ export const getRecommendOne = ({ dispatch }, recommend) => {
  */
 export const loginSuccuess = ({ dispatch }) => {
   const url = '/category';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         const all = {
@@ -163,7 +165,7 @@ export const loginSuccuess = ({ dispatch }) => {
 export const fetchCategoryicLists = ({ dispatch }, categoryId) => {
   const url = '/article/queryCategory';
   const params = { categoryId };
-  return _post(url, params)
+  return _get(url, params)
     .then((json) => {
       if (json.code === 200) {
         return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
@@ -186,7 +188,7 @@ export const fetchCategoryicLists = ({ dispatch }, categoryId) => {
  */
 export const fetchTopicLists = ({ dispatch }) => {
   const url = '/article';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         return dispatch('FETCH_TOPIC_LISTS_SUCCESS', json.data);
@@ -209,7 +211,7 @@ export const fetchTopicLists = ({ dispatch }) => {
 export const fetchTopic = ({ dispatch }, objectId) => {
   const url = '/article/query';
   const params = { objectId };
-  return _post(url, params)
+  return _get(url, params)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_TOPIC_SUCCESS', json.data);
@@ -233,7 +235,7 @@ export const fetchTopic = ({ dispatch }, objectId) => {
 export const fetchImg = ({ dispatch }, objectId) => {
   const url = '/upload/query';
   const params = { objectId };
-  return _post(url, params)
+  return _get(url, params)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_IMG_SUCCESS', json.data[0]);
@@ -257,7 +259,7 @@ export const fetchImg = ({ dispatch }, objectId) => {
 export const fetchComments = ({ dispatch }, objectId) => {
   const url = '/comments/query';
   const params = { objectId };
-  return _post(url, params)
+  return _get(url, params)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_COMMENTS_SUCCESS', json.data);
@@ -304,7 +306,7 @@ export const setComments = ({ dispatch }, nickname, email, content, articleId, f
  */
 export const fetchMe = ({ dispatch }) => {
   const url = '/information';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_ME_SUCCESS', json.data[0]);
@@ -327,7 +329,7 @@ export const fetchMe = ({ dispatch }) => {
  */
 export const fetFriendLink = ({ dispatch }) => {
   const url = '/linkfriend';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_FRIEND_SUCCESS', json.data);
@@ -349,7 +351,7 @@ export const fetFriendLink = ({ dispatch }) => {
  */
 export const fetSEO = ({ dispatch }) => {
   const url = '/webinfo';
-  return _get({ url })
+  return _get(url)
     .then((json) => {
       if (json.code === 200) {
         dispatch('FETCH_WEBINFO_SUCCESS', json.data);

@@ -52,8 +52,8 @@ router.get('/', function (req, res, next) {
 });
 
 // 查询单一文章评论
-router.post('/query', function (req, res, next) {
-    var cql = 'select * from Comments where  articleId="' + req.body.objectId + '"';
+router.get('/query', function (req, res, next) {
+    var cql = 'select * from Comments where  articleId="' + req.query.objectId + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;

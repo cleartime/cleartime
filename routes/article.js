@@ -9,8 +9,8 @@ var json = require('./config');
 var Article = AV.Object.extend('Article');// 网站信息
 
 // 根据栏目查询单个文章
-router.post('/queryCategory', function (req, res, next) {
-    var cql = 'select * from Article where category=' + req.body.categoryId + ' order by -updatedAt ';
+router.get('/queryCategory', function (req, res, next) {
+    var cql = 'select * from Article where category=' + req.query.categoryId + ' order by -updatedAt ';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -27,8 +27,8 @@ router.post('/queryCategory', function (req, res, next) {
 
 
 // 根据推荐位查询单个文章
-router.post('/queryRecommend', function (req, res, next) {
-    var cql = 'select * from Article where recommend="' + req.body.recommend + '" order by -updatedAt ';
+router.get('/queryRecommend', function (req, res, next) {
+    var cql = 'select * from Article where recommend="' + req.query.recommend + '" order by -updatedAt ';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;
@@ -44,8 +44,8 @@ router.post('/queryRecommend', function (req, res, next) {
 
 
 // 查询单个文章
-router.post('/query', function (req, res, next) {
-    var cql = 'select * from Article where objectId="' + req.body.objectId + '"';
+router.get('/query', function (req, res, next) {
+    var cql = 'select * from Article where objectId="' + req.query.objectId + '"';
     var pvalues = [0];
     AV.Query.doCloudQuery(cql, pvalues).then(function (data) {
         var results = data.results;

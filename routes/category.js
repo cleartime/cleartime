@@ -9,8 +9,8 @@ var json = require('./config');
 var Webinfo = AV.Object.extend('Webinfo');// 网站信息
 
 // 查询单个栏目(根据cod)
-router.post('/query', function (req, res) {
-    var cql = 'select * from Category where objectId = '+req.body.objectId+'';
+router.get('/query', function (req, res) {
+    var cql = 'select * from Category where objectId = '+req.query.objectId+'';
     AV.Query.doCloudQuery(cql).then(function (data) {
         json.data = data.results;
         json.code = 200;
