@@ -3,7 +3,7 @@
  */
 var config = {
     //'SERVER_URL': 'http://localhost:3000'
-    'SERVER_URL': 'http://cleartime.leanapp.cn'
+    'SERVER_URL': 'http://gxx.leanapp.cn'
 };
 for(item in config){
     app.constant(item,config[item])

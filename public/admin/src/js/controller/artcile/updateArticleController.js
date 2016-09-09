@@ -1,5 +1,5 @@
 app.controller('updateArticleController', ['$scope', 'ajax', 'toast', '$state', 'SERVER_URL', '$stateParams', function ($scope, ajax, toast, $state, SERVER_URL, $stateParams) {
-    ajax.post({
+    ajax.get({
         url: '/article/query',
         data: {
             objectId: $stateParams.id
@@ -12,7 +12,7 @@ app.controller('updateArticleController', ['$scope', 'ajax', 'toast', '$state', 
         $scope.article.content = decodeURIComponent($scope.article.content);
         var fileId = result.fileId;
         if(fileId){
-            ajax.post({
+            ajax.get({
                 url: '/upload/query',
                 data: {
                     objectId: fileId

@@ -1,7 +1,7 @@
 app.controller('addCommentsController', ['$scope', 'ajax', 'toast', '$state', '$stateParams', function ($scope, ajax, toast, $state, $stateParams) {
 
     if ($stateParams.id) {
-        ajax.post({
+        ajax.get({
             url: '/comments/query',
             data: {
                 objectId:$stateParams.id,
