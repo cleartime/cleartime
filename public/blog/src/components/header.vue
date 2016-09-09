@@ -44,14 +44,6 @@
     ready() {
       this.scroll();
     },
-    route: {
-      ready() {
-        this.scroll();
-      },
-      data() {
-        this.scroll();
-      },
-    },
     methods: {
       searchtitle(title) {
         this.isShowTitle = !this.isShowTitle;

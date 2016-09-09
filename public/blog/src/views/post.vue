@@ -48,35 +48,31 @@
         fileId: getFileId,
       },
     },
-    ready() {
-    },
-    route: {
-      data() {
-        // 初始化hint
-        this.initHint();
-        // 显示hint
-        this.showHint();
-        // 获取文章具体内容
-        /* eslint-disable no-console, prefer-arrow-callback,
-        space-before-function-paren, space-before-blocks */
-        const self = this;
-        this.fetchTopic(this.$route.params.id)
-          .then(function(){
-            // 获取文章图片
-            if (self.fileId) {
-              self.fetchImg(self.fileId)
+    created() {
+      // 初始化hint
+      this.initHint();
+      // 显示hint
+      this.showHint();
+      // 获取文章具体内容
+      /* eslint-disable no-console, prefer-arrow-callback,
+       space-before-function-paren, space-before-blocks */
+      const self = this;
+      this.fetchTopic(this.$route.params.id)
+        .then(function(){
+          // 获取文章图片
+          if (self.fileId) {
+            self.fetchImg(self.fileId)
               .then()
               .catch((e) => console.log(e));
-            }
-          })
-          .catch((e) => console.log(e));
-        // 获取文章评论
-        this.fetchComments(this.$route.params.id)
-          .then()
-          .catch((e) => console.log(e));
-        /* eslint-enable no-console, prefer-arrow-callback,
-        space-before-function-paren, space-before-blocks */
-      },
+          }
+        })
+        .catch((e) => console.log(e));
+      // 获取文章评论
+      this.fetchComments(this.$route.params.id)
+        .then()
+        .catch((e) => console.log(e));
+      /* eslint-enable no-console, prefer-arrow-callback,
+       space-before-function-paren, space-before-blocks */
     },
   };
 </script>
