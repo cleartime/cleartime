@@ -69,6 +69,7 @@
     -webkit-overflow-scrolling: touch;
     line-height: 1.6em;
     word-spacing: .05em;
+    letter-spacing: .05em;
     height: 100%;
     width: 100%;
     text-rendering: optimizeLegibility;
