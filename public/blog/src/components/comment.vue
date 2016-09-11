@@ -8,12 +8,14 @@
             <!--<img src="../assets/pep.png">-->
             <p>{{ i.nickname }}</p>
           </div>
-          <p class="comment-text">
-            <span class="comment-email">{{ i.email }}</span>
-            <span class="comment-time">{{ i.updatedAt | timeToUpdata }}</span>
-          </p>
-          <p class="comment-content">{{ i.content}}</p>
-          <p @click='isShowCommet(i.nickname, i.email, i.objectId)' class="reply">回复他</p>
+          <div class="comment-pep-right">
+            <p class="comment-text">
+              <span class="comment-email">{{ i.email }}</span>
+              <span class="comment-time">{{ i.updatedAt | timeToUpdata }}</span>
+            </p>
+            <p class="comment-content">{{ i.content}}</p>
+            <p @click='isShowCommet(i.nickname, i.email, i.objectId)' class="reply">回复他</p>
+          </div>
         </div>
         <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
           <div class="comment-pep">
@@ -21,12 +23,14 @@
             <!--<img src="../assets/pep.png">-->
             <p>{{ j.nickname }}</p>
           </div>
-          <p class="comment-text">
-            <span class="comment-email">{{ j.email }}</span>
-            <span class="comment-time">{{ j.updatedAt | timeToUpdata}}</span>
-          </p>
-          <p class="comment-content"><span>{{ '@'+i.nickname }}</span>{{ j.content }}</p>
-          <p @click='isShowCommet(j.nickname, i.email, j.objectId)' class="reply">回复他</p>
+          <div class="comment-pep-right">
+            <p class="comment-text">
+              <span class="comment-email">{{ j.email }}</span>
+              <span class="comment-time">{{ j.updatedAt | timeToUpdata}}</span>
+            </p>
+            <p class="comment-content"><span>{{ '@'+i.nickname }}</span>{{ j.content }}</p>
+            <p @click='isShowCommet(j.nickname, i.email, j.objectId)' class="reply">回复他</p>
+          </div>
         </div>
       </div>
       <div class="comment-body">
@@ -56,15 +60,17 @@
     box-sizing: border-box;
   }
   .comment{
+    overflow: hidden;
     margin: 20px 0;
     padding: 10px;
     border-bottom: 1px dashed #ccc;
-    .reply{
-      text-align: right;
-      cursor: pointer
-    }
+  }
+  .reply{
+    text-align: right;
+    cursor: pointer
   }
   .fcomment{
+    overflow: hidden;
     margin: 20px 0;
     padding: 15px 0;
     border-bottom: 1px dashed #ccc;
@@ -90,27 +96,29 @@
       margin: 5px 0 0;
     }
   }
-  .comment-text{
-    span:nth-child(2){
-      float: right;
-    }
-    input{
-      display: block;
-      margin:10px 0px;
-      outline: #00AA00;
-    }
-    input:nth-child(1){
-      padding-left: 15px;
-      float: left;
-    }
-    input:nth-child(2){
-      padding-left: 15px;
-      margin-left: 20px;
-      margin-bottom: -6px;
-      float: left;
-    }
-    float: left;
+  .comment-pep-right{
     width: 80%;
+    float: left;
+    .comment-text{
+      span:nth-child(2){
+        float: right;
+      }
+      input{
+        display: block;
+        margin:10px 0px;
+        outline: #00AA00;
+      }
+      input:nth-child(1){
+        padding-left: 15px;
+        float: left;
+      }
+      input:nth-child(2){
+        padding-left: 15px;
+        margin-left: 20px;
+        margin-bottom: -6px;
+        float: left;
+      }
+    }
   }
   .comment-footer{
     width: 80%;
