@@ -6,9 +6,9 @@
       </a>
       <ul class="navbar">
         <li><a v-link="{name: 'me'}">我的资料</a></li>
-        <li v-if='$route.isindex' >
-          <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
-          <input type="text" v-model="title" v-if='isShowTitle' />
+        <li v-if='$route.isindex'>
+          <a @click="searchtitle(title)" class="search" ><i class="iconfont icon-xiazai15"></i></a>
+          <input type="text" v-model="title" v-if='isShowTitle'  transition="search" />
         </li>
       </ul>
     </div>
@@ -86,17 +86,6 @@
 
 <style lang="scss" scoped>
   @import '../assets/font/iconfont';
-  .title-transition {
-    transition: all .5s ease;
-  }
-  .title-enter{
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  .title-leave {
-    opacity: 0;
-    transform: translateX(100%);
-  }
   header {
     background: url("../assets/banner.jpg") no-repeat top center;
     background-size: cover;
@@ -143,6 +132,7 @@
             font-weight: bold;
           }
           input{
+            outline: none;
             border-radius: 15px;
             width: 50px;
             padding-left: 10px;

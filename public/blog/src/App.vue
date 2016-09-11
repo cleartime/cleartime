@@ -35,8 +35,11 @@
       this.transitionObj = 'bounce';
       // 会变的 title
       document.addEventListener('visibilitychange', () => {
-        document.title = document.hidden ? '出BUG了，快看！' : 'cleartime的博客_桂孝孝的博客';
+        document.title = document.hidden ? '出BUG了，快看！' : 'cleartime的博客_web前端技术博客';
       });
+      // 会变的复制代码
+//      document.body.addEventListener('copy', () => {
+//      });
       // 控制台
       try {
         /* eslint-disable no-console */
@@ -84,6 +87,10 @@
     -moz-osx-font-smoothing: grayscale;
     color: #34495e;
     margin: 0;
+    ::selection {
+      color: #00b0e8;
+      background: #000000;
+    }
   }
 
   img[src^="http"]:empty::before {
@@ -131,7 +138,7 @@
   }
 
   .fade-transition {
-    transition: all 4s ease-in-out;
+    transition: all 2s ease-in-out;
   }
 
   .fade-enter {
@@ -140,6 +147,14 @@
 
   .fade-leave {
     opacity: 0;
+  }
+
+  .search-transition {
+    transition: all .5s ease;
+  }
+
+  .search-enter, .search-leave {
+    transform: translateX(100%);
   }
 
   .bounce-enter {
