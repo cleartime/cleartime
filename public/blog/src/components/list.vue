@@ -4,8 +4,7 @@
       <div class="cell" v-for="topicItem in items" transition="fade"  >
         <div class="topic-wrapper">
           <a v-link="{name: 'post' , params: {id: topicItem.objectId} }"  title=" {{ topicItem.title }}" >
-            <p>{{ topicItem.title }}</p>
-            <p>{{ topicItem.createdAt | timeToNow }}</p>
+            <p>{{ topicItem.title }} <span>{{ topicItem.createdAt | timeToNow }}</span></p>
             <p>{{ topicItem.description }}</p>
           </a>
         </div>
@@ -32,7 +31,6 @@
 
   .panel {
     margin-bottom: 15px;
-    box-shadow: 0 0 5px #CCC;
   }
   .panel-header {
     font-size: .9em;
@@ -92,11 +90,12 @@
       font-weight: 400;
       color: #404040;
     }
-    a p:nth-child(2){
+    a p span{
+      float: right;
       font-size: 14px;
       color: #8b8b8b;
     }
-    a p:nth-child(3){
+    a p:nth-child(2){
       color: #919191;
       font-size: 13px;
       white-space: normal;

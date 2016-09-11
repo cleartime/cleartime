@@ -120,6 +120,7 @@
     }
     h2{
       border-bottom: 1px solid #d2d2d2;
+      padding-bottom: .7em;
     }
     blockquote {
       background:#f9f9f9;

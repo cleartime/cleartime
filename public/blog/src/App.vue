@@ -67,18 +67,22 @@
   html,
   #app {
     -webkit-overflow-scrolling: touch;
-    line-height: 1.5;
+    line-height: 1.6em;
+    word-spacing: .05em;
     height: 100%;
     width: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   body {
     height: 100%;
-    font: 16px 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
     background-color: #fff;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #34495e;
+    margin: 0;
   }
 
   img[src^="http"]:empty::before {
@@ -106,7 +110,9 @@
 
   .main {
     overflow: hidden;
-    padding: 0 5%;
+    padding: 2em 1.4em 0;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .back-transition {
