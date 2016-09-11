@@ -13,7 +13,7 @@
             <span class="comment-time">{{ i.updatedAt | timeToUpdata }}</span>
           </p>
           <p class="comment-content">{{ i.content}}</p>
-          <a @click='isShowCommet(i.nickname, i.email, i.objectId)'>回复他</a>
+          <p @click='isShowCommet(i.nickname, i.email, i.objectId)' class="reply">回复他</p>
         </div>
         <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
           <div class="comment-pep">
@@ -26,7 +26,7 @@
             <span class="comment-time">{{ j.updatedAt | timeToUpdata}}</span>
           </p>
           <p class="comment-content"><span>{{ '@'+i.nickname }}</span>{{ j.content }}</p>
-          <a @click='isShowCommet(j.nickname, i.email, j.objectId)'>回复他</a>
+          <p @click='isShowCommet(j.nickname, i.email, j.objectId)' class="reply">回复他</p>
         </div>
       </div>
       <div class="comment-body">
@@ -59,6 +59,10 @@
     margin: 20px 0;
     padding: 10px;
     border-bottom: 1px dashed #ccc;
+    .reply{
+      text-align: right;
+      cursor: pointer
+    }
   }
   .fcomment{
     margin: 20px 0;
@@ -113,6 +117,7 @@
     margin-top:16px ;
     float: left;
     .comment-click{
+      cursor: pointer;
       display: block;
       clear: both;
     }
