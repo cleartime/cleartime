@@ -26,22 +26,7 @@ export const timeToUpdata = (time) => {
 };
 
 
-export const transTab = (tab) => {
-  let str;
-  switch (tab) {
-    case 'good':
-      str = '精华';
-      break;
-    case 'share':
-      str = '分享';
-      break;
-    case 'job':
-      str = '招聘';
-      break;
-    case 'ask':
-      str = '问答';
-      break;
-    default:
-  }
+export const comment = (str) => {
+  console.log(str);
   return str;
 };

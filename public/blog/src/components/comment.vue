@@ -35,19 +35,22 @@
       </div>
       <div class="comment-body">
         <div class="comment-pep">
-          <i class="iconfont icon-myline"></i>
+          <i class="iconfont icon-myline updatePep" @click='updatePep()' title="点击更换用户"></i>
           <!--<img src="../assets/pep.png">-->
           <p>{{ nickname }}</p>
         </div>
-        <div v-if='isShow' class='comment-text'>
-          <from>
-          <input type="text" placeholder="您的昵称" v-model="nickname" required pattern="[A-Za-z]{3}" title="Three letter country code">
-          <input type="email" placeholder="您的邮箱" v-model="email" required pattern="[A-Za-z]{3}" title="Three letter country code">
-          </from>
-        </div>
-        <div class="comment-footer" >
-          <textarea placeholder="评论的内容" v-model="content" required pattern="[A-Za-z]{3}" title="Three letter country code"></textarea>
-          <a name='content' class="comment-click" @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close" title="取消"></span></a>
+        <div class="comment-pep-right">
+          <div v-if='isShow' class='comment-text'>
+            <p class="pattern" v-if='pattern.pattern_nickname'>{{ pattern.pattern_nickname }}</p>
+            <input type="text" placeholder="您的昵称" v-model="nickname" debounce="500" lazy>
+            <p class="pattern" v-if='pattern.pattern_email'>{{ pattern.pattern_email }}</p>
+            <input type="email" placeholder="您的邮箱方便交流" v-model="email" debounce="500" lazy>
+          </div>
+          <div class="comment-footer" >
+            <p class="pattern" v-if='pattern.pattern_content'>{{ pattern.pattern_content }}</p>
+            <textarea placeholder="评论的内容" v-model="content" debounce="500" lazy></textarea>
+            <a name='content' class="comment-click"  :class=" commentClickDisabled ? 'commentClickDisabled' : ''"  @click='setcomment()'>{{ user }} <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close" title="取消"></span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -104,25 +107,17 @@
         float: right;
       }
       input{
+        width: 80%;
+        box-sizing: border-box;
+        padding:10px 15px;
         display: block;
         margin:10px 0px;
         outline: #00AA00;
-      }
-      input:nth-child(1){
-        padding-left: 15px;
-        float: left;
-      }
-      input:nth-child(2){
-        padding-left: 15px;
-        margin-left: 20px;
-        margin-bottom: -6px;
-        float: left;
       }
     }
   }
   .comment-footer{
     width: 80%;
-    margin-top:16px ;
     float: left;
     .comment-click{
       cursor: pointer;
@@ -156,11 +151,25 @@
       }
     }
   }
+  .commentClickDisabled{
+    pointer-events: none;
+    color: #ccc!important;
+  }
+  .pattern{
+    color: #990000;
+    text-align: left;
+  }
+  .updatePep{
+    cursor: pointer;
+  }
   @media screen and (max-width: 768px){
     .comment-pep{
       width: 100%;
       float: none;
       text-align: center;
+    }
+    .comment-pep-right{
+      width: 100%;
     }
     .comment-text{
       float: none;
@@ -169,15 +178,13 @@
         float: right;
       }
       input{
+        padding: 15px;
         box-sizing: border-box;
-        width: 100%;
+        width: 100%!important;
         border:1px solid #ccc;
         float: none;
         height: 35px;
         line-height: 35px;
-      }
-      input:nth-child(2){
-        margin:6px auto 0;
       }
     }
     .comment-footer{
@@ -205,16 +212,28 @@
     },
     data() {
       return {
-        nickname: '',
-        email: '',
-        content: '',
-        articleId: this.topic,
-        isShow: false,
-        user: '点击评论',
-        fid: '',
-        isCancel: false,
-        femail: '',
-        fnickname: '',
+        nickname: '', // 昵称
+        email: '', // 邮箱
+        content: '', // 内容
+        articleId: this.topic, // 文章ID
+        isShow: false, // 是否显示昵称和邮箱文本框
+        user: '点击评论', // 提交按钮文字显示
+        fid: '', // 评论谁就是谁的ID
+        isCancel: false, // 是否取消回复
+        femail: '', // 评论谁就是谁的邮箱
+        fnickname: '', // 评论谁就是谁的昵称
+        commentClickDisabled: true, // 评论按钮不可点击
+        pattern: {// 验证的提示
+          pattern_nickname: false,
+          pattern_email: false,
+          pattern_content: false,
+        },
+        fill: {// 是否填写了数据,默认不填写
+          fill_nickname: false,
+          fill_email: false,
+          fill_content: false,
+        },
+        isSetcomment: false, //是否提交了评论(用来hack后面评论提示的bug,暂时先这么解决了)
       };
     },
     props: ['comment', 'topic'],
@@ -233,19 +252,14 @@
       /* eslint-enable brace-style */
     },
     methods: {
+      // 提交评论
       setcomment() {
-        /* eslint-disable brace-style,no-alert */
-        if (!!this.nickname.length && !!this.email.length && !!this.content.length) {
-          this.setComments(this.nickname, this.email, this.content, this.articleId,
-            this.fid, this.fnickname, this.femail);
-          this.isShow = false;
-          this.content = '';
-        }
-        else {
-          alert('昵称,邮箱,评论内容不能为空!');
-        }
-        /* eslint-enable brace-style,no-alert */
+        this.setComments(this.nickname, this.email, this.content, this.articleId,
+          this.fid, this.fnickname, this.femail);
+        this.isShow = false;
+        this.content = '';
       },
+      // 是否显示昵称和邮箱
       isShowCommet(name, email, fid) {
         window.location.hash = '';
         window.location.hash = 'content';
@@ -256,11 +270,73 @@
         this.fnickname = name;
         document.getElementsByTagName('textarea')[0].focus();
       },
+      // 取消回复按钮
       cancel() {
         this.isCancel = false;
         this.user = '点击评论';
         this.fid = '';
         this.fnickname = '';
+      },
+      // 更改用户状态恢复出厂设置
+      updatePep() {
+        this.isShow = true;
+      },
+    },
+    watch: {
+      'nickname': function (newVal) { // eslint-disable-line object-shorthand
+        this.commentClickDisabled = true;
+        this.fill.fill_nickname = true;
+        if (!newVal.length) {
+          this.pattern.pattern_nickname = '请输入昵称!';
+        } else if (/\s/.test(newVal)) {
+          this.pattern.pattern_nickname = '昵称不能包含空格!';
+        } else {
+          this.pattern.pattern_nickname = false;
+        }
+        if ((this.fill.fill_nickname && this.fill.fill_email && this.fill.fill_content)
+          && (!this.pattern.pattern_nickname && !this.pattern.pattern_email
+          && !this.pattern.pattern_content)) {
+          this.commentClickDisabled = false;
+        }
+      },
+      'email': function (newVal) { // eslint-disable-line object-shorthand
+        this.commentClickDisabled = true;
+        this.fill.fill_email = true;
+        if (!newVal.length) {
+          this.pattern.pattern_email = '请输入邮箱!';
+        } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(newVal)) {
+          this.pattern.pattern_email = '邮箱格式不正确,请输入正确的邮箱!!';
+        } else {
+          this.pattern.pattern_email = false;
+        }
+        if ((this.fill.fill_nickname && this.fill.fill_email && this.fill.fill_content)
+          && (!this.pattern.pattern_nickname && !this.pattern.pattern_email
+          && !this.pattern.pattern_content)) {
+          this.commentClickDisabled = false;
+        }
+      },
+      'content': function (newVal) { // eslint-disable-line object-shorthand
+        this.commentClickDisabled = true;
+        this.fill.fill_content = true;
+        if (!newVal.length) {
+          this.pattern.pattern_content = '请输入评论内容!';
+        } else {
+          this.pattern.pattern_content = false;
+        }
+        if ((this.fill.fill_nickname && this.fill.fill_email && this.fill.fill_content)
+          && (!this.pattern.pattern_nickname && !this.pattern.pattern_email
+          && !this.pattern.pattern_content)) {
+          this.commentClickDisabled = false;
+        }
+      },
+      // 状态恢复出厂设置
+      'comment': function (newVal) { // eslint-disable-line object-shorthand
+        if (newVal) {
+          this.pattern.pattern_nickname = false;
+          this.pattern.pattern_email = false;
+          this.pattern.pattern_content = false;
+          this.fill.fill_content = false;
+        }
       },
     },
   };
