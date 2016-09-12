@@ -138,7 +138,7 @@
   }
 
   .fade-transition {
-    transition: all 2s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 
   .fade-enter {

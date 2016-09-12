@@ -88,6 +88,7 @@
       float: left;
       width: 100%;
       padding-bottom: 30px;
+      border-bottom: 1px solid #ccc;
       a {
         display: block;
         &.v-link-active {
