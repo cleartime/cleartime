@@ -87,7 +87,7 @@
 <style lang="scss" scoped>
   @import '../assets/font/iconfont';
   header {
-    background: url("../assets/banner.jpg") no-repeat top center;
+    background: url("../assets/banner.png") no-repeat top center;
     background-size: cover;
     height: 288px;
     overflow: hidden;
