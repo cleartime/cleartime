@@ -34,8 +34,8 @@
         </div>
       </div>
       <div class="comment-body">
-        <div class="comment-pep">
-          <i class="iconfont icon-myline updatePep" @click='updatePep()' title="点击更换用户"></i>
+        <div class="comment-pep updatePep" @click='updatePep()' title="点击更换用户">
+          <i class="iconfont icon-myline"></i>
           <!--<img src="../assets/pep.png">-->
           <p>{{ nickname }}</p>
         </div>

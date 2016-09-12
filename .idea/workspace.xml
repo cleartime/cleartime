@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/App.vue" afterPath="$PROJECT_DIR$/public/blog/src/App.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/comment.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/post.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/post.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/config.js" afterPath="$PROJECT_DIR$/public/blog/src/config.js" />
     </list>
     <ignored path="cleartime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="comment.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44378698">
-              <caret line="280" column="23" selection-start-line="280" selection-start-column="23" selection-end-line="280" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.42159763">
+              <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -129,12 +128,12 @@
         <option value="$PROJECT_DIR$/public/blog/node_modules/prismjs/themes/prism.css" />
         <option value="$PROJECT_DIR$/public/blog/index.html" />
         <option value="$PROJECT_DIR$/public/blog/src/components/header.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/config.js" />
         <option value="$PROJECT_DIR$/public/blog/src/main.js" />
         <option value="$PROJECT_DIR$/public/blog/src/filters.js" />
         <option value="$PROJECT_DIR$/routes/comments.js" />
         <option value="$PROJECT_DIR$/public/blog/src/views/post.vue" />
         <option value="$PROJECT_DIR$/public/blog/src/App.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/config.js" />
         <option value="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
       </list>
     </option>
@@ -484,12 +483,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00151" summary="语法高亮重写">
-      <created>1472552403404</created>
-      <option name="number" value="00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1472552403406</updated>
-    </task>
     <task id="LOCAL-00152" summary="语法高亮重写">
       <created>1472552519520</created>
       <option name="number" value="00152" />
@@ -778,7 +771,13 @@
       <option name="project" value="LOCAL" />
       <updated>1473674962343</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="评论完美">
+      <created>1473675784965</created>
+      <option name="number" value="00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1473675784965</updated>
+    </task>
+    <option name="localTasksCounter" value="201" />
     <servers />
   </component>
   <component name="TodoView">
@@ -854,7 +853,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="评论样式" />
     <MESSAGE value="头部弄了下" />
     <MESSAGE value="评论样式从新弄了下" />
     <MESSAGE value="描点样式颜色" />
@@ -879,7 +877,8 @@
     <MESSAGE value="改下样式" />
     <MESSAGE value="图片换了个" />
     <MESSAGE value="评论换了下" />
-    <option name="LAST_COMMIT_MESSAGE" value="评论换了下" />
+    <MESSAGE value="评论完美" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论完美" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1193,14 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.044378698">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/views/post.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5754437">
@@ -1273,10 +1264,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.110946745">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44378698">
-          <caret line="280" column="23" selection-start-line="280" selection-start-column="23" selection-end-line="280" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.42159763">
+          <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
           <folding />
         </state>
       </provider>
