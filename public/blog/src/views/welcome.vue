@@ -15,6 +15,7 @@
     data() {
       return {
         transitionObj: 'bounce',
+        time: 0,
       };
     },
     vuex: {
@@ -31,20 +32,29 @@
       if (!this.$route.isindex) {
         this.isShow = false;
         this.transitionObj = '';
+        return false;
       }
+      const self = this;
+      setTimeout(() => {
+        self.time = 1;
+      }, 2000);
+    },
+    destroyed() {
+      this.opacityStyle = 0;
     },
     watch: {
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
         if (newVal.length > oldVal.length) {
+          if (!!this.time) {
+            this.$dispatch('isShow', false);
+            return false;
+          }
           const self = this;
           setTimeout(() => {
             self.$dispatch('isShow', false);
           }, 2000);
         }
       },
-    },
-    destroyed() {
-      this.opacityStyle = 0;
     },
   };
 </script>
