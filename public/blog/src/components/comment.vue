@@ -1,6 +1,6 @@
 <template>
     <div class="comment-main">
-      <h2>讨论区</h2>
+      <h2>讨论区<span>评论一下,有惊喜哦!</span></h2>
       <div v-for="i in comment" transition="list" transition-mode="out-in" >
         <div class="comment"  v-if = '!i.fid' transition="fade">
           <div class="comment-pep">
@@ -61,6 +61,10 @@
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    h2 span{
+      float: right;
+      font-size: 14px;
+    }
   }
   .comment{
     overflow: hidden;
