@@ -91,6 +91,28 @@
     display: flex;
     padding: 15px;
     flex-direction: column;
+    h3:after,h4:after,h5:after{
+      content: ':';
+    }
+    table{
+      margin: 20px auto;
+      border-collapse: collapse;
+      tbody tr:nth-child(2n+1) {
+        background-color: #f7f7f7;
+      }
+      td, th {
+        border: 1px solid #ddd;
+        padding: .3rem .6rem;
+      }
+    }
+
+    p > code, h2 > code, h4>code, h5>code{
+      color: #e96900;
+      padding: 3px 5px;
+      margin: 0 2px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
     pre{
       line-height: 1.2;
       padding: 15px;
