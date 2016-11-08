@@ -11,6 +11,7 @@ var busboy = require('connect-busboy');
 app.use(busboy());
 
 
+
 // 设置模板引擎
 //app.set('views', path.join(__dirname, 'web'));
 //app.set('view engine', 'jade');
@@ -20,6 +21,9 @@ app.use(busboy());
 require('./cloud');
 // 加载云引擎中间件
 app.use(AV.express());
+
+app.enable('trust proxy');
+app.use(AV.Cloud.HttpsRedirect());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
