@@ -10,9 +10,8 @@
       </div>
     </div>
     <div class="inner padding">
-      <img :src="setimg.url" alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
-      <div class="article">
-        {{{ content }}}
+      <img :src="setimg.url" :alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
+      <div class="article" v-html="content">
       </div>
     </div>
   </article>
@@ -36,13 +35,15 @@
         topic: getTopic,
       },
     },
-    ready() {
-      marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
-      });
-      marked(this.topic.content, (err, content) => {
-        if (!err) {
-          this.content = content;
-        }
+    mounted() {
+      this.$nextTick(function () {
+        marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
+        });
+        marked(this.topic.content, (err, content) => {
+          if (!err) {
+            this.content = content;
+          }
+        });
       });
     },
   };

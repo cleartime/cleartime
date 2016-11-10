@@ -240,19 +240,21 @@
       };
     },
     props: ['comment', 'topic'],
-    ready() {
-      /* eslint-disable brace-style */
-      if (typeof(Storage) !== 'undefined')
-      {
-        if (localStorage.nickname && localStorage.email) {
-          this.nickname = localStorage.nickname;
-          this.email = localStorage.email;
-          this.isShow = false;
-        } else {
-          this.isShow = true;
+    mounted() {
+      this.$nextTick(function () {
+        /* eslint-disable brace-style */
+        if (typeof(Storage) !== 'undefined')
+        {
+          if (localStorage.nickname && localStorage.email) {
+            this.nickname = localStorage.nickname;
+            this.email = localStorage.email;
+            this.isShow = false;
+          } else {
+            this.isShow = true;
+          }
         }
-      }
-      /* eslint-enable brace-style */
+        /* eslint-enable brace-style */
+      });
     },
     methods: {
       // 提交评论

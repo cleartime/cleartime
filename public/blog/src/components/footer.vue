@@ -25,8 +25,10 @@
         fetFriendLink,
       },
     },
-    ready() {
-      this.fetFriendLink();
+    mounted() {
+      this.$nextTick(function () {
+        this.fetFriendLink();
+      });
     },
   };
 </script>

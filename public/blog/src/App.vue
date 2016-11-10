@@ -4,7 +4,9 @@
       <!--<c-Bar></c-Bar>-->
       <c-header></c-header>
       <div class="main">
-        <router-view transition="back" transition-mode="out-in" class="main-wrapper"></router-view>
+        <transition name="back" mode="out-in">
+          <router-view  class="main-wrapper"></router-view>
+        </transition>
       </div>
       <c-footer></c-footer>
       <c-back></c-back>
@@ -28,26 +30,28 @@
         transitionObj: 'index',
       };
     },
-    ready() {
-      if (!this.$route.isindex) {
-        this.isShow = false;
-      }
-      this.transitionObj = 'bounce';
-      // 会变的 title
-      document.addEventListener('visibilitychange', () => {
-        document.title = document.hidden ? '出BUG了，快看！' : 'cleartime的博客_web前端技术博客';
+    mounted() {
+        this.$nextTick(function () {
+        if (!route.meta.isindex) {
+          this.isShow = false;
+        }
+        this.transitionObj = 'bounce';
+        // 会变的 title
+        document.addEventListener('visibilitychange', () => {
+          document.title = document.hidden ? '出BUG了，快看！' : 'cleartime的博客_web前端技术博客';
+        });
+        // 会变的复制代码
+  //      document.body.addEventListener('copy', () => {
+  //      });
+        // 控制台
+        try {
+          /* eslint-disable no-console */
+          console.log('一个人到底多无聊\r\n 才会把 console 当成玩具\r\n一个人究竟多堕落\r\n 才会把大好青春荒废在博客上\r\n\r\n\r\n%cfollow me %c https://github.com/cleartime', 'color:red', 'color:green');
+        } catch (e) {
+          console.log(e);
+          /* eslint-enable  no-console */
+        }
       });
-      // 会变的复制代码
-//      document.body.addEventListener('copy', () => {
-//      });
-      // 控制台
-      try {
-        /* eslint-disable no-console */
-        console.log('一个人到底多无聊\r\n 才会把 console 当成玩具\r\n一个人究竟多堕落\r\n 才会把大好青春荒废在博客上\r\n\r\n\r\n%cfollow me %c https://github.com/cleartime', 'color:red', 'color:green');
-      } catch (e) {
-        console.log(e);
-        /* eslint-enable  no-console */
-      }
     },
     components: {
       cHeader,
@@ -123,7 +127,7 @@
     margin: 0 auto;
   }
 
-  .back-transition {
+  .back-enter-active, .back-leave-active {
     transition: all .5s ease;
   }
 
@@ -132,12 +136,12 @@
     transform: translateY(-100%);
   }
 
-  .back-leave {
+  .back-leave-active {
     opacity: 0;
     transform: translateY(-100%);
   }
 
-  .fade-transition {
+  .fade-enter-active, .fade-leave-active {
     transition: all .5s ease-in-out;
   }
 
@@ -145,15 +149,15 @@
     opacity: 0;
   }
 
-  .fade-leave {
+  .fade-leave-active {
     opacity: 0;
   }
 
-  .search-transition {
+  .search-enter-active, .search-leave-active {
     transition: all .5s ease;
   }
 
-  .search-enter, .search-leave {
+  .search-enter, .search-leave-active {
     transform: translateX(100%);
   }
 
@@ -161,7 +165,7 @@
     animation: bounce-in 2s;
   }
 
-  .bounce-leave {
+  .bounce-leave-active {
     animation: bounce-out 2s;
   }
 
@@ -187,7 +191,7 @@
     }
   }
 
-  .index-enter, .index-leave {
+  .index-enter, .index-leave-active {
     animation: index 2s;
   }
 

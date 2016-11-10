@@ -16,14 +16,16 @@
         document.body.scrollTop = 0;
       },
     },
-    ready() {
-      window.onscroll = () => {
-        if (document.body.scrollTop > 400) {
-          this.show = true;
-        } else {
-          this.show = false;
-        }
-      };
+    mounted() {
+      this.$nextTick(function () {
+        window.onscroll = () => {
+          if (document.body.scrollTop > 400) {
+            this.show = true;
+          } else {
+            this.show = false;
+          }
+        };
+      });
     },
     beforeDestory() {
       window.onscroll = null;

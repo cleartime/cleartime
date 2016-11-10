@@ -28,16 +28,18 @@
         this.$dispatch('isShow', false);
       },
     },
-    ready() {
-      if (!this.$route.isindex) {
-        this.isShow = false;
-        this.transitionObj = '';
-        return false;
-      }
-      const self = this;
-      setTimeout(() => {
-        self.time = 1;
-      }, 2000);
+    mounted() {
+      this.$nextTick(function () {
+        if (!this.$route.isindex) {
+          this.isShow = false;
+          this.transitionObj = '';
+          return false;
+        }
+        const self = this;
+        setTimeout(() => {
+          self.time = 1;
+        }, 2000);
+      });
     },
     destroyed() {
       this.opacityStyle = 0;

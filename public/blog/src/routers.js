@@ -2,22 +2,30 @@ export default (router) => router.map({
   '/': {
     name: 'index',
     component: require('./views/page'),
-    isindex: true,
+    meta: {
+      isindex: true
+    },
   },
   '/welcome': {
     name: 'welcome',
     component: require('./views/welcome'),
-    isWelcome: true,
+    meta: {
+      isWelcome: true
+    },
   },
   '/post/:id': {
     name: 'post',
     component: require('./views/post'),
-    isPost: true,
+    meta: {
+      isPost: true
+    },
   },
   '/me': {
     name: 'me',
     component: require('./views/me'),
-    isMe: true,
+    meta: {
+      isMe: true
+    },
   },
 });
 

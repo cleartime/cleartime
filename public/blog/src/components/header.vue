@@ -41,8 +41,10 @@
         listname: getListname,
       },
     },
-    ready() {
-      this.scroll();
+    mounted() {
+      this.$nextTick(function () {
+        this.scroll();
+      });
     },
     methods: {
       searchtitle(title) {
