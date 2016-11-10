@@ -91,9 +91,9 @@
       border-bottom: 1px solid #ccc;
       a {
         display: block;
-        &.v-link-active {
-          color: #0000AA;
-        }
+        /*&.v-link-active {*/
+          /*color: #0000AA;*/
+        /*}*/
       }
     }
     .content-list {

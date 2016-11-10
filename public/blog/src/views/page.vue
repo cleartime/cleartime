@@ -2,7 +2,7 @@
     <div class="content">
       <div class="panel">
           <ul class="panel-header" v-if="topicLists && !isSearch">
-            <li v-for="tab in topicTabs" :class="$index === selected ? 'link-active' : ''"  @click="update($index,tab.categoryID)">
+            <li v-for="(tab, index) in topicTabs" :class="index === selected ? 'link-active' : ''"  @click="update(index,tab.categoryID)">
               {{ tab.name }}
             </li>
           </ul>

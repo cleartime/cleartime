@@ -1,13 +1,17 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      <div class="cell" v-for="topicItem in items" transition="fade"  >
+      <div class="cell" v-for="topicItem in items">
+        <transition-group name="fade">
         <div class="topic-wrapper">
-          <a v-link="{name: 'post' , params: {id: topicItem.objectId} }"  title=" {{ topicItem.title }}" >
+          <router-link to="{ path: 'post', {params: {id: topicItem.objectId} }}">
+          <a :title="' ' + topicItem.title" >
             <p>{{ topicItem.title }} <span>{{ topicItem.createdAt | timeToNow }}</span></p>
             <p>{{ topicItem.description }}</p>
           </a>
+          </router-link>
         </div>
+        </transition-group>
       </div>
     </div>
   </div>

@@ -25,12 +25,12 @@
     },
     methods: {
       closeWelcomePage() {
-        this.$dispatch('isShow', false);
+        eventHub.$emit('isShow', false});
       },
     },
     mounted() {
       this.$nextTick(function () {
-        if (!this.$route.isindex) {
+        if (!this.route.meta.isindex) {
           this.isShow = false;
           this.transitionObj = '';
           return false;
@@ -48,12 +48,12 @@
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
         if (newVal.length > oldVal.length) {
           if (!!this.time) {
-            this.$dispatch('isShow', false);
+            eventHub.$emit('isShow', false});
             return false;
           }
           const self = this;
           setTimeout(() => {
-            self.$dispatch('isShow', false);
+            eventHub.$emit('isShow', false});
           }, 2000);
         }
       },

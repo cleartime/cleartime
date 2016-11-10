@@ -1,19 +1,23 @@
 <template>
 	<header>
     <div class="hearder-fixed" :class=" isShowFixed ? 'hearder-fixed-active' : 'hearder-absoleteve'" >
-      <a v-link="{name: 'index'}" class="hearder-icon">
-        <img src="../assets/head.jpeg" alt="logo">
+      <a class="hearder-icon">
+        <router-link to="/index">
+          <img src="../assets/head.jpeg" alt="logo">
+        </router-link>
       </a>
       <ul class="navbar">
-        <li><a v-link="{name: 'me'}">我的资料</a></li>
-        <li v-if='$route.isindex'>
+        <li><router-link to="/me">我的资料</router-link></li>
+        <li v-if='route.meta.isindex'>
           <a @click="searchtitle(title)" class="search" ><i class="iconfont icon-xiazai15"></i></a>
-          <input type="text" v-model="title" v-if='isShowTitle'  transition="search" />
+          <transition-group name="search">
+            <input type="text" v-model="title" v-if='isShowTitle' />
+          </transition-group>
         </li>
       </ul>
     </div>
     <div class="hearder-content">
-      <p class="header-title">{{ $route.isPost ? topic.title : $route.isMe ? '我的资料' : isSearch ? '搜索结果如下' : listname.name}}</p>
+      <p class="header-title">{{ route.meta.isPost ? topic.title : route.meta.isMe? '我的资料' : isSearch ? '搜索结果如下' : listname.name}}</p>
     </div>
 	</header>
 </template>

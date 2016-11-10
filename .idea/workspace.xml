@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a83b585b-5044-4896-9972-c745e415923f" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/package.json" afterPath="$PROJECT_DIR$/public/blog/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/App.vue" afterPath="$PROJECT_DIR$/public/blog/src/App.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/article.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/article.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/backTop.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/backTop.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/comment.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/footer.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/footer.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/header.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/header.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/progressBar.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/progressBar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/components/list.vue" afterPath="$PROJECT_DIR$/public/blog/src/components/list.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/main.js" afterPath="$PROJECT_DIR$/public/blog/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/routers.js" afterPath="$PROJECT_DIR$/public/blog/src/routers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/404.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/404.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/me.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/me.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/page.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/page.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/post.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/post.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog/src/views/welcome.vue" afterPath="$PROJECT_DIR$/public/blog/src/views/welcome.vue" />
     </list>
     <ignored path="cleartime.iws" />
@@ -61,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/blog/node_modules/extract-text-webpack-plugin/index.js" />
         <option value="$PROJECT_DIR$/public/blog/node_modules/html-webpack-plugin/index.js" />
         <option value="$PROJECT_DIR$/public/blog/build/utils.js" />
         <option value="$PROJECT_DIR$/public/blog/src/assets/font/iconfont.css" />
@@ -73,7 +74,6 @@
         <option value="$PROJECT_DIR$/public/blog/src/assets/lib/shCore.js" />
         <option value="$PROJECT_DIR$/public/admin/src/sass/layout.sass" />
         <option value="$PROJECT_DIR$/public/blog/src/vuex/middlewares.js" />
-        <option value="$PROJECT_DIR$/public/blog/src/views/me.vue" />
         <option value="$PROJECT_DIR$/public/admin/src/js/service/ajaxService.js" />
         <option value="$PROJECT_DIR$/blog/dist/index.html" />
         <option value="$PROJECT_DIR$/routes/redirect.js" />
@@ -87,12 +87,8 @@
         <option value="$PROJECT_DIR$/public/admin/src/js/controller/comments/addCommentsController.js" />
         <option value="$PROJECT_DIR$/public/admin/src/js/controller/artcile/addArticleController.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/public/blog/src/views/page.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/components/list.vue" />
         <option value="$PROJECT_DIR$/public/blog/node_modules/prismjs/themes/prism.css" />
-        <option value="$PROJECT_DIR$/public/blog/src/main.js" />
         <option value="$PROJECT_DIR$/public/blog/src/filters.js" />
-        <option value="$PROJECT_DIR$/public/blog/src/views/post.vue" />
         <option value="$PROJECT_DIR$/routes/article.js" />
         <option value="$PROJECT_DIR$/routes/comments.js" />
         <option value="$PROJECT_DIR$/public/blog/src/vuex/actions.js" />
@@ -103,15 +99,21 @@
         <option value="$PROJECT_DIR$/public/admin/src/js/config.js" />
         <option value="$PROJECT_DIR$/public/blog/index.html" />
         <option value="$PROJECT_DIR$/public/blog/package.json" />
-        <option value="$PROJECT_DIR$/public/blog/src/routers.js" />
-        <option value="$PROJECT_DIR$/public/blog/src/components/article.vue" />
         <option value="$PROJECT_DIR$/public/blog/src/App.vue" />
         <option value="$PROJECT_DIR$/public/blog/src/components/backTop.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/components/footer.vue" />
-        <option value="$PROJECT_DIR$/public/blog/src/components/header.vue" />
         <option value="$PROJECT_DIR$/public/blog/src/components/progressBar.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/components/footer.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/components/article.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/components/comment.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/components/header.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/routers.js" />
+        <option value="$PROJECT_DIR$/public/blog/src/components/list.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/main.js" />
+        <option value="$PROJECT_DIR$/public/blog/src/views/404.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/views/me.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/views/post.vue" />
         <option value="$PROJECT_DIR$/public/blog/src/views/welcome.vue" />
+        <option value="$PROJECT_DIR$/public/blog/src/views/page.vue" />
       </list>
     </option>
   </component>
@@ -486,12 +488,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00159" summary="语法高亮重写差不多了">
-      <created>1472631359493</created>
-      <option name="number" value="00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1472631359493</updated>
-    </task>
     <task id="LOCAL-00160" summary="语法高亮重写差不多了">
       <created>1472633091998</created>
       <option name="number" value="00160" />
@@ -780,7 +776,13 @@
       <option name="project" value="LOCAL" />
       <updated>1478591061968</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="用vue2.0重构中">
+      <created>1478762625096</created>
+      <option name="number" value="00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1478762625096</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TodoView">
@@ -856,7 +858,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="@符号颜色" />
     <MESSAGE value="移动端样式" />
     <MESSAGE value="欢迎页加个倒计时" />
     <MESSAGE value="样式调整" />
@@ -881,7 +882,8 @@
     <MESSAGE value="评论一下,有惊喜哦!" />
     <MESSAGE value="修改了下文章样式" />
     <MESSAGE value="改为https" />
-    <option name="LAST_COMMIT_MESSAGE" value="改为https" />
+    <MESSAGE value="用vue2.0重构中" />
+    <option name="LAST_COMMIT_MESSAGE" value="用vue2.0重构中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -905,13 +907,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1331361">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/src/js/controller/artcile/articleController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1161,42 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.088757396">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/routers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-45.625">
           <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1209,70 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="256" column="9" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/welcome.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28994083">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/post.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46745563">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/page.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.887574">
-          <caret line="88" column="3" selection-start-line="88" selection-start-column="3" selection-end-line="88" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/me.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/views/404.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33284023">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/components/progressBar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5769231">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/components/list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90976334">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/hint.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1281,18 +1180,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
+    <entry file="file://$PROJECT_DIR$/public/blog/src/components/progressBar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59911245">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/footer.vue">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/components/comment.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/components/article.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/page.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.088757396">
+          <caret line="4" column="120" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/404.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42159763">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71153843">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/components/list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15532544">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/me.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1331361">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/welcome.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79881656">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39940828">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/views/post.vue">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46597633">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
+          <caret line="93" column="3" selection-start-line="93" selection-start-column="3" selection-end-line="95" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/blog/src/routers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1331361">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding />
         </state>
       </provider>

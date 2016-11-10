@@ -1,31 +1,34 @@
-export default (router) => router.map({
-  '/': {
-    name: 'index',
-    component: require('./views/page'),
-    meta: {
-      isindex: true
+var router = new VueRouter({
+  routes: [
+    {
+      path: '/index',
+      component: require('./views/page'),
+      meta: {
+        isindex: true
+      },
     },
-  },
-  '/welcome': {
-    name: 'welcome',
-    component: require('./views/welcome'),
-    meta: {
-      isWelcome: true
+    {
+      path: '/welcome',
+      component: require('./views/welcome'),
+      meta: {
+        isPost: true
+      },
     },
-  },
-  '/post/:id': {
-    name: 'post',
-    component: require('./views/post'),
-    meta: {
-      isPost: true
+    {
+      path: '/post/:id',
+      component: require('./views/post'),
+      meta: {
+        isWelcome: true
+      },
     },
-  },
-  '/me': {
-    name: 'me',
-    component: require('./views/me'),
-    meta: {
-      isMe: true
+    {
+      path: '/me',
+      component: require('./views/me'),
+      meta: {
+        isMe: true
+      },
     },
-  },
-});
+  ]
+})
 
+export default (router) => router;

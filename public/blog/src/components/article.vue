@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="inner padding">
-      <img :src="setimg.url" :alt="桂孝孝的博客图片名称{{ setimg.name }}" class="head-img">
+      <img :src="setimg.url" :alt="'桂孝孝的博客图片名称' + setimg.name" class="head-img">
       <div class="article" v-html="content">
       </div>
     </div>

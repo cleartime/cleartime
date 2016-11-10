@@ -13,14 +13,9 @@ Vue.filter('timeToUpdata', timeToUpdata);
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-  history: true,
-  hashbang: false,
-  transitionOnLoad: true,
+  mode: 'history',
 });
 
-router.redirect({
-  '*': '/',
-});
 
 configRouter(router);
 router.beforeEach((transition) => {
@@ -43,5 +38,10 @@ router.beforeEach((transition) => {
     transition.next();
   }
 });
-router.start(Vue.extend(App), '#app');
+
+new Vue({
+  el: '#app',
+  router: router,
+  template: Vue.extend(App)
+})
 
