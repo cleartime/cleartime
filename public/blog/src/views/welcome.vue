@@ -25,7 +25,7 @@
     },
     methods: {
       closeWelcomePage() {
-        eventHub.$emit('isShow', false});
+        this.$emit('isShow', false);
       },
     },
     mounted() {
@@ -48,12 +48,11 @@
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
         if (newVal.length > oldVal.length) {
           if (!!this.time) {
-            eventHub.$emit('isShow', false});
+            this.$emit('isShow', false);
             return false;
           }
-          const self = this;
           setTimeout(() => {
-            eventHub.$emit('isShow', false});
+            this.$emit('isShow', false);
           }, 2000);
         }
       },

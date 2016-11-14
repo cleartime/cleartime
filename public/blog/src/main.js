@@ -38,10 +38,10 @@ router.beforeEach((transition) => {
     transition.next();
   }
 });
-
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router: router,
-  template: Vue.extend(App)
-})
-
+  template: Vue.extend(App),
+});
+/* eslint-enable no-new */

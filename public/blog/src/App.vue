@@ -31,7 +31,7 @@
       };
     },
     mounted() {
-        this.$nextTick(function () {
+      this.$nextTick(function () {
         if (!route.meta.isindex) {
           this.isShow = false;
         }
