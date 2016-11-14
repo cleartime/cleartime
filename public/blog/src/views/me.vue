@@ -21,7 +21,7 @@
         fetchMe,
       },
     },
-    created() {
+    mounted() {
       // 初始化hint
       this.fetchMe();
     },

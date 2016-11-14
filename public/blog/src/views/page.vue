@@ -47,7 +47,7 @@
         getlistname: getListname,
       },
     },
-    created() {
+    mounted() {
       // 初始化hint
       this.initHint();
       // 显示hint
