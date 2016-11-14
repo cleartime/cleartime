@@ -3,13 +3,13 @@
       <c-hint v-if="hint.show"></c-hint>
       <template v-if="topic && !hint.show">
         <c-article></c-article>
-        <c-comment :comment = 'comment' :topic = 'topic.objectId' ></c-comment>
+        <!--<c-comment :comment = 'comment' :topic = 'topic.objectId' ></c-comment>-->
       </template>
     </div>
 </template>
 
 <script>
-  import cComment from '../components/comment';
+//  import cComment from '../components/comment';
   import cHint from '../components/hint';
   import cArticle from '../components/article';
   import {
@@ -30,7 +30,7 @@
     components: {
       cArticle,
       cHint,
-      cComment,
+//      cComment,
     },
     vuex: {
       actions: {

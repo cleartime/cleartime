@@ -32,7 +32,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (!this.route.meta.isindex) {
+        if (this.$route.matched.some(record => record.meta.isindex)) {
           this.isShow = false;
           this.transitionObj = '';
           return false;

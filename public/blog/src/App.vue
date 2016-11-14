@@ -11,7 +11,7 @@
       <c-footer></c-footer>
       <c-back></c-back>
     </div>
-    <welcome v-if="isShow" @click="isShow"></welcome>
+    <welcome v-if="isShow" v-on:click.native="isShow"></welcome>
   </div>
 </template>
 
@@ -30,9 +30,14 @@
         transitionObj: 'index',
       };
     },
+    methods: {
+      isShow() {
+        this.isShow = false;
+      },
+    },
     mounted() {
       this.$nextTick(function () {
-        if (!this.$route.meta.isindex) {
+        if (this.$route.matched.some(record => record.meta.isindex)) {
           this.isShow = false;
         }
         this.transitionObj = 'bounce';
@@ -61,12 +66,6 @@
       cBar,
     },
     store,
-    events: {
-      isShow(msg) {
-        // 事件回调内的 `this` 自动绑定到注册它的实例上
-        this.isShow = msg;
-      },
-    },
   };
 </script>
 

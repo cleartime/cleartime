@@ -17,7 +17,7 @@
         const t = setInterval(() => {
           if (this.time <= 0) {
             clearInterval(t);
-            this.router.push({ name: 'index' });
+            this.$router.push({ name: 'index' });
             return;
           }
           this.time -= 1;
