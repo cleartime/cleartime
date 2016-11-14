@@ -32,7 +32,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (!route.meta.isindex) {
+        if (!this.$route.meta.isindex) {
           this.isShow = false;
         }
         this.transitionObj = 'bounce';

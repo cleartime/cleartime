@@ -1,12 +1,14 @@
 <template>
+  <div>
     <div class="bg" :transition="transitionObj">
       <!--<img src="../assets/bj1.jpg" width="100%" height="100%">-->
     </div>
-  <div class="menu" :transition="transitionObj">
+    <div class="menu" :transition="transitionObj">
       <div class="pic" @click="closeWelcomePage">
         <img src="../assets/head.jpeg">
       </div>
     </div>
+  </div>
 </template>
 
 <script>
