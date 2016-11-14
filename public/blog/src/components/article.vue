@@ -36,7 +36,7 @@
       },
     },
     mounted() {
-      this.$nextTick(function () {
+      this.$nextTick(function () { // eslint-disable-line func-names
         marked.setOptions({ highlight: (code) => Prism.highlight(code, Prism.languages.javascript),
         });
         marked(this.topic.content, (err, content) => {

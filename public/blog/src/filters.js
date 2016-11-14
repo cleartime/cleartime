@@ -24,9 +24,3 @@ export const timeToUpdata = (time) => {
   const t = time.split('T');
   return `${t[0]}  ${t[1].slice(0, 8)}`;
 };
-
-
-export const comment = (str) => {
-  console.log(str);
-  return str;
-};

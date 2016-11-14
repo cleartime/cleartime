@@ -25,10 +25,5 @@
         owidth: 0,
       };
     },
-    watch: {
-      'changes': (a, b) => {
-        console.log(a, b);
-      },
-    },
   };
 </script>

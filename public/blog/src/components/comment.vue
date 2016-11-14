@@ -304,7 +304,7 @@
       },
     },
     watch: {
-      'nickname': function (newVal) { // eslint-disable-line object-shorthand
+      'nickname': function (newVal) { // eslint-disable-line object-shorthand, func-names
         this.commentClickDisabled = true;
         this.fill.fill_nickname = true;
         if (!newVal.length) {
@@ -320,7 +320,7 @@
           this.commentClickDisabled = false;
         }
       },
-      'email': function (newVal) { // eslint-disable-line object-shorthand
+      'email': function (newVal) { // eslint-disable-line object-shorthand, func-names
         this.commentClickDisabled = true;
         this.fill.fill_email = true;
         if (!newVal.length) {
@@ -336,7 +336,7 @@
           this.commentClickDisabled = false;
         }
       },
-      'content': function (newVal) { // eslint-disable-line object-shorthand
+      'content': function (newVal) { // eslint-disable-line object-shorthand, func-names
         this.commentClickDisabled = true;
         this.fill.fill_content = true;
         if (!newVal.length) {
@@ -351,7 +351,7 @@
         }
       },
       // 状态恢复出厂设置
-      'comment': function (newVal) { // eslint-disable-line object-shorthand
+      'comment': function (newVal) { // eslint-disable-line object-shorthand, func-names
         if (newVal) {
           this.pattern.pattern_nickname = false;
           this.pattern.pattern_email = false;
