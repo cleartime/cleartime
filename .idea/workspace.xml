@@ -99,8 +99,8 @@
       <file leaf-file-name="header.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33284023">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.64349115">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -572,12 +572,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00170" summary="修改欢迎页第一版">
-      <created>1473075443335</created>
-      <option name="number" value="00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1473075443336</updated>
-    </task>
     <task id="LOCAL-00171" summary="修改欢迎页第一版">
       <created>1473075576262</created>
       <option name="number" value="00171" />
@@ -866,7 +860,13 @@
       <option name="project" value="LOCAL" />
       <updated>1479263152577</updated>
     </task>
-    <option name="localTasksCounter" value="219" />
+    <task id="LOCAL-00219" summary="用vue2.0重构中">
+      <created>1479263299246</created>
+      <option name="number" value="00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1479263299246</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1404,8 +1404,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/blog/src/components/header.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33284023">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.64349115">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding />
         </state>
       </provider>

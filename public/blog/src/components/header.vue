@@ -10,9 +10,9 @@
         <li><router-link to="/me">我的资料</router-link></li>
         <li v-if='$route.meta.isindex'>
           <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
-          <transition-group name="search">
+          <transition name="search">
             <input type="text" v-model="title" v-if='isShowTitle'/>
-          </transition-group>
+          </transition>
         </li>
       </ul>
     </div>
