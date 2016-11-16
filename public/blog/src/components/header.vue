@@ -9,16 +9,15 @@
       <ul class="navbar">
         <li><router-link to="/me">我的资料</router-link></li>
         <li v-if='$route.meta.isindex'>
-          <a @click="searchtitle(title)" class="search"><i class="iconfont icon-xiazai15"></i></a>
+          <a @click="searchtitle(title)" class="search" ><i class="iconfont icon-xiazai15"></i></a>
           <transition name="search">
-            <input type="text" v-model="title" v-if='isShowTitle'/>
+            <input type="text" v-model="title" v-if='isShowTitle' />
           </transition>
         </li>
       </ul>
     </div>
     <div class="hearder-content">
-      <p class="header-title">{{ $route.meta.isPost ? topic.title : $route.meta.isMe? '我的资料' : isSearch ? '搜索结果如下' :
-        listname.name}}</p>
+      <p class="header-title">{{ $route.meta.isPost ? topic.title : $route.meta.isMe? '我的资料' : isSearch ? '搜索结果如下' : listname.name}}</p>
     </div>
 	</header>
 </template>
@@ -82,11 +81,9 @@
 //          if (delta === 0) return false;
             beforeScrollTop = afterScrollTop;
 //          this.isShowFixed = delta <= 0;
-      },
-        false
-      )
+          }, false);
 //        };
-      };,
+      },
     },
     watch: {
     },
