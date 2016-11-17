@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="topic-list">
       <transition-group name="fade" tag="div">
-        <div class="cell" v-for="topicItem in items" :key="topicItem">
+        <div class="cell" v-for="topicItem in items" :key="topicItem.objectId">
           <div class="topic-wrapper">
             <router-link :to="{ path: 'post', query: {id: topicItem.objectId} }">
             <a :title="' ' + topicItem.title" >
