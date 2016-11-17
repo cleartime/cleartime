@@ -2,7 +2,7 @@
 	<header>
     <div class="hearder-fixed" :class=" isShowFixed ? 'hearder-fixed-active' : 'hearder-absoleteve'" >
       <a class="hearder-icon">
-        <router-link to="/index">
+        <router-link to="/">
           <img src="../assets/head.jpeg" alt="logo">
         </router-link>
       </a>

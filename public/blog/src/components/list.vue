@@ -1,8 +1,8 @@
 <template>
   <div class="inner">
     <div class="topic-list">
-      <!--<transition-group name="fade" tag="div">-->
-        <div class="cell" v-for="topicItem in items">
+      <transition-group name="fade" tag="div">
+        <div class="cell" v-for="topicItem in items" :key="topicItem">
           <div class="topic-wrapper">
             <router-link :to="{ path: 'post', query: {id: topicItem.objectId} }">
             <a :title="' ' + topicItem.title" >
@@ -12,7 +12,7 @@
             </router-link>
           </div>
         </div>
-      <!--</transition-group>-->
+      </transition-group>
     </div>
   </div>
 </template>
@@ -188,7 +188,7 @@
     .topic-wrapper {
       a {
         display: inline-block;
-        width: 90%;
+        /*width: 90%;*/
       }
     }
     .panel-header li{

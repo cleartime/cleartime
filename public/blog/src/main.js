@@ -17,7 +17,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/index',
+      path: '/',
       component: require('./views/page'),
       meta: {
         isindex: true,
