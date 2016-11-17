@@ -27,14 +27,14 @@ const router = new VueRouter({
       path: '/welcome',
       component: require('./views/welcome'),
       meta: {
-        isPost: true,
+        isWelcome: true,
       },
     },
     {
       path: '/post/:id',
       component: require('./views/post'),
       meta: {
-        isWelcome: true,
+        isPost: true,
       },
     },
     {

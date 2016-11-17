@@ -4,7 +4,7 @@
       <!--<transition-group name="fade" tag="div">-->
         <div class="cell" v-for="topicItem in items">
           <div class="topic-wrapper">
-            <router-link to="{ path: 'post', {params: {id: topicItem.objectId} }}">
+            <router-link :to="{ path: 'post', query: {id: topicItem.objectId} }">
             <a :title="' ' + topicItem.title" >
               <p>{{ topicItem.title }} <span>{{ topicItem.createdAt | timeToNow }}</span></p>
               <p>{{ topicItem.description }}</p>

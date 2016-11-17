@@ -48,23 +48,25 @@
       },
     },
     mounted() {
-      // 初始化hint
-      this.initHint();
-      // 显示hint
-      this.showHint();
-      // 获取栏目
-      this.loginSuccuess();
-      // 获取标签
-      this.getRecommend();
-      // 获取文章列表
-      if (this.getlistname.id) {
-        this.selected = this.getlistname.index;
-        this.fetchCategoryicLists(Number(this.getlistname.id));
-      } else if (this.$route.params.recommend) {
-        this.getRecommendOne(this.$route.params.recommend);
-      } else {
-        this.fetchTopicLists();
-      }
+      this.$nextTick(function () {
+        // 初始化hint
+        this.initHint();
+        // 显示hint
+        this.showHint();
+        // 获取栏目
+        this.loginSuccuess();
+        // 获取标签
+        this.getRecommend();
+        // 获取文章列表
+        if (this.getlistname.id) {
+          this.selected = this.getlistname.index;
+          this.fetchCategoryicLists(Number(this.getlistname.id));
+        } else if (this.$route.params.recommend) {
+          this.getRecommendOne(this.$route.params.recommend);
+        } else {
+          this.fetchTopicLists();
+        }
+      });
     },
     methods: {
       update(index, categoryId) {
