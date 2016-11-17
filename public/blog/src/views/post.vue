@@ -1,15 +1,15 @@
 <template>
     <div class="post">
-      <!--<c-hint v-if="hint.show"></c-hint>-->
-      <!--<template v-if="topic && !hint.show">-->
+      <c-hint v-if="hint.show"></c-hint>
+      <template v-if="topic && !hint.show">
         <c-article></c-article>
-        <!--<c-comment :comment = 'comment' :topic = 'topic.objectId' ></c-comment>-->
-      <!--</template>-->
+        <c-comment :comment = 'comment' :topic = 'topic.objectId' ></c-comment>
+      </template>
     </div>
 </template>
 
 <script>
-//  import cComment from '../components/comment';
+  import cComment from '../components/comment';
   import cHint from '../components/hint';
   import cArticle from '../components/article';
   import {
@@ -30,7 +30,7 @@
     components: {
       cArticle,
       cHint,
-//      cComment,
+      cComment,
     },
     vuex: {
       actions: {
@@ -49,9 +49,7 @@
       },
     },
     mounted() {
-      console.log(3);
       this.$nextTick(function () {
-        console.log(4);
         // 初始化hint
         this.initHint();
         // 显示hint
@@ -60,7 +58,7 @@
         /* eslint-disable no-console, prefer-arrow-callback,
          space-before-function-paren, space-before-blocks */
         const self = this;
-        this.fetchTopic(this.$route.params.id)
+        this.fetchTopic(this.$route.query.id)
           .then(function(){
             // 获取文章图片
             if (self.fileId) {
@@ -71,7 +69,7 @@
           })
           .catch((e) => console.log(e));
         // 获取文章评论
-        this.fetchComments(this.$route.params.id)
+        this.fetchComments(this.$route.query.id)
           .then()
           .catch((e) => console.log(e));
         /* eslint-enable no-console, prefer-arrow-callback,

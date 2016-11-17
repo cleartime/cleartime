@@ -31,7 +31,7 @@ const router = new VueRouter({
       },
     },
     {
-      path: '/post/:id',
+      path: '/post',
       component: require('./views/post'),
       meta: {
         isPost: true,
