@@ -22,6 +22,7 @@
   import cBack from './components/backTop';
   import welcome from './views/welcome';
   import store from './vuex/store';
+//  import '../assets/lib/youkown.js';
 
   export default {
     data() {

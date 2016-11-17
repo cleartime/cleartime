@@ -1,9 +1,9 @@
 <template>
     <div class="comment-main">
       <h2>讨论区<span>评论一下,有惊喜哦!</span></h2>
-      <transition-group name="list" mode="out-in" tag="div">
+      <!--<transition-group name="list" mode="out-in" tag="div">-->
       <div v-for="i in comment">
-        <transition-group name="fade" tag="div">
+        <!--<transition-group name="fade" tag="div">-->
         <div class="comment"  v-if = '!i.fid'>
           <div class="comment-pep">
             <i class="iconfont icon-myline"></i>
@@ -19,8 +19,8 @@
             <p @click='isShowCommet(i.nickname, i.email, i.objectId)' class="reply">回复他</p>
           </div>
         </div>
-        </transition-group>
-        <transition-group name="fade"  tag="div">
+        <!--</transition-group>-->
+        <!--<transition-group name="fade"  tag="div">-->
         <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
           <div class="comment-pep">
             <i class="iconfont icon-myline"></i>
@@ -36,9 +36,9 @@
             <p @click='isShowCommet(j.nickname, i.email, j.objectId)' class="reply">回复他</p>
           </div>
         </div>
-        </transition-group>
+        <!--</transition-group>-->
       </div>
-      </transition-group>
+      <!--</transition-group>-->
       <div class="comment-body">
         <div class="comment-pep updatePep" @click='updatePep()' title="点击更换用户">
           <i class="iconfont icon-myline"></i>
@@ -46,25 +46,25 @@
           <p>{{ nickname }}</p>
         </div>
         <div class="comment-pep-right">
-          <transition-group name="fade"  tag="div">
+          <!--<transition-group name="fade"  tag="div">-->
           <div v-if='isShow' class='comment-text'>
             <p class="pattern" v-if='pattern.pattern_nickname'>{{ pattern.pattern_nickname }}</p>
             <input type="text" placeholder="您的昵称" v-model="nickname"  >
-            <transition-group name="fade"  tag="div">
+            <!--<transition-group name="fade"  tag="div">-->
             <p class="pattern" v-if='pattern.pattern_email'>{{ pattern.pattern_email }}</p>
-            </transition-group>
+            <!--</transition-group>-->
             <input type="email" placeholder="您的邮箱方便交流" v-model="email"  >
           </div>
-          </transition-group>
+          <!--</transition-group>-->
           <div class="comment-footer" >
-            <transition-group name="fade"  tag="div">
+            <!--<transition-group name="fade"  tag="div">-->
             <p class="pattern" v-if='pattern.pattern_content'>{{ pattern.pattern_content }}</p>
-            </transition-group>
+            <!--</transition-group>-->
             <textarea placeholder="评论的内容" v-model="content" ></textarea>
             <a name='content' class="comment-click"  :class=" commentClickDisabled ? 'commentClickDisabled' : ''"  @click='setcomment()'>{{ user }}
-              <transition-group name='fade'  tag="div">
+              <!--<transition-group name='fade'  tag="div">-->
               <span v-if='isCancel' @click.stop='cancel()' class="iconfont icon-close" title="取消"></span>
-              </transition-group>
+              <!--</transition-group>-->
             </a>
           </div>
         </div>
