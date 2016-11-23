@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import { getTopicLists } from '../vuex/getters';
+  import { getTopicLists, getWelcome } from '../vuex/getters';
   export default {
     data() {
       return {
@@ -23,6 +23,7 @@
     vuex: {
       getters: {
         getTopicLists,
+        getWelcome,
       },
     },
     methods: {
@@ -32,6 +33,7 @@
     },
     mounted() {
       this.$nextTick(function () {
+        console.log(this.getWelcome);
         if (this.$route.matched.some(record => record.meta.isindex)) {
           this.isShow = false;
           this.transitionObj = '';

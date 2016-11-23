@@ -8,6 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
+  isShowWelcome: false,
   commentsInfo: '',
   comments: [],
   listname: {

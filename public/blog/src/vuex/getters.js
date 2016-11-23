@@ -25,3 +25,5 @@ export const getSearch = (state) => state.isSearch;
 export const getListname = (state) => state.listname;
 
 export const getComments = (state) => state.comments;
+
+export const getWelcome = (state) => state.isShowWelcome;
