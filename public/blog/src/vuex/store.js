@@ -8,7 +8,7 @@ Vue.use(Vuex);
 /* eslint-disable no-param-reassign */
 
 const state = {
-  isShowWelcome: false,
+  isShowWelcome: true,
   commentsInfo: '',
   comments: [],
   listname: {
@@ -166,6 +166,10 @@ const mutations = {
     state.listname.name = !index ? '欢迎来到我的博客' : listname.name;
     state.listname.id = listname.categoryID;
     state.listname.index = index;
+  },
+  // 是否显示欢迎页
+  SHOW_WELCOME() {
+    state.isShowWelcome = false;
   },
 };
 

@@ -12,7 +12,8 @@
 </template>
 
 <script>
-  import { getTopicLists, getWelcome } from '../vuex/getters';
+  import { getTopicLists } from '../vuex/getters';
+  import { weclome } from '../vuex/actions';
   export default {
     data() {
       return {
@@ -23,44 +24,44 @@
     vuex: {
       getters: {
         getTopicLists,
-        getWelcome,
+      },
+      actions: {
+        weclome,
       },
     },
     methods: {
       closeWelcomePage() {
-        this.$emit('isShow', false);
+        this.weclome();
       },
     },
     mounted() {
       this.$nextTick(function () {
-        console.log(this.getWelcome);
         if (this.$route.matched.some(record => record.meta.isindex)) {
           this.isShow = false;
           this.transitionObj = '';
           return false;
         }
-        const self = this;
-        setTimeout(() => {
-          self.time = 1;
-        }, 2000);
+//        const self = this;
+//        setTimeout(() => {
+//          self.time = 1;
+//        }, 2000);
       });
     },
     destroyed() {
       this.opacityStyle = 0;
     },
-    watch: {
-      'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
-        if (newVal.length > oldVal.length) {
-          if (!!this.time) {
-            this.$emit('isShow', false);
-            return false;
-          }
-          setTimeout(() => {
-            this.$emit('isShow', false);
-          }, 2000);
-        }
-      },
-    },
+//    watch: {
+//      'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
+//        if (newVal.length > oldVal.length) {
+//          if (!!this.time) {
+//            self.weclome();
+//            return false;
+//          }
+//          setTimeout(() => {
+//          }, 2000);
+//        }
+//      },
+//    },
   };
 </script>
 

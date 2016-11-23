@@ -11,7 +11,7 @@
       <c-footer></c-footer>
       <c-back></c-back>
     </div>
-    <welcome v-if="isShow" v-on:click.native="isShow"></welcome>
+    <welcome v-if="isShow"></welcome>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
   export default {
     data() {
       return {
-        isShow: true,
+        isShow: this.$store.state.isShowWelcome,
         transitionObj: 'index',
       };
     },

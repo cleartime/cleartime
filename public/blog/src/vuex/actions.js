@@ -388,3 +388,13 @@ export const search = ({ dispatch }, title) => {
     });
 };
 
+
+/**
+ * 是否显示欢迎页
+ * @param  {Function} options.dispatch store对象解构出来的函数，无需手动提供
+ * @param  {String} id               文章id
+ * @return {Promise}                  Promise
+ */
+export const weclome = ({ dispatch }) => {
+  dispatch('SHOW_WELCOME');
+};
