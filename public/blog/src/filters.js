@@ -18,3 +18,9 @@ export const timeToNow = (time) => {
   }
   return str;
 };
+
+
+export const timeToUpdata = (time) => {
+  const t = time.split('T');
+  return `${t[0]}  ${t[1].slice(0, 8)}`;
+};

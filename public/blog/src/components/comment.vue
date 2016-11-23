@@ -20,8 +20,8 @@
           </div>
         </div>
         </transition>
-        <transition name="fade">
-        <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId'>
+        <transition-group name="fade" mode="out-in" tag="div">
+        <div class="fcomment"  v-for="j in comment" v-if = 'j.fid == i.objectId' :key="j.fid">
           <div class="comment-pep">
             <i class="iconfont icon-myline"></i>
             <!--<img src="../assets/pep.png">-->
@@ -36,7 +36,7 @@
             <p @click='isShowCommet(j.nickname, i.email, j.objectId)' class="reply">回复他</p>
           </div>
         </div>
-        </transition>
+        </transition-group>
       </div>
       </transition-group>
       <div class="comment-body">
