@@ -35,9 +35,8 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.$route.matched.some(record => record.meta.isindex)) {
-          this.transitionObj = '';
-          return false;
+        if (!this.$route.meta.isindex) {
+          this.weclome();
         }
       });
     },
