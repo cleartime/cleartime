@@ -41,27 +41,29 @@
           this.transitionObj = '';
           return false;
         }
-//        const self = this;
-//        setTimeout(() => {
-//          self.time = 1;
-//        }, 2000);
+        const self = this;
+        setTimeout(() => {
+          self.time = 1;
+        }, 2000);
       });
     },
     destroyed() {
       this.opacityStyle = 0;
     },
-//    watch: {
-//      'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
-//        if (newVal.length > oldVal.length) {
-//          if (!!this.time) {
-//            self.weclome();
-//            return false;
-//          }
-//          setTimeout(() => {
-//          }, 2000);
-//        }
-//      },
-//    },
+    watch: {
+      'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
+        if (newVal.length > oldVal.length) {
+          if (!!this.time) {
+            this.weclome();
+            return false;
+          }
+          const self = this;
+          setTimeout(() => {
+            self.weclome();
+          }, 2000);
+        }
+      },
+    },
   };
 </script>
 

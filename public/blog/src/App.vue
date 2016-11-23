@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="app" v-show="!isShow" :transition="transitionObj">
+    <div id="app" v-show="!$store.state.isShowWelcome" :transition="transitionObj">
       <!--<c-Bar></c-Bar>-->
       <c-header></c-header>
       <div class="main">
@@ -11,7 +11,7 @@
       <c-footer></c-footer>
       <c-back></c-back>
     </div>
-    <welcome v-if="isShow"></welcome>
+    <welcome v-if="$store.state.isShowWelcome"></welcome>
   </div>
 </template>
 
@@ -27,14 +27,8 @@
   export default {
     data() {
       return {
-        isShow: this.$store.state.isShowWelcome,
         transitionObj: 'index',
       };
-    },
-    methods: {
-      isShow() {
-        this.isShow = false;
-      },
     },
     mounted() {
       this.$nextTick(function () {
