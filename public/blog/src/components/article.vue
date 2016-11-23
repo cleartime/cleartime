@@ -168,6 +168,7 @@
 
   @media screen and (max-width: 768px) {
     .article-header h2{
+      padding-bottom: 10px;
       border-bottom: 1px solid #d2d2d2;
     }
     .article-header{

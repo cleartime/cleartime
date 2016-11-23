@@ -167,10 +167,9 @@
         font-size: 24px;
         font-weight: bold;
         text-shadow: 0 1px 0 #fff;
+        line-height: 36px;
       }
      }
   }
 
-  @media screen and (max-width: 768px){
-  }
 </style>

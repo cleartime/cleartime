@@ -2,13 +2,12 @@ import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
 // import configRouter from './routers';
-import { timeToNow, comment, timeToUpdata } from './filters';
+import { timeToNow, timeToUpdata } from './filters';
 // import { fetchMsgCount } from './vuex/actions';
 // import { getToken } from './vuex/getters';
 import store from './vuex/store';
 
 Vue.filter('timeToNow', timeToNow);
-Vue.filter('comment', comment);
 Vue.filter('timeToUpdata', timeToUpdata);
 
 Vue.use(VueRouter);

@@ -4,11 +4,9 @@
       <transition-group name="fade" tag="div">
         <div class="cell" v-for="topicItem in items" :key="topicItem.objectId">
           <div class="topic-wrapper">
-            <router-link :to="{ path: 'post', query: {id: topicItem.objectId} }">
-            <a :title="' ' + topicItem.title" >
+            <router-link :to="{ path: 'post', query: {id: topicItem.objectId} }" :title="' ' + topicItem.title" >
               <p>{{ topicItem.title }} <span>{{ topicItem.createdAt | timeToNow }}</span></p>
               <p>{{ topicItem.description }}</p>
-            </a>
             </router-link>
           </div>
         </div>
@@ -93,6 +91,10 @@
       font-size: 22px;
       font-weight: 400;
       color: #404040;
+      line-height: 22px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     a p span{
       float: right;
@@ -187,7 +189,6 @@
     }
     .topic-wrapper {
       a {
-        display: inline-block;
         /*width: 90%;*/
       }
     }
