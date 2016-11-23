@@ -32,9 +32,6 @@
     },
     mounted() {
       this.$nextTick(function () {
-//        if (this.$route.matched.some(record => record.meta.isindex)) {
-//          this.isShow = false;
-//        }
         this.transitionObj = 'bounce';
         // 会变的 title
         document.addEventListener('visibilitychange', () => {

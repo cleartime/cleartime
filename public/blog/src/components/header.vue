@@ -85,15 +85,13 @@
 //        };
       },
     },
-    watch: {
-    },
   };
 </script>
 
 <style lang="scss" scoped>
   @import '../assets/font/iconfont';
   header {
-    background: url("../assets/banner2.png") no-repeat top center;
+    background:#0E2231 url("../assets/banner2.png") no-repeat top center;
     background-size: cover;
     height: 288px;
     overflow: hidden;

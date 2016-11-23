@@ -18,7 +18,6 @@
     data() {
       return {
         transitionObj: 'bounce',
-        time: 0,
       };
     },
     vuex: {
@@ -37,26 +36,14 @@
     mounted() {
       this.$nextTick(function () {
         if (this.$route.matched.some(record => record.meta.isindex)) {
-          this.isShow = false;
           this.transitionObj = '';
           return false;
         }
-        const self = this;
-        setTimeout(() => {
-          self.time = 1;
-        }, 2000);
       });
-    },
-    destroyed() {
-      this.opacityStyle = 0;
     },
     watch: {
       'getTopicLists': function (newVal, oldVal) { // eslint-disable-line object-shorthand
         if (newVal.length > oldVal.length) {
-          if (!!this.time) {
-            this.weclome();
-            return false;
-          }
           const self = this;
           setTimeout(() => {
             self.weclome();
@@ -76,17 +63,6 @@
     background-size: cover;
     top: 0;
     left: 0;
-    .text{
-      font-size: 20px;
-      position: absolute;
-      background: transparent;
-      color: #fff;
-      right: 15px;
-      top: 15px;
-      &:after{
-        content: '...';
-      }
-    }
   }
   .menu{
     border-radius: 50%;
@@ -112,7 +88,6 @@
       height: 50px;
       background-size: 100%;
       transition: transform 2s;
-      -webkit-transition: -webkit-transform 2s;
       &:hover{
         transform: rotate(360deg) scale(2)
       }
