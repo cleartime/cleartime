@@ -52,5 +52,9 @@ $ lean deploy / lean deploy -g
 
 具体部署可参考[LeanCloud云引擎 Node.js 部署](https://leancloud.cn/docs/leanengine_webhosting_guide-node.html#部署)
 
+> 友情提示
+
+> vue1.0纪念版请戳https://github.com/cleartime/bolg-vue1.0
+
 ## License
 MIT
