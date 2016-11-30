@@ -3,8 +3,7 @@
 ## 简介
 一个前后端完全分离的单页应用  [线上地址点此查看](http://cleartime.leanapp.cn)
 
-
-### version 1.0
+### version 2.0
 - 响应式布局
 - 主页，关于，标签
 - 过渡动画
