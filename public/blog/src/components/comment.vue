@@ -7,6 +7,7 @@
         <div class="comment"  v-if = '!i.fid'>
           <div class="comment-pep">
             <i class="iconfont icon-myline"></i>
+
             <!--<img src="../assets/pep.png">-->
             <p>{{ i.nickname }}</p>
           </div>
