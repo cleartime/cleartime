@@ -506,12 +506,6 @@
       <option name="number" value="Default" />
       <updated>1465958585382</updated>
     </task>
-    <task id="LOCAL-00212" summary="用vue2.0重构中">
-      <created>1479109306939</created>
-      <option name="number" value="00212" />
-      <option name="project" value="LOCAL" />
-      <updated>1479109306939</updated>
-    </task>
     <task id="LOCAL-00213" summary="用vue2.0重构中">
       <created>1479114737865</created>
       <option name="number" value="00213" />
@@ -800,7 +794,13 @@
       <option name="project" value="LOCAL" />
       <updated>1485047753148</updated>
     </task>
-    <option name="localTasksCounter" value="261" />
+    <task id="LOCAL-00261" summary=" 重构完成">
+      <created>1485149424325</created>
+      <option name="number" value="00261" />
+      <option name="project" value="LOCAL" />
+      <updated>1485149424328</updated>
+    </task>
+    <option name="localTasksCounter" value="262" />
     <servers />
   </component>
   <component name="TodoView">
